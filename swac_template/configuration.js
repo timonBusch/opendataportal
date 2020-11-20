@@ -9,8 +9,8 @@
  * Configuration for SWAC
  */
 var SWAC_config = {};
-SWAC_config.swac_root = "/SWAC";
-SWAC_config.app_root = "/SWAC";
+SWAC_config.swac_root = "/swac_template";
+SWAC_config.app_root = "/swac_template";
 // Options for progressive webapp
 SWAC_config.progressive = {};
 SWAC_config.progressive.active = false;
