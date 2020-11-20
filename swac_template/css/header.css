@@ -1,0 +1,19 @@
+#navbar {
+    padding: 10px;
+}
+
+#searchbar{
+    left: 45.5%;
+}
+
+.headContent{
+    position: sticky;
+    top: 0;
+    z-index:10;
+    background: white;
+}
+
+#logo {
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
