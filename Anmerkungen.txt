@@ -1,4 +1,0 @@
-Mockups OpenData:
-	- Bereich für neueste Einträge ergänzen?
-	- Kommentarfunktion für Datensätze?
-	- Abonnieren per Mail oder Push Up?
