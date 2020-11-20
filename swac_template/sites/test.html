@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SWAC - easy skinable</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/global.css">
+        <link rel="stylesheet" type="text/css" href="../css/header.css">
+        <noscript>
+        <link rel="stylesheet" type="text/css" href="../css/noscript.css">
+
+        </noscript>
+        <script src="../libs/uikit/js/uikit.min.js"></script>
+        <script src="../swac/swac.js"></script>
+
+        <!-- Datasources -->
+        <script src="../data/routes.js"></script>
+        <script src="../data/exampledata.js"></script>
+    </head>
+    <body>
+            <!-- Header -->
+            <div class="headContent">
+
+                <!-- Logo einbinden -->
+                <h1 id="logo" class="uk-heading uk-text-center">
+                    <img src="../img/logo.png"/>
+                </h1>
+
+                <!-- Navigation zwischen den Seiten -->
+                <div id="navbar" class="uk-text-center">
+                    <img src="images/light.jpg" alt="">
+                    <div class="uk-position-center">
+                        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                            <div  class="uk-navbar">
+                                <ul class="uk-navbar-nav">
+                                    <li class="uk-active"><a href="#">Daten</a></li>
+                                    <li><a href="#">Impressum</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Suchfeld -->
+                <form id="searchbar" class="uk-search uk-search-default">
+                    <span class="uk-search-icon-flip" uk-search-icon></span>
+                    <input  class="uk-search-input" type="search" placeholder="Search...">
+                </form>
+
+                <!-- Trenner -->
+                <hr class="uk-divider-icon">
+            </div>
+
+
+
+        <div class="uk-grid-match uk-child-width-expand@s uk-text-center uk-grid" uk-grid="">
+            <div class="uk-first-column">
+                <div id="filterCard" class="uk-card uk-card-default uk-card-body">
+                    <h2>Filtermöglichkeiten</h2>
+                    
+
+        <ul class="uk-list swac_repeatedForSet" swac_setname="exampledata" swac_setno="0" swac_setid="1">
+                <li swac_id="1">
+                    
+                    <input id="select_1" class="uk-checkbox" type="checkbox" name="Datensatz 1" value="1">
+                    <label for="select_1"><swac-bp attrname="name">Kategorie 1</swac-bp></label>
+
+                </li>
+            </ul><ul class="uk-list swac_repeatedForSet" swac_setname="exampledata" swac_setno="1" swac_setid="2">
+                <li swac_id="2">
+                    
+                    <input id="select_2" class="uk-checkbox" type="checkbox" name="Datensatz 2" value="2">
+                    <label for="select_2"><swac-bp attrname="name">Kategorie 2</swac-bp></label>
+
+                </li>
+            </ul><ul class="uk-list swac_repeatedForSet" swac_setname="exampledata" swac_setno="2" swac_setid="3">
+                <li swac_id="3">
+                    
+                    <input id="select_3" class="uk-checkbox" type="checkbox" name="Datensatz 3" value="3">
+                    <label for="select_3"><swac-bp attrname="name">Kategorie 3</swac-bp></label>
+
+                </li>
+            </ul>
+                </div>
+            </div>
+            <div>
+                <div id="contentCard" class="uk-card uk-card-default uk-card-body">
+                    <h2>Chooseable</h2>
+                    <p>Smart stands for: You have the choice!</p>
+                    <p>SWAC gives you ready to use components. But if you
+                        want to, you can customise it. Customisation goes in levels
+                        from easy configuration to extension programming.</p>
+                </div>
+                <div id="contentCard" class="uk-card uk-card-default uk-card-body">
+                    <h2>Chooseable</h2>
+                    <p>Smart stands for: You have the choice!</p>
+                    <p>SWAC gives you ready to use components. But if you
+                        want to, you can customise it. Customisation goes in levels
+                        from easy configuration to extension programming.</p>
+                </div>
+                <div id="contentCard" class="uk-card uk-card-default uk-card-body">
+                    <h2>Chooseable</h2>
+                    <p>Smart stands for: You have the choice!</p>
+                    <p>SWAC gives you ready to use components. But if you
+                        want to, you can customise it. Customisation goes in levels
+                        from easy configuration to extension programming.</p>
+                </div>
+                <div id="contentCard" class="uk-card uk-card-default uk-card-body">
+                    <h2>Chooseable</h2>
+                    <p>Smart stands for: You have the choice!</p>
+                    <p>SWAC gives you ready to use components. But if you
+                        want to, you can customise it. Customisation goes in levels
+                        from easy configuration to extension programming.</p>
+                </div>
+                <div id="contentCard" class="uk-card uk-card-default uk-card-body">
+                    <h2>Chooseable</h2>
+                    <p>Smart stands for: You have the choice!</p>
+                    <p>SWAC gives you ready to use components. But if you
+                        want to, you can customise it. Customisation goes in levels
+                        from easy configuration to extension programming.</p>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <table class="uk-table uk-table-divider uk-table-striped">
+            <tbody><tr><th>Property</th><th>Value</th></tr>
+            <tr class="swac_repeatForValue"><td>{attrName}</td><td>{*}</td></tr>
+        <tr class="swac_repeatedForValue" swac_setname="person" swac_setno="0" swac_attrname="name"><td><swac-bp attrname="attrName">name</swac-bp></td><td><swac-bp attrname="name">Max Mustermann</swac-bp></td></tr><tr class="swac_repeatedForValue" swac_setname="person" swac_setno="0" swac_attrname="age"><td><swac-bp attrname="attrName">age</swac-bp></td><td><swac-bp attrname="age">20</swac-bp></td></tr><tr class="swac_repeatedForValue" swac_setname="person" swac_setno="0" swac_attrname="eyecolor"><td><swac-bp attrname="attrName">eyecolor</swac-bp></td><td><swac-bp attrname="eyecolor">blue</swac-bp></td></tr></tbody></table>
+
+        <div id="select_example3" swa="Select FROM exampledata TEMPLATE checkboxselect"></div>
+    </body>
+</html>
