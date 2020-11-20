@@ -1,55 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>SWAC - easy skinable</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/global.css">
-    <link rel="stylesheet" type="text/css" href="../css/header.css">
-    <noscript>
-        <link rel="stylesheet" type="text/css" href="../css/noscript.css">
+    <head>
+        <title>SWAC - easy skinable</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/global.css">
+        <link rel="stylesheet" type="text/css" href="../css/header.css">
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="../css/noscript.css">
 
-    </noscript>
-    <script src="../libs/uikit/js/uikit.min.js"></script>
-    <script src="../swac/swac.js"></script>
+        </noscript>
+        <script src="../libs/uikit/js/uikit.min.js"></script>
+        <script src="../swac/swac.js"></script>
 
-    <!-- Datasources -->
-    <script src="../data/routes.js"></script>
-    <script src="../data/exampledata.js"></script>
-</head>
-<body>
-<!-- Header -->
-<div class="headContent">
+        <!-- Datasources -->
+        <script src="../data/routes.js"></script>
+        <script src="../data/exampledata.js"></script>
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="headContent">
 
-    <!-- Logo einbinden -->
-    <h1 id="logo" class="uk-heading uk-text-center">
-        <img src="../img/logo.png"/>
-    </h1>
+            <!-- Logo einbinden -->
+            <h1 id="logo" class="uk-heading uk-text-center">
+                <img src="../img/logo.png"/>
+            </h1>
 
-    <!-- Navigation zwischen den Seiten -->
-    <div id="navbar" class="uk-text-center">
-        <img src="images/light.jpg" alt="">
-        <div class="uk-position-center">
-            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-                <div  class="uk-navbar">
-                    <ul class="uk-navbar-nav">
-                        <li><a href="outline.html">Daten</a></li>
-                        <li class="uk-active"><a href="impressum.html">Impressum</a></li>
-                    </ul>
+            <!-- Navigation zwischen den Seiten -->
+            <div id="navbar" class="uk-text-center">
+                <img src="images/light.jpg" alt="">
+                <div class="uk-position-center">
+                    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                        <div  class="uk-navbar">
+                            <ul class="uk-navbar-nav">
+                                <li><a href="outline.html">Daten</a></li>
+                                <li class="uk-active"><a href="impressum.html">Impressum</a></li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
-            </nav>
+            </div>
+
+            <!-- Suchfeld -->
+            <form id="searchbar" class="uk-search uk-search-default">
+                <span class="uk-search-icon-flip" uk-search-icon></span>
+                <input  class="uk-search-input" type="search" placeholder="Search...">
+            </form>
+
+            <!-- Trenner -->
+            <hr class="uk-divider-icon">
         </div>
-    </div>
-
-    <!-- Suchfeld -->
-    <form id="searchbar" class="uk-search uk-search-default">
-        <span class="uk-search-icon-flip" uk-search-icon></span>
-        <input  class="uk-search-input" type="search" placeholder="Search...">
-    </form>
-
-    <!-- Trenner -->
-    <hr class="uk-divider-icon">
-</div>
-<div>
-</body>
+    </body>
+    <footer>
+        <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+            <li><a href="haftungsausschluss.html">Haftungsausschluss</a></li>
+        </ul>
+        <p>Kontakt<br>
+            <a href="mailto:jelka.wilczek@fh-bielefeld.de">Jelka Wilczek</a>,
+            <a href="mailto:fabian.list@fh-bielefeld.de">Fabian List</a>,
+            <a href="mailto:timon.buschendorf@fh-bielefeld.de">Timon Buschendorf</a>,
+            <a href="mailto:lukas.von_der_heide@fh-bielefeld.de">Lukas von der Heide</a><br>
+            © 2020 – 2020 OpenData Portal (ArbeitsGruppe)
+    </footer>
 </html>
