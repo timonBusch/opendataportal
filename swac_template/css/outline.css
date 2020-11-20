@@ -16,16 +16,12 @@ h6 {
 #outline-body{
     float: right;
     margin: 0px;
-    padding: 0px
+    padding: 0px;
 }
 
-#left-sidebar{
-}
 #rumpf{
     display: flex;
     flex-direction: row;
-    margin-right: 5%;
-    margin-left: 2%
 }
 .tablebox{
     display: flex;
@@ -37,4 +33,21 @@ h6 {
 }
 #table-right{
     width: 20%;
+}
+
+div.clickable a {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    text-decoration:none; /* Makes sure the link   doesn't get underlined */
+    z-index:10; /* raises anchor tag above everything else in div */
+    background-color:white; /*workaround to make clickable in IE */
+    opacity: 0; /*workaround to make clickable in IE */
+    filter: alpha(opacity=1); /*workaround to make clickable in IE */
+}
+
+div.clickable { /* Containing div must have a position value */
+    position:relative;
 }
