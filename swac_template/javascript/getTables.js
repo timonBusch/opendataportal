@@ -16,7 +16,7 @@ function addTablebox(){
             /* Liste erstellen */
             let newTablebox = document.createElement("ol");
             let newTablediv = document.createElement("div");
-            newTablediv.className="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable"
+            newTablediv.className="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body"
 
             /* Link zur Einzelsicht */
             let clickable = document.createElement("a");
@@ -24,14 +24,16 @@ function addTablebox(){
             newTablediv.appendChild(clickable);
 
             /* Linke Seite der Tablebox */
-            let newTabledivleft = document.createElement("div")
-            let newTablecontent = document.createElement("p")
-            let newTableheader = document.createElement("h4")
+            let newTabledivleft = document.createElement("div");
+            let newTablecontent = document.createElement("p");
+            let newTableheader = document.createElement("h4");
+            newTableheader.className = "uk-article-title";
+            newTablecontent.className = "uk-text-lead";
 
-            newTabledivleft.id = "table-left"
+            newTabledivleft.id = "table-left";
             let newTablecontenttext = document.createTextNode("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.");
             let newTablename = document.createTextNode(data["list"][key]["dt"]);
-            newTablecontent.appendChild(newTablecontenttext)
+            newTablecontent.appendChild(newTablecontenttext);
             newTablebox.appendChild(newTablediv);
             newTablediv.appendChild(newTabledivleft);
             newTabledivleft.appendChild(newTableheader);
@@ -40,12 +42,12 @@ function addTablebox(){
 
 
             /* Rechte Seite der Tablebox */
-            let newTabledivright = document.createElement("div")
-            newTabledivright.id = "table-right"
-            let newTablelastChange = document.createElement("p")
-            let newTablelastChangeValue = document.createElement("p")
-            let newTableStroge = document.createElement("p")
-            let newTableStorageValue = document.createElement("p")
+            let newTabledivright = document.createElement("div");
+            newTabledivright.id = "table-right";
+            let newTablelastChange = document.createElement("p");
+            let newTablelastChangeValue = document.createElement("p");
+            let newTableStroge = document.createElement("p");
+            let newTableStorageValue = document.createElement("p");
 
             let newTablelastChangeText = document.createTextNode("Letzte Änderung");
             let newTablelastChangeValueText = document.createTextNode(data["list"][key]["dt_txt"]);
@@ -61,10 +63,10 @@ function addTablebox(){
             newTabledivright.appendChild(newTablelastChangeValue);
             newTabledivright.appendChild(newTableStroge);
             newTabledivright.appendChild(newTableStorageValue);
-            newTablediv.appendChild(newTabledivright)
+            newTablediv.appendChild(newTabledivright);
 
 
-            list.appendChild(newTablebox)
+            list.appendChild(newTablebox);
         }
         sections[0].appendChild(list);
     }).catch(function() {

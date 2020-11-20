@@ -1,8 +1,3 @@
-h6 {
-    margin-top: 0px !important;
-    margin: 0px !important;
-}
-
 #outline-head{
     display:flex;
     flex-direction: row;
@@ -34,7 +29,9 @@ h6 {
 #table-right{
     width: 20%;
 }
-
+.tablebox{
+    display:flex!important;
+}
 div.clickable a {
     position:absolute;
     width:100%;
