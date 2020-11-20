@@ -1,0 +1,40 @@
+h6 {
+    margin-top: 0px !important;
+    margin: 0px !important;
+}
+
+#outline-head{
+    display:flex;
+    flex-direction: row;
+}
+#sort{
+    right: 0px;
+    margin-right: 10%;
+    position: absolute;
+}
+
+#outline-body{
+    float: right;
+    margin: 0px;
+    padding: 0px
+}
+
+#left-sidebar{
+}
+#rumpf{
+    display: flex;
+    flex-direction: row;
+    margin-right: 5%;
+    margin-left: 2%
+}
+.tablebox{
+    display: flex;
+    flex-direction: row;
+}
+#table-left{
+    width: 75%;
+    margin-right: 5%;
+}
+#table-right{
+    width: 20%;
+}
