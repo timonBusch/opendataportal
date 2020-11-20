@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/global.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
-
     <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
     <link rel="stylesheet" type="text/css" href="../css/outline.css">
     <noscript>
@@ -15,8 +14,9 @@
     <script src="../libs/uikit/js/uikit.min.js"></script>
     <script src="../swac/swac.js"></script>
     <script src="../data/routes.js"></script>
+    <script src="../javascript/getTables.js"></script>
 </head>
-<body>
+<body onload="addTablebox()">
     <div>
         <section id="outline-head">
             <div id="tablecount"><h3>Anzahl Treffer</h3></div>
@@ -42,34 +42,7 @@
             </div>
         </section>
         <section id="outline-body">
-            <div>
-                <ul class="tablelist">
-                    <ol><div class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox">
-                        <div id="table-left">
-                            <h4>Tabelle 1</h4>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                            </p>
-                            <p><strong>Kategorie:</strong> Geschichte</p>
-                        </div>
-                        <div id="table-right">
-                            <p><strong>Letzte Änderung</strong></p>
-                            <p>20.11.2020</p>
-                            <p><strong>Speicherplatzbedarf</strong></p>
-                            <p>39MB</p>
-                            <p><a class="uk-button uk-button-default" href="">Zur Detailansicht</a></p>
-                        </div>
-                    </div></ol>
-                    <ol><div class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding">
-                        <h4>Tabelle 2</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                        </p>
-                    </div></ol>
-                    <ol><div class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding">
-                        <h4>Tabelle 3</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                        </p>
-                    </div></ol>
-                </ul>
+            <div class="tablelist">
             </div>
         </section>
         </div>
