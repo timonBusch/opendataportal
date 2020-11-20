@@ -19,9 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javascript/getTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/getTables.js" afterDir="false" />
+    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="adding footer to outline.html">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/impressum.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/impressum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sites/outline.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/outline.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,11 +80,20 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2641" y="-101" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605866182449">
       <screen x="1920" y="-423" width="1920" height="1040" />
     </state>
     <state x="2641" y="-101" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1605866182449" />
+    <state x="99" y="100" width="1402" height="701" maximized="true" key="DiffContextDialog" timestamp="1605890560081">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="99" y="100" width="1402" height="701" maximized="true" key="DiffContextDialog/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605890560081" />
+    <state x="603" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605890501824">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="603" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605890501824" />
   </component>
 </project>
