@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sitemap</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../css/global.css">
+        <link rel="stylesheet" type="text/css" href="../css/index.css">
+        <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
+        <noscript>
+        <link rel="stylesheet" type="text/css" href="../css/noscript.css">
+        </noscript>
+        <script src="../libs/uikit/js/uikit.min.js"></script>
+        <script src="../swac/swac.js"></script>
+        <script src="../data/routes.js"></script>
+    </head>
+    <body>
+        <header id="siteheader" class="uk-cover-container">
+            <img src="../content/header.jpg" alt="Header" uk-cover>
+            <a href="index.html" class="logo">
+                <img src="../content/logo.jpg" alt="Logo" width="150" height="150">
+            </a>
+        </header>
+        <div id="head_navigation" swa="Navigation FROM routes"></div>
+        <noscript>
+        <div class="noscript_nav">
+            <a href="../sitemap.html" class="uk-button uk-button-primary">Sitemap</a>
+            <br>Bitte aktiviere Javascript, um die bestmögliche Ansicht zu haben. / Please activate Javascript for the best experience.
+        </div>
+        </noscript>
+
+        <h1>Page contents</h1>
+
+        <h3>Template todo</h3>
+		<p>
+			<ol>
+				<li>Configure your page menue by editing the routes.js</li>
+				<li>Reload this page</li>
+				<li>Click the "generate code" button</li>
+				<li>Copy code to clipboard</li>
+				<li>Open this file (sitemap.html) in editor</li>
+				<li>Paste the generated code</li>
+				<li>Outcomment this todo and the component useage.</li>
+			</ol>
+		</p>
+		<div id="dataview" swa="Navigation FROM routes TEMPLATE sitemap"></div>
+		
+        <footer>
+            <a href="about/privacy.html">Privacy policy / Datenschutzerklärung</a>
+            <a href="about/imprint.html">Imprint / Impressum</a>
+            &copy; 2018 - 2020 Florian Fehring <a class="toplink" href="#">Top</a>
+        </footer>
+    </body>
+</html>

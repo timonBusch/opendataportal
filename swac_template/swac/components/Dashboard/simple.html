@@ -1,0 +1,41 @@
+<h1>##Dashboard.overallActive## <span class="swac_dashboard_overall"></span></h1>
+##Dashboard.activeTimeout## <input type="number" name="activeTimeout" class="swac_dashbord_activeTimeout uk-input uk-form-small uk-form-width-small"> ##Dashboard.seconds##
+<button type="button" class="swac_dashboard_calculateActivityStates uk-button uk-button-small" disabled>
+    ##Dashboard.calculateActivityStates##
+</button>
+
+<ul class="swac_dashboard" uk-accordion="multiple: true">
+    <li class="swac_repeatForSet" swac_parent="{parent}">
+        <a class="uk-accordion-title" href="#">
+            <img src="../swac/components/Dashboard/imgs/collect_{collectsData}.svg" shouldActive="{collectsData}" class="swac_dashboard_acticityState" alt="Collection status" width="25" height="25"> 
+            <span class="swac_dashboard_overCur"></span> %
+            {name}
+            <span class="swac_dashboard_offScince"></span>
+        </a>
+        ##Dashboard.oldestActivityFrom## <span class="swac_dashboard_oldestSubActivityTS"></span>
+        <br>##Dashboard.newestActivityFrom## <span class="swac_dashboard_newestSubActivityTS"></span>
+        Id: <a href="/SmartMonitoring/sites/objectview.html?id={id}">{id}</a>
+        <div class="uk-accordion-content">
+            ##Dashboard.inactiveOfAvailable## <span class="swac_dashboard_inactiveCur"></span> / <span class="swac_dashboard_availCur"></span>
+            <br>##Dashboard.lastOwnActivityFrom## <span class="swac_dashboard_ownActivityTS">{lastSetFrom}</span>
+            <ul class="swac_forChilds" uk-accordion="multiple: true">
+                <li class="swac_child">
+                    <a class="uk-accordion-title" href="#">
+                        <img src="../swac/components/Dashboard/imgs/collect_{collectsData}.svg" shouldActive="{collectsData}" class="swac_dashboard_acticityState" alt="Collection status" width="25" height="25"> 
+                        <span class="swac_dashboard_overCur"></span> %
+                        {name}
+                        <span class="swac_dashboard_offScince"></span>
+                    </a>
+                    ##Dashboard.oldestActivityFrom## <span class="swac_dashboard_oldestSubActivityTS"></span>
+                    <br>##Dashboard.newestActivityFrom## <span class="swac_dashboard_newestSubActivityTS"></span>
+                    ID: {id}
+                    <div class="uk-accordion-content">
+                        ##Dashboard.inactiveOfAvailable## <span class="swac_dashboard_inactiveCur"></span> / <span class="swac_dashboard_availCur"></span>
+                        <br>##Dashboard.lastOwnActivityFrom## <span class="swac_dashboard_ownActivityTS">{lastSetFrom}</span>
+                        <ul class="swac_forChilds" uk-accordion="multiple: true"></ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul>
