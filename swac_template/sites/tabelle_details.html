@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SmartWebApplicationComponents Template</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../css/global.css">
+        <link rel="stylesheet" type="text/css" href="../css/index.css">
+        <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
+        <noscript>
+        <link rel="stylesheet" type="text/css" href="../css/noscript.css">
+        </noscript>
+
+        <script src="../libs/uikit/js/uikit.min.js"></script>
+        <script src="../swac/swac.js"></script>
+        <script src="../data/routes.js"></script>
+        <script src="../data/exampledata.js"></script>
+        <script src="../data/person.js"></script>
+        <script src="../libs/uikit/js/uikit-icons.min.js"></script>
+
+    </head>
+    <body>
+        <header id="siteheader" class="uk-cover-container">
+            <img src="../content/header.jpg" alt="By geralt (https://pixabay.com/illustrations/puzzle-learn-arrangement-components-1765847/)" uk-cover>
+            <a href="index.html" class="logo">
+                <img src="../content/logo.jpg" alt="SWAC Logo" width="150" height="150">
+            </a>
+        </header>
+        <div id="head_navigation" swa="Navigation FROM routes"></div>
+        <noscript>
+        <div class="noscript_nav">
+            <a href="sitemap.html" class="uk-button uk-button-primary">Sitemap</a>
+            <br>Bitte aktiviere Javascript, um die bestmögliche Ansicht zu haben. / Please activate Javascript for the best experience.
+        </div>
+        </noscript>
+
+        <div class="uk-section uk-section-muted">
+            <div class="uk-container uk-container-expand">
+
+                <h3>53 Datensätze zur verfügung</h3>
+                <div class="uk-text-center uk-grid-large" uk-grid>
+
+                    <div class="uk-width-1-4 uk-text-left">
+                        <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden">
+                            <h1 class="uk-article-title">Details</h1>
+
+                            <dl class="uk-description-list">
+                                <dt>Kategorie</dt>
+                                <dd>Wetterdaten</dd>
+                                <dt>Speicherplatzbedarf</dt>
+                                <dd>15,56 GB</dd>
+                                <dt>Erstellungsdatum</dt>
+                                <dd>01.05.2020</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="uk-width-3-4">
+
+                        <div class="uk-card uk-card-default uk-card-body">
+
+                            <article class="uk-article uk-text-left">
+
+                                <a href="" class="uk-icon-button" uk-icon="bell"></a>
+                                <h1 class="uk-article-title">Titel der Tabelle</h1>
+
+                                <p class="uk-text-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                            </article>
+
+
+
+                            <div id="modal-container" class="uk-modal-container" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                                    <div class="uk-panel-scrollable" id="exampledata" swa="Present FROM exampledata"></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="uk-container uk-container-expand uk-text-right">
+
+                    <div class="uk-button-group">
+                        <a class="uk-button uk-button-default" href="#modal-container" uk-toggle>Vorschau</a>
+                        <button class="uk-button uk-button-default">Datensätze abrufen</button>
+                        <button class="uk-button uk-button-default">JSON-Export</button>
+                        <button class="uk-button uk-button-default">CSV-Export</button>
+                        <button class="uk-button uk-button-default">Codebeispiel</button>
+                    </div>
+                </div>
+
+                <hr class="uk-divider-icon">
+
+                <div class="uk-text-center uk-grid-large" uk-grid>
+
+                    <div class="uk-width-1-4">
+                        <h3 class="uk-text-left">Verfasse ein Kommentar</h3>
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <textarea class="uk-textarea" rows="5" placeholder="Kommentar"></textarea>
+                            <button class="uk-button uk-button-default uk-margin-top">Absenden</button>
+                        </div>
+                    </div>
+
+                    <div class="uk-width-3-4" uk-grid>
+                        <h3>Kommentarsektion</h3>
+                        <div class="uk-width-1-1">
+
+                            <div class="uk-card uk-card-default uk-card-body">
+                                <article class="uk-article uk-text-left">
+
+                                    <h1 class="uk-article-title"><a class="uk-link-reset" href="">Überschrift</a></h1>
+
+                                    <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012.</p>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+                                </article>
+                            </div>
+
+                        </div>
+                        <div class="uk-width-1-1">
+
+                            <div class="uk-card uk-card-default uk-card-body">
+                                <article class="uk-article uk-text-left">
+
+                                    <h1 class="uk-article-title"><a class="uk-link-reset" href="">Überschrift</a></h1>
+
+                                    <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012.</p>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+                                </article>
+                            </div>
+
+                        </div>
+                        <div class="uk-width-1-1">
+
+                            <div class="uk-card uk-card-default uk-card-body">
+                                <article class="uk-article uk-text-left">
+
+                                    <h1 class="uk-article-title"><a class="uk-link-reset" href="">Überschrift</a></h1>
+
+                                    <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012.</p>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+                                </article>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <footer>
+
+        </footer>
+    </body>
+</html>
