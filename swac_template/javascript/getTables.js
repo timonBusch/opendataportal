@@ -11,6 +11,7 @@ function addTablebox(){
         console.log(sections[0])
         var list = [];
         list = document.createElement("ul");
+        list.setAttribute("id", "tablelist")
         for(var key in data["records"]) {
             /* Liste erstellen */
             let newTablebox = document.createElement("ol");
@@ -71,7 +72,8 @@ function addTablebox(){
         }
         sections[0].appendChild(list);
 
-
+        document.getElementById("tableNumber");
+        tableNumber.textContent = "Anzahl der Treffer: " + data["records"].length;
 
     }).catch(function() {
         //console.log("Ein Fehler beim Abruf der Daten ist aufgetreten.");

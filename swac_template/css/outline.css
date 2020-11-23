@@ -2,18 +2,21 @@
     display:flex;
     flex-direction: row;
 }
-#sort{
-    right: 0px;
-    margin-right: 10%;
-    position: absolute;
-}
 
 #outline-body{
     float: right;
     margin: 0px;
     padding: 0px;
 }
-
+.filter {
+    position: fixed!important;
+}
+.dummy {
+    visibility: hidden;
+}
+.sort{
+    margin-right: 40px;
+}
 #rumpf{
     display: flex;
     flex-direction: row;
@@ -47,4 +50,33 @@ div.clickable a {
 
 div.clickable { /* Containing div must have a position value */
     position:relative;
+}
+
+#up{
+    display: inline-block;
+    text-decoration: none;
+    background: rgb(41, 197, 171);
+    color: whitesmoke;
+    width: 65px;
+    height: 65px;
+    font-size: larger;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px #D7D7D7;
+    border: dashed 1px #FFF;
+    transition: .4s;
+    position:fixed;
+    bottom: 50px;
+    right: 0px;
+    margin-right: 70px;
+    opacity: 40%;
+    z-index: 99;
+}
+
+#up:hover{
+    background: rgb(71, 197, 171);
+    box-shadow: 0px 0px 0px 5px rgb(11, 197, 171);
 }

@@ -26,7 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="adding header and footer to sites" />
+    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="adding number of tables when loading tables">
+      <change afterPath="$PROJECT_DIR$/css/tabelle_details.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/tabelle_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/tabelle_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/test.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,8 +40,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -67,6 +73,7 @@
       <updated>1605865984031</updated>
       <workItem from="1605865985678" duration="13801000" />
       <workItem from="1606119072423" duration="458000" />
+      <workItem from="1606120667266" duration="9269000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
@@ -82,7 +89,56 @@
       <option name="project" value="LOCAL" />
       <updated>1605891241347</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adding search function to outline.html">
+      <created>1606126160507</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606126160507</updated>
+    </task>
+    <task id="LOCAL-00004" summary="adding search function to outline.html">
+      <created>1606126552957</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606126552957</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix sort button">
+      <created>1606126806047</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606126806047</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixing link in navbar">
+      <created>1606128066888</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606128066888</updated>
+    </task>
+    <task id="LOCAL-00007" summary="hiding searchbar on details">
+      <created>1606128351116</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606128351116</updated>
+    </task>
+    <task id="LOCAL-00008" summary="hiding searchbar on details">
+      <created>1606128377893</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606128377893</updated>
+    </task>
+    <task id="LOCAL-00009" summary="adding number of tables when loading tables">
+      <created>1606128767174</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606128767174</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,24 +171,40 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="color change header" />
     <MESSAGE value="adding header and footer to sites" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding header and footer to sites" />
+    <MESSAGE value="adding search function to outline.html" />
+    <MESSAGE value="fix sort button" />
+    <MESSAGE value="fixing link in navbar" />
+    <MESSAGE value="hiding searchbar on details" />
+    <MESSAGE value="adding number of tables when loading tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding number of tables when loading tables" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2641" y="-101" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605866182449">
       <screen x="1920" y="-423" width="1920" height="1040" />
     </state>
     <state x="2641" y="-101" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1605866182449" />
-    <state x="99" y="100" width="1402" height="701" maximized="true" key="DiffContextDialog" timestamp="1605890560081">
-      <screen x="0" y="0" width="1600" height="900" />
+    <state x="1700" y="187" width="1394" height="700" key="DiffContextDialog" timestamp="1606126789769">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
+    <state x="1700" y="187" width="1394" height="700" key="DiffContextDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126789769" />
     <state x="99" y="100" width="1402" height="701" maximized="true" key="DiffContextDialog/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605890560081" />
-    <state x="395" y="186" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1605891243964">
-      <screen x="0" y="0" width="1600" height="900" />
+    <state x="23" y="183" width="1538" height="893" key="MergeDialog" timestamp="1606126252267">
+      <screen x="0" y="180" width="1600" height="900" />
     </state>
+    <state x="23" y="183" width="1538" height="893" key="MergeDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126252267" />
+    <state x="437" y="393" width="717" height="474" key="MultipleFileMergeDialog" timestamp="1606126252274">
+      <screen x="0" y="180" width="1600" height="900" />
+    </state>
+    <state x="437" y="393" width="717" height="474" key="MultipleFileMergeDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126252274" />
+    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606128770963">
+      <screen x="0" y="180" width="1600" height="900" />
+    </state>
+    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606128770963" />
     <state x="395" y="186" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605891243964" />
-    <state x="603" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605890501824">
-      <screen x="0" y="0" width="1600" height="900" />
+    <state x="603" y="545" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606128724412">
+      <screen x="0" y="180" width="1600" height="900" />
     </state>
+    <state x="603" y="545" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606128724412" />
     <state x="603" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605890501824" />
     <state x="504" y="15" width="592" height="870" key="find.popup" timestamp="1605892148777">
       <screen x="0" y="0" width="1600" height="900" />

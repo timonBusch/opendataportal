@@ -17,6 +17,7 @@
     <script src="../swac/swac.js"></script>
     <script src="../data/routes.js"></script>
     <script src="../javascript/getTables.js"></script>
+    <script src="../javascript/search.js"></script>
 </head>
 
 <body onload="addTablebox()">
@@ -44,9 +45,9 @@
         </div>
 
         <!-- Suchfeld -->
-        <form id="searchbar" class="uk-search uk-search-default">
+        <form id="searchform" class="uk-search uk-search-default" onkeyup="searchTable()">
             <span class="uk-search-icon-flip" uk-search-icon></span>
-            <input  class="uk-search-input" type="search" placeholder="Search...">
+            <input id="searchbar" class="uk-search-input" type="search" placeholder="Search...">
         </form>
 
         <!-- Trenner -->
@@ -56,12 +57,22 @@
     <div class="uk-container uk-container-expand">
 
     <section id="outline-head">
-            <div id="tablecount"><h3>Anzahl Treffer</h3></div>
-            <div id="sort">Sortierung</div>
+            <div id="tablecount"><h3 id="tableNumber">Anzahl der Treffer: </h3></div>
+        <div class="uk-inline sort" style="right: 0;position: absolute;">
+            <button class="uk-button uk-button-default" type="button">Sortieren nach: Neueste absteigend</button>
+            <div uk-dropdown>
+                <ul class="uk-nav uk-dropdown-nav">
+                    <li class="uk-active"><a href="#">Neueste absteigend</a></li>
+                    <li><a href="#">Neueste aufsteigend</a></li>
+                    <li><a href="#">Name aufsteigend</a></li>
+                    <li><a href="#">Name absteigend</a></li>
+                </ul>
+            </div>
+        </div>
         </section>
         <div id="rumpf">
         <div class="uk-width-1-4 uk-text-left">
-            <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden">
+            <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden filter">
                 <h1 class="uk-article-title">Filtermöglichkeiten</h1>
                         <h6>Kategorien</h6>
                         <div id="category-box" class="uk-panel uk-panel-scrollable">
@@ -72,6 +83,10 @@
                                 <li><label><input class="uk-checkbox" type="checkbox"> Category 4</label></li>
                             </ul>
                         </div>
+            </div>
+            <!-- Dummy, damit flex trotz fixed position erhalten bleibt -->
+            <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden dummy">
+                <h1 class="uk-article-title">Filtermöglichkeiten</h1>
             </div>
         </div>
 
@@ -85,6 +100,7 @@
             </div>
         </section>
         </div>
+        <a href="" id="up">up</a>
     </div>
 </div>
 </body>
