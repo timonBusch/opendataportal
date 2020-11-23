@@ -26,10 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="hiding searchbar on details">
+    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="adding number of tables when loading tables">
+      <change afterPath="$PROJECT_DIR$/css/tabelle_details.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javascript/getTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/getTables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/outline.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/outline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/tabelle_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/tabelle_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +40,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -72,7 +73,7 @@
       <updated>1605865984031</updated>
       <workItem from="1605865985678" duration="13801000" />
       <workItem from="1606119072423" duration="458000" />
-      <workItem from="1606120667266" duration="7867000" />
+      <workItem from="1606120667266" duration="9269000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
@@ -130,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606128377893</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="adding number of tables when loading tables">
+      <created>1606128767174</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606128767174</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +175,8 @@
     <MESSAGE value="fix sort button" />
     <MESSAGE value="fixing link in navbar" />
     <MESSAGE value="hiding searchbar on details" />
-    <option name="LAST_COMMIT_MESSAGE" value="hiding searchbar on details" />
+    <MESSAGE value="adding number of tables when loading tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding number of tables when loading tables" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2641" y="-101" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605866182449">
@@ -187,15 +196,15 @@
       <screen x="0" y="180" width="1600" height="900" />
     </state>
     <state x="437" y="393" width="717" height="474" key="MultipleFileMergeDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126252274" />
-    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606128385406">
+    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606128770963">
       <screen x="0" y="180" width="1600" height="900" />
     </state>
-    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606128385406" />
+    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606128770963" />
     <state x="395" y="186" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605891243964" />
-    <state x="603" y="545" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606127687004">
+    <state x="603" y="545" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606128724412">
       <screen x="0" y="180" width="1600" height="900" />
     </state>
-    <state x="603" y="545" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606127687004" />
+    <state x="603" y="545" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606128724412" />
     <state x="603" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605890501824" />
     <state x="504" y="15" width="592" height="870" key="find.popup" timestamp="1605892148777">
       <screen x="0" y="0" width="1600" height="900" />
