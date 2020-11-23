@@ -27,7 +27,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="adding search function to outline.html">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sites/outline.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/outline.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +70,7 @@
       <updated>1605865984031</updated>
       <workItem from="1605865985678" duration="13801000" />
       <workItem from="1606119072423" duration="458000" />
-      <workItem from="1606120667266" duration="5862000" />
+      <workItem from="1606120667266" duration="6123000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
@@ -94,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606126160507</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adding search function to outline.html">
+      <created>1606126552957</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606126552957</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,9 +141,10 @@
       <screen x="1920" y="-423" width="1920" height="1040" />
     </state>
     <state x="2641" y="-101" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1605866182449" />
-    <state x="99" y="100" width="1402" height="701" maximized="true" key="DiffContextDialog" timestamp="1605890560081">
-      <screen x="0" y="0" width="1600" height="900" />
+    <state x="1700" y="187" width="1394" height="700" key="DiffContextDialog" timestamp="1606126789769">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
+    <state x="1700" y="187" width="1394" height="700" key="DiffContextDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126789769" />
     <state x="99" y="100" width="1402" height="701" maximized="true" key="DiffContextDialog/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605890560081" />
     <state x="23" y="183" width="1538" height="893" key="MergeDialog" timestamp="1606126252267">
       <screen x="0" y="180" width="1600" height="900" />
@@ -147,10 +154,10 @@
       <screen x="0" y="180" width="1600" height="900" />
     </state>
     <state x="437" y="393" width="717" height="474" key="MultipleFileMergeDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126252274" />
-    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606126257733">
+    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606126557046">
       <screen x="0" y="180" width="1600" height="900" />
     </state>
-    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126257733" />
+    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126557046" />
     <state x="395" y="186" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605891243964" />
     <state x="603" y="545" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606126136387">
       <screen x="0" y="180" width="1600" height="900" />
