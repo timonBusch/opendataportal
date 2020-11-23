@@ -35,8 +35,8 @@
                     <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
                         <div  class="uk-navbar">
                             <ul class="uk-navbar-nav">
-                                <li><a href="outline.html">Daten</a></li>
-                                <li class="uk-active"><a href="impressum.html">Impressum</a></li>
+                                <li class="uk-active"><a href="outline.html">Daten</a></li>
+                                <li><a href="impressum.html">Impressum</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -44,9 +44,9 @@
             </div>
 
             <!-- Suchfeld -->
-            <form id="searchbar" class="uk-search uk-search-default">
+            <form id="searchform" class="uk-search uk-search-default" onkeyup="searchTable()">
                 <span class="uk-search-icon-flip" uk-search-icon></span>
-                <input  class="uk-search-input" type="search" placeholder="Search...">
+                <input id="searchbar" class="uk-search-input" type="search" placeholder="Search...">
             </form>
 
             <!-- Trenner -->
