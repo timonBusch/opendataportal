@@ -26,10 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="adding header and footer to sites">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/impressum.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/impressum.html" afterDir="false" />
-    </list>
+    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="adding header and footer to sites" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605865984031</updated>
       <workItem from="1605865985678" duration="13801000" />
+      <workItem from="1606119072423" duration="458000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
