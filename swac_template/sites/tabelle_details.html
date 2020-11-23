@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SmartWebApplicationComponents Template</title>
+        <title>Details</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../css/global.css">
         <link rel="stylesheet" type="text/css" href="../css/index.css">
@@ -62,9 +62,11 @@
         <div class="uk-section uk-section-muted">
             <div class="uk-container uk-container-expand">
 
+
+                <!-- Titel der Tabelle, Beschreibung und Details -->
                 <h3>53 Datensätze zur verfügung</h3>
                 <div class="uk-text-center uk-grid-large" uk-grid>
-
+                    <!-- Details -->
                     <div class="uk-width-1-4 uk-text-left">
                         <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden">
                             <h1 class="uk-article-title">Details</h1>
@@ -80,13 +82,19 @@
                         </div>
                     </div>
 
-                    <div class="uk-width-3-4">
+                    <!-- Titel und Beschreibung -->
+                    <div class="uk-width-3-4 uk-margin-bottom">
+
+                        <div class="uk-alert-danger" uk-alert>
+                            <a class="uk-alert-close" uk-close></a>
+                            <p>Achtung! Diese Tabelle könnte unvollständige oder fehlerhafte Datensätze enthalten!</p>
+                        </div>
 
                         <div class="uk-card uk-card-default uk-card-body">
 
                             <article class="uk-article uk-text-left">
 
-                                <a href="" class="uk-icon-button" uk-icon="bell"></a>
+                                <a href="#subscribe_modal" class="uk-icon-button" uk-icon="bell" uk-toggle></a>
                                 <h1 class="uk-article-title">Titel der Tabelle</h1>
 
                                 <p class="uk-text-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -94,35 +102,106 @@
                                     quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
                             </article>
 
-
-
-                            <div id="modal-container" class="uk-modal-container" uk-modal>
-                                <div class="uk-modal-dialog uk-modal-body">
+                            <!-- Pop-up zum abonnieren der Tabelle -->
+                            <div id="subscribe_modal" uk-modal>
+                                <div class="uk-modal-dialog">
                                     <button class="uk-modal-close-default" type="button" uk-close></button>
-                                    <div class="uk-panel-scrollable" id="exampledata" swa="Present FROM exampledata"></div>
-                                </div>
 
+                                    <div class="uk-modal-body">
+                                        <h2 class="uk-modal-title uk-text-center">Tabelle abonnieren</h2>
+                                        <p>Bitte geben Sie ihre Mailadresse an um über neue Daten in dieser Tabelle informiert zu werden:</p>
+                                        <input class="uk-input" placeholder="E-Mail">
+                                    </div>
+                                    <div class="uk-modal-footer uk-text-center">
+                                        <button class="uk-button uk-button-primary" type="button">OK</button>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
 
                     </div>
                 </div>
 
+                <!-- Buttons fuer Export etc. -->
                 <div class="uk-container uk-container-expand uk-text-right">
 
                     <div class="uk-button-group">
-                        <a class="uk-button uk-button-default" href="#modal-container" uk-toggle>Vorschau</a>
-                        <button class="uk-button uk-button-default">Datensätze abrufen</button>
-                        <button class="uk-button uk-button-default">JSON-Export</button>
-                        <button class="uk-button uk-button-default">CSV-Export</button>
+                        <a class="uk-button uk-button-default" href="#preview_modal" uk-toggle>Vorschau</a>
+                        <a class="uk-button uk-button-default" href="#datasets_modal" uk-toggle>Datensätze abrufen</a>
+                        <div class="uk-inline">
+                            <a class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: download"></a>
+                            <button class="uk-button uk-button-default">JSON-Export</button>
+                        </div>
+                        <div class="uk-inline">
+                            <a class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: download"></a>
+                            <button class="uk-button uk-button-default">CSV-Export</button>
+                        </div>
                         <button class="uk-button uk-button-default">Codebeispiel</button>
                     </div>
                 </div>
 
+                <!-- Pop-up fuer Button Vorschau -->
+                <div id="preview_modal" class="uk-modal-container" uk-modal>
+
+                    <div class="uk-modal-dialog uk-modal-body">
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+                        <div class="uk-panel-scrollable" id="exampledata" swa="Present FROM exampledata"></div>
+                    </div>
+
+                </div>
+
+                <!-- Pop-up Datensaetze abrufen -->
+                <div id="datasets_modal" uk-modal>
+                    <div class="uk-modal-dialog">
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+
+                        <div class="uk-modal-body uk-text-center">
+                            <h2 class="uk-modal-title">Datensätze abrufen</h2>
+                            <p>Bitte schränken Sie die anzuzeigenden Daten ein:</p>
+                            <div class="uk-panel-scrollable uk-height-small uk-width-expand uk-text-center">
+                                <form class="uk-grid-small" uk-grid>
+                                    <div class="uk-width-1-1">
+                                        <label><input class="uk-checkbox" type="checkbox"> Spalte 1</label>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <label><input class="uk-checkbox" type="checkbox"> Spalte 2</label>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <label><input class="uk-checkbox" type="checkbox"> Spalte 3</label>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <label><input class="uk-checkbox" type="checkbox"> Spalte 4</label>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <label><input class="uk-checkbox" type="checkbox"> Spalte 5</label>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="uk-margin-top">
+                                <label for="start">von:</label>
+                                <input type="date" id="start" name="trip-start">
+
+                                <label for="start">bis:</label>
+                                <input type="date" id="end" name="trip-start">
+                            </div>
+
+
+                        </div>
+                        <div class="uk-modal-footer uk-text-center">
+                            <button class="uk-button uk-button-primary" type="button">OK</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trenner -->
                 <hr class="uk-divider-icon">
 
+                <!-- Kommentarsektion -->
                 <div class="uk-text-center uk-grid-large" uk-grid>
 
+                    <!-- Kommentar verfasen -->
                     <div class="uk-width-1-4">
                         <h3 class="uk-text-left">Verfasse ein Kommentar</h3>
                         <div class="uk-card uk-card-default uk-card-body">
@@ -138,7 +217,7 @@
                             <div class="uk-card uk-card-default uk-card-body">
                                 <article class="uk-article uk-text-left">
 
-                                    <h1 class="uk-article-title"><a class="uk-link-reset" href="">Überschrift</a></h1>
+                                    <h3 class="uk-article-title"><a class="uk-link-reset" href="">Überschrift</a></h3>
 
                                     <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012.</p>
 
@@ -154,7 +233,7 @@
                             <div class="uk-card uk-card-default uk-card-body">
                                 <article class="uk-article uk-text-left">
 
-                                    <h1 class="uk-article-title"><a class="uk-link-reset" href="">Überschrift</a></h1>
+                                    <h5 class="uk-article-title"><a class="uk-link-reset" href="">Überschrift</a></h5>
 
                                     <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012.</p>
 
@@ -170,7 +249,7 @@
                             <div class="uk-card uk-card-default uk-card-body">
                                 <article class="uk-article uk-text-left">
 
-                                    <h1 class="uk-article-title"><a class="uk-link-reset" href="">Überschrift</a></h1>
+                                    <h5 class="uk-article-title"><a class="uk-link-reset" href="">Überschrift</a></h5>
 
                                     <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012.</p>
 
