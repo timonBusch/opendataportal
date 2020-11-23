@@ -2,11 +2,6 @@
     display:flex;
     flex-direction: row;
 }
-#sort{
-    right: 0px;
-    margin-right: 10%;
-    position: absolute;
-}
 
 #outline-body{
     float: right;
@@ -14,6 +9,9 @@
     padding: 0px;
 }
 
+.sort{
+    margin-right: 40px;
+}
 #rumpf{
     display: flex;
     flex-direction: row;
