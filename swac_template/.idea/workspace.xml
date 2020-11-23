@@ -26,8 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="fix sort button">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="fixing link in navbar">
       <change beforePath="$PROJECT_DIR$/sites/tabelle_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/tabelle_details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +70,7 @@
       <updated>1605865984031</updated>
       <workItem from="1605865985678" duration="13801000" />
       <workItem from="1606119072423" duration="458000" />
-      <workItem from="1606120667266" duration="7211000" />
+      <workItem from="1606120667266" duration="7467000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
@@ -108,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606126806047</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixing link in navbar">
+      <created>1606128066888</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606128066888</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +149,8 @@
     <MESSAGE value="adding header and footer to sites" />
     <MESSAGE value="adding search function to outline.html" />
     <MESSAGE value="fix sort button" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix sort button" />
+    <MESSAGE value="fixing link in navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing link in navbar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2641" y="-101" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605866182449">
@@ -163,10 +170,10 @@
       <screen x="0" y="180" width="1600" height="900" />
     </state>
     <state x="437" y="393" width="717" height="474" key="MultipleFileMergeDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126252274" />
-    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606126893281">
+    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606128072037">
       <screen x="0" y="180" width="1600" height="900" />
     </state>
-    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126893281" />
+    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606128072037" />
     <state x="395" y="186" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605891243964" />
     <state x="603" y="545" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606127687004">
       <screen x="0" y="180" width="1600" height="900" />
