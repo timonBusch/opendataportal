@@ -72,7 +72,8 @@ function addTablebox(){
         }
         sections[0].appendChild(list);
 
-
+        document.getElementById("tableNumber");
+        tableNumber.textContent = "Anzahl der Treffer: " + data["records"].length;
 
     }).catch(function() {
         //console.log("Ein Fehler beim Abruf der Daten ist aufgetreten.");
