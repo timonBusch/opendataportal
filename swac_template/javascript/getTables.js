@@ -11,6 +11,7 @@ function addTablebox(){
         console.log(sections[0])
         var list = [];
         list = document.createElement("ul");
+        list.setAttribute("id", "tablelist")
         for(var key in data["records"]) {
             /* Liste erstellen */
             let newTablebox = document.createElement("ol");

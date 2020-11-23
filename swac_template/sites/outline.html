@@ -17,6 +17,7 @@
     <script src="../swac/swac.js"></script>
     <script src="../data/routes.js"></script>
     <script src="../javascript/getTables.js"></script>
+    <script src="../javascript/search.js"></script>
 </head>
 
 <body onload="addTablebox()">
@@ -44,19 +45,20 @@
         </div>
 
         <!-- Suchfeld -->
-        <form id="searchbar" class="uk-search uk-search-default">
+        <form id="searchform" class="uk-search uk-search-default" onkeyup="searchTable()">
             <span class="uk-search-icon-flip" uk-search-icon></span>
-            <input  class="uk-search-input" type="search" placeholder="Search...">
+            <input id="searchbar" class="uk-search-input" type="text" placeholder="Search...">
         </form>
 
         <!-- Trenner -->
         <hr class="uk-divider-icon">
     </div>
+
 <div class="uk-section uk-section-muted">
     <div class="uk-container uk-container-expand">
 
     <section id="outline-head">
-            <div id="tablecount"><h3>Anzahl Treffer</h3></div>
+            <div id="tablecount"><h3 id="tableNumber">Anzahl der Treffer: </h3></div>
             <div id="sort">Sortierung</div>
         </section>
         <div id="rumpf">

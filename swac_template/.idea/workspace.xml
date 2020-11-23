@@ -26,7 +26,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="adding header and footer to sites" />
+    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="adding header and footer to sites">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/getTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/getTables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/outline.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/outline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/test.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +43,7 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -67,6 +74,7 @@
       <updated>1605865984031</updated>
       <workItem from="1605865985678" duration="13801000" />
       <workItem from="1606119072423" duration="458000" />
+      <workItem from="1606120667266" duration="5412000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
