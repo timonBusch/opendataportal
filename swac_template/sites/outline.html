@@ -57,23 +57,33 @@
 
     <section id="outline-head">
             <div id="tablecount"><h3>Anzahl Treffer</h3></div>
-            <div id="sort">Sortierung</div>
+            <div class="uk-inline sort" style="right: 0;position: absolute;">
+                <button class="uk-button uk-button-default" type="button">Sortieren nach: Neueste absteigend</button>
+                <div uk-dropdown>
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#">Neueste absteigend</a></li>
+                        <li><a href="#">Neueste aufsteigend</a></li>
+                        <li><a href="#">Name aufsteigend</a></li>
+                        <li><a href="#">Name absteigend</a></li>
+                    </ul>
+                </div>
+            </div>
         </section>
         <div id="rumpf">
-        <div class="uk-width-1-4 uk-text-left">
-            <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden">
-                <h1 class="uk-article-title">Filtermöglichkeiten</h1>
-                        <h6>Kategorien</h6>
-                        <div id="category-box" class="uk-panel uk-panel-scrollable">
-                            <ul class="uk-list">
-                                <li><label><input class="uk-checkbox" type="checkbox"> Category 1</label></li>
-                                <li><label><input class="uk-checkbox" type="checkbox"> Category 2</label></li>
-                                <li><label><input class="uk-checkbox" type="checkbox"> Category 3</label></li>
-                                <li><label><input class="uk-checkbox" type="checkbox"> Category 4</label></li>
-                            </ul>
-                        </div>
+            <div class="uk-width-1-4 uk-text-left">
+                <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden">
+                    <h1 class="uk-article-title">Filtermöglichkeiten</h1>
+                    <h6>Kategorien</h6>
+                    <div id="category-box" class="uk-panel uk-panel-scrollable">
+                        <ul class="uk-list">
+                            <li><label><input class="uk-checkbox" type="checkbox"> Category 1</label></li>
+                            <li><label><input class="uk-checkbox" type="checkbox"> Category 2</label></li>
+                            <li><label><input class="uk-checkbox" type="checkbox"> Category 3</label></li>
+                            <li><label><input class="uk-checkbox" type="checkbox"> Category 4</label></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
 
 
         <section id="left-sidebar">
