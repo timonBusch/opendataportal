@@ -8,7 +8,12 @@
     margin: 0px;
     padding: 0px;
 }
-
+.filter {
+    position: fixed!important;
+}
+.dummy {
+    visibility: hidden;
+}
 .sort{
     margin-right: 40px;
 }
