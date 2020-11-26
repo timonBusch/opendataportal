@@ -20,85 +20,105 @@
     <script src="../javascript/search.js"></script>
 </head>
 
-<body onload="addTablebox()">
+<body>
 <!-- Header -->
-    <div class="headContent">
+<div class="headContent">
 
-        <!-- Logo einbinden -->
-        <h1 id="logo" class="uk-heading uk-text-center">
-            <img src="../img/logo.png"/>
-        </h1>
+    <!-- Logo einbinden -->
+    <h1 id="logo" class="uk-heading uk-text-center">
+        <img src="../img/logo.png"/>
+    </h1>
 
-        <!-- Navigation zwischen den Seiten -->
-        <div id="navbar" class="uk-text-center">
-            <img src="images/light.jpg" alt="">
-            <div class="uk-position-center">
-                <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-                    <div  class="uk-navbar">
-                        <ul class="uk-navbar-nav">
-                            <li class="uk-active"><a href="#">Daten</a></li>
-                            <li><a href="impressum.html">Impressum</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+    <!-- Navigation zwischen den Seiten -->
+    <div id="navbar" class="uk-text-center">
+        <img src="images/light.jpg" alt="">
+        <div class="uk-position-center">
+            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                <div  class="uk-navbar">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="#">Daten</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-
-        <!-- Suchfeld -->
-        <form id="searchform" class="uk-search uk-search-default" onkeyup="searchTable()">
-            <span class="uk-search-icon-flip" uk-search-icon></span>
-            <input id="searchbar" class="uk-search-input" type="search" placeholder="Search...">
-        </form>
-
-        <!-- Trenner -->
-        <hr class="uk-divider-icon">
     </div>
+
+    <!-- Suchfeld -->
+    <form id="searchform" class="uk-search uk-search-default" onkeyup="searchTable()">
+        <span class="uk-search-icon-flip" uk-search-icon></span>
+        <input id="searchbar" class="uk-search-input" type="search" placeholder="Search...">
+    </form>
+
+    <!-- Trenner -->
+    <hr class="uk-divider-icon">
+</div>
 <div class="uk-section uk-section-muted">
     <div class="uk-container uk-container-expand">
 
-    <section id="outline-head">
+        <section id="outline-head">
             <div id="tablecount"><h3 id="tableNumber">Anzahl der Treffer: </h3></div>
-        <div class="uk-inline sort" style="right: 0;position: absolute;">
-            <button class="uk-button uk-button-default" type="button">Sortieren nach: Neueste absteigend</button>
-            <div uk-dropdown>
-                <ul class="uk-nav uk-dropdown-nav">
-                    <li class="uk-active"><a href="#">Neueste absteigend</a></li>
-                    <li><a href="#">Neueste aufsteigend</a></li>
-                    <li><a href="#">Name aufsteigend</a></li>
-                    <li><a href="#">Name absteigend</a></li>
-                </ul>
+            <div class="uk-inline sort" style="right: 0;position: absolute;">
+                <button class="uk-button uk-button-default" type="button">Sortieren nach: Neueste absteigend</button>
+                <div uk-dropdown>
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#">Neueste absteigend</a></li>
+                        <li><a href="#">Neueste aufsteigend</a></li>
+                        <li><a href="#">Name aufsteigend</a></li>
+                        <li><a href="#">Name absteigend</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
         </section>
         <div id="rumpf">
-        <div class="uk-width-1-4 uk-text-left">
-            <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden filter">
-                <h1 class="uk-article-title">Filtermöglichkeiten</h1>
-                        <h6>Kategorien</h6>
-                        <div id="category-box" class="uk-panel uk-panel-scrollable">
-                            <ul class="uk-list">
-                                <li><label><input class="uk-checkbox" type="checkbox"> Category 1</label></li>
-                                <li><label><input class="uk-checkbox" type="checkbox"> Category 2</label></li>
-                                <li><label><input class="uk-checkbox" type="checkbox"> Category 3</label></li>
-                                <li><label><input class="uk-checkbox" type="checkbox"> Category 4</label></li>
-                            </ul>
-                        </div>
+            <div class="uk-width-1-4 uk-text-left">
+                <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden filter">
+                    <h1 class="uk-article-title">Filtermöglichkeiten</h1>
+                    <h6>Kategorien</h6>
+                    <div id="category-box" class="uk-panel uk-panel-scrollable">
+                        <ul class="uk-list">
+                            <li><label><input class="uk-checkbox" type="checkbox"> Category 1</label></li>
+                            <li><label><input class="uk-checkbox" type="checkbox"> Category 2</label></li>
+                            <li><label><input class="uk-checkbox" type="checkbox"> Category 3</label></li>
+                            <li><label><input class="uk-checkbox" type="checkbox"> Category 4</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Dummy, damit flex trotz fixed position erhalten bleibt -->
+                <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden dummy">
+                    <h1 class="uk-article-title">Filtermöglichkeiten</h1>
+                </div>
             </div>
-            <!-- Dummy, damit flex trotz fixed position erhalten bleibt -->
-            <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden dummy">
-                <h1 class="uk-article-title">Filtermöglichkeiten</h1>
-            </div>
-        </div>
 
 
-        <section id="left-sidebar">
+            <section id="left-sidebar">
 
 
-        </section>
-        <section id="outline-body">
-            <div class="tablelist">
-            </div>
-        </section>
+            </section>
+            <section id="outline-body">
+                <div class="tablelist">
+                    <div id="present_example4" swa="Present FROM ../data/tbl_observedobject.json" style="border: none;">
+                        <article class="swac_repeatForSet" style="padding-bottom: 25px;">
+                            <div class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body">
+                                <a href="tabelle_details.html"></a>
+                                <div id="table-left">
+                                    <h4>{name}</h4>
+                                    <p>{description}</p>
+                                    <p><strong>Kategorie:</strong> Geschichte</p>
+                                </div>
+                                <div id="table-right">
+                                    <p><strong>Letzte Änderung</strong></p>
+                                    <p>20.11.2020</p>
+                                    <p><strong>Speicherplatzbedarf</strong></p>
+                                    <p>39MB</p>
+                                </div>
+
+                            </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
         </div>
         <a href="" id="up">up</a>
     </div>
