@@ -1,5 +1,5 @@
 #closeButton {
-    position: fixed;
+    position: absolute;
     right: 2%;
     display:flex;
     flex-direction: row;
