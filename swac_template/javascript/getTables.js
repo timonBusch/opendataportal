@@ -76,6 +76,6 @@ function addTablebox(){
         tableNumber.textContent = "Anzahl der Treffer: " + data["records"].length;
 
     }).catch(function() {
-        //console.log("Ein Fehler beim Abruf der Daten ist aufgetreten.");
+        console.log("Ein Fehler beim Abruf der Daten ist aufgetreten.");
     });
 }
