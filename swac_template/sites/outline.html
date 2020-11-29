@@ -17,11 +17,10 @@
     <script src="../swac/swac.js"></script>
     <script src="../data/routes.js"></script>
     <script src="../javascript/getTables.js"></script>
-    <script src="../javascript/orderBy.js"></script>
     <script src="../javascript/search.js"></script>
 </head>
 
-<body>
+<body onload="addTablebox()">
 <!-- Header -->
 <div class="headContent">
 
@@ -99,7 +98,8 @@
                     <div id="present_example4" swa="Present FROM ../data/tbl_observedobject.json" style="border: none;">
                         <article class="swac_repeatForSet" style="padding-bottom: 25px;">
                             <div class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body">
-                                <a href="tabelle_details.html"></a>
+                                <!--<a href="tabelle_details.html"></a>-->
+                                <a href="tabelle_details.html#{id}"></a>
                                 <div id="table-left">
                                     <h4>{name}</h4>
                                     <p>{description}</p>
