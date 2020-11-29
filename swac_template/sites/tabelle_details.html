@@ -16,7 +16,7 @@
         <script src="../swac/swac.js"></script>
         <script src="../data/routes.js"></script>
         <script src="../data/exampledata.js"></script>
-        <script src="../data/comments.js"></script>
+        <script src="../data/comments.js"></script>>
         <script src="../javascript/detailedDataset.js"></script>
         <script src="../libs/uikit/js/uikit-icons.min.js"></script>
 
@@ -66,62 +66,67 @@
 
 
                 <!-- Titel der Tabelle, Beschreibung und Details -->
-                <h3>53 Datensätze zur verfügung</h3>
-                <div class="uk-text-center uk-grid-large" uk-grid>
-                    <!-- Details -->
-                    <div class="uk-width-1-4 uk-text-left">
-                        <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden">
-                            <h1 class="uk-article-title">Details</h1>
+                <div id="present_details" swa="Present FROM records" style="border: none" >
+                    <div class="swac_repeatForSet">
 
-                            <dl class="uk-description-list">
-                                <dt>Kategorie</dt>
-                                <dd>Wetterdaten</dd>
-                                <dt>Speicherplatzbedarf</dt>
-                                <dd>15,56 GB</dd>
-                                <dt>Erstellungsdatum</dt>
-                                <dd>01.05.2020</dd>
-                            </dl>
-                        </div>
-                    </div>
+                        <h3>53 Datensätze zur verfügung</h3>
+                        <div  class="uk-text-center uk-grid-large" uk-grid>
 
-                    <!-- Titel und Beschreibung -->
-                    <div class="uk-width-3-4 uk-margin-bottom">
+                            <!-- Details -->
+                            <div class="uk-width-1-4 uk-text-left">
+                                <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden">
+                                    <h1 class="uk-article-title">Details</h1>
 
-                        <div class="uk-alert-danger" uk-alert>
-                            <a class="uk-alert-close" uk-close></a>
-                            <p>Achtung! Diese Tabelle könnte unvollständige oder fehlerhafte Datensätze enthalten!</p>
-                        </div>
-
-                        <div class="uk-card uk-card-default uk-card-body">
-
-                            <article class="uk-article uk-text-left">
-
-                                <a href="#subscribe_modal" class="uk-icon-button" uk-icon="bell" uk-toggle></a>
-                                <h1 class="uk-article-title">Titel der Tabelle</h1>
-
-                                <p class="uk-text-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                            </article>
-
-                            <!-- Pop-up zum abonnieren der Tabelle -->
-                            <div id="subscribe_modal" uk-modal>
-                                <div class="uk-modal-dialog">
-                                    <button class="uk-modal-close-default" type="button" uk-close></button>
-
-                                    <div class="uk-modal-body">
-                                        <h2 class="uk-modal-title uk-text-center">Tabelle abonnieren</h2>
-                                        <p>Bitte geben Sie ihre Mailadresse an um über neue Daten in dieser Tabelle informiert zu werden:</p>
-                                        <input class="uk-input" placeholder="E-Mail">
-                                    </div>
-                                    <div class="uk-modal-footer uk-text-center">
-                                        <button class="uk-button uk-button-primary" type="button">OK</button>
-                                    </div>
+                                    <dl class="uk-description-list">
+                                        <dt>Kategorie</dt>
+                                        <dd>Wetterdaten</dd>
+                                        <dt>Speicherplatzbedarf</dt>
+                                        <dd>15,56 GB</dd>
+                                        <dt>Erstellungsdatum</dt>
+                                        <dd>01.05.2020</dd>
+                                    </dl>
                                 </div>
                             </div>
 
-                        </div>
+                            <!-- Titel und Beschreibung -->
+                            <div class="uk-width-3-4 uk-margin-bottom">
 
+                                <div class="uk-alert-danger" uk-alert>
+                                    <a class="uk-alert-close" uk-close></a>
+                                    <p>Achtung! Diese Tabelle könnte unvollständige oder fehlerhafte Datensätze enthalten!</p>
+                                </div>
+
+                                <div class="uk-card uk-card-default uk-card-body">
+
+                                    <article class="uk-article uk-text-left">
+
+                                        <a href="#subscribe_modal" class="uk-icon-button" uk-icon="bell" uk-toggle></a>
+                                        <h1 class="uk-article-title">{name}</h1>
+
+                                        <p class="uk-text-lead">{description}</p>
+                                    </article>
+
+                                    <!-- Pop-up zum abonnieren der Tabelle -->
+                                    <div id="subscribe_modal" uk-modal>
+                                        <div class="uk-modal-dialog">
+                                            <button class="uk-modal-close-default" type="button" uk-close></button>
+
+                                            <div class="uk-modal-body">
+                                                <h2 class="uk-modal-title uk-text-center">Tabelle abonnieren</h2>
+                                                <p>Bitte geben Sie ihre Mailadresse an um über neue Daten in dieser Tabelle informiert zu werden:</p>
+                                                <input class="uk-input" placeholder="E-Mail">
+                                            </div>
+                                            <div class="uk-modal-footer uk-text-center">
+                                                <button class="uk-button uk-button-primary" type="button">OK</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
