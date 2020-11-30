@@ -27,10 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="adding number of tables when loading tables">
-      <change afterPath="$PROJECT_DIR$/css/tabelle_details.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/tabelle_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/tabelle_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sites/startseite.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,13 +37,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1kY85iHRxbTCqje8opnHCYCpLTA" />
@@ -74,6 +76,7 @@
       <workItem from="1605865985678" duration="13801000" />
       <workItem from="1606119072423" duration="458000" />
       <workItem from="1606120667266" duration="9269000" />
+      <workItem from="1606726215976" duration="56000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
