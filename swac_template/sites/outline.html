@@ -3,6 +3,8 @@
 <head>
     <title>Übersicht</title>
     <meta charset="UTF-8">
+    <script src="../javascript/getTables.js"></script>
+    <script src="../data/fetchedData.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/global.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
@@ -16,11 +18,11 @@
     <script src="../libs/uikit/js/uikit.min.js"></script>
     <script src="../swac/swac.js"></script>
     <script src="../data/routes.js"></script>
-    <script src="../javascript/getTables.js"></script>
+
     <script src="../javascript/search.js"></script>
 </head>
 
-<body onload="addTablebox()">
+<body>
 <!-- Header -->
 <div class="headContent">
 
@@ -95,7 +97,8 @@
             </section>
             <section id="outline-body">
                 <div class="tablelist">
-                    <div id="present_example4" swa="Present FROM ../data/tbl_observedobject.json" style="border: none;">
+                    <!--<div id="present_example4" swa="Present FROM ../data/tbl_observedobject.json" style="border: none;">-->
+                    <div id="present_example4" swa="Present FROM fetchedData" style="border: none;">
                         <article class="swac_repeatForSet" style="padding-bottom: 25px;">
                             <div class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body">
                                 <!--<a href="tabelle_details.html"></a>-->
