@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="added footer/header to startseite">
+    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="fix footer at startseite">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sites/startseite.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/startseite.html" afterDir="false" />
     </list>
@@ -78,7 +78,7 @@
       <workItem from="1606119072423" duration="458000" />
       <workItem from="1606120667266" duration="9269000" />
       <workItem from="1606726215976" duration="400000" />
-      <workItem from="1606726658695" duration="1112000" />
+      <workItem from="1606726658695" duration="1814000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
@@ -171,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606727568041</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix footer at startseite">
+      <created>1606727802711</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1606727802711</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +220,8 @@
     <MESSAGE value="add startseite.js" />
     <MESSAGE value="startseite href ergänzt" />
     <MESSAGE value="added footer/header to startseite" />
-    <option name="LAST_COMMIT_MESSAGE" value="added footer/header to startseite" />
+    <MESSAGE value="fix footer at startseite" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix footer at startseite" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2641" y="-101" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605866182449">
@@ -233,16 +241,16 @@
       <screen x="0" y="180" width="1600" height="900" />
     </state>
     <state x="437" y="393" width="717" height="474" key="MultipleFileMergeDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126252274" />
-    <state x="474" y="215" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606727579593">
+    <state x="474" y="215" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606727807217">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="474" y="215" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606727579593" />
+    <state x="474" y="215" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606727807217" />
     <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606128770963" />
     <state x="395" y="186" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605891243964" />
-    <state x="724" y="422" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606727571242">
+    <state x="724" y="422" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606728242249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="724" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606727571242" />
+    <state x="724" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606728242249" />
     <state x="603" y="545" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606128724412" />
     <state x="603" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605890501824" />
     <state x="504" y="15" width="592" height="870" key="find.popup" timestamp="1605892148777">
