@@ -6,9 +6,6 @@ function searchTable() {
     filter = input.value.toUpperCase();
     card = document.getElementById("present_example4");
     ul = card.getElementsByTagName('ul');
-    if(ul == null){
-        return
-    }
 
     // Tabellentitel nach Suchbegriff durchlaufen und entsprechend ein-/ausblenden
     for (i = 0; i < ul.length; i++) {
@@ -23,6 +20,9 @@ function searchTable() {
     }
     // Anpassen der Trefferzahl
     tableNumber = document.getElementById('tableNumber');
-    tableNumber.textContent = "Anzahl der Treffer: " + countTables.toString();
-
+    if(filter == ""){
+        tableNumber.textContent = "Anzahl der Treffer: " + fetchedData.length;
+    }else{
+        tableNumber.textContent = "Anzahl der Treffer: " + countTables.toString();
+    }
 }
