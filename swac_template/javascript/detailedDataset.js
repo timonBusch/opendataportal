@@ -30,5 +30,3 @@ fetch(url_dataset_count)
         let number = document.getElementById("number_dataset");
         number.textContent = count.records[0].count + " Datensätze zur verfügung";
     });
-
-SWA
