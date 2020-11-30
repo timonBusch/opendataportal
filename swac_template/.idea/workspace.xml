@@ -26,8 +26,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="adding number of tables when loading tables">
-      <change afterPath="$PROJECT_DIR$/sites/startseite.html" afterDir="false" />
+    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="add startseite.html">
+      <change afterPath="$PROJECT_DIR$/javascript/startseite.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +37,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -76,7 +76,7 @@
       <workItem from="1605865985678" duration="13801000" />
       <workItem from="1606119072423" duration="458000" />
       <workItem from="1606120667266" duration="9269000" />
-      <workItem from="1606726215976" duration="56000" />
+      <workItem from="1606726215976" duration="117000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
@@ -141,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606128767174</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add startseite.html">
+      <created>1606726299259</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606726299259</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +186,8 @@
     <MESSAGE value="fixing link in navbar" />
     <MESSAGE value="hiding searchbar on details" />
     <MESSAGE value="adding number of tables when loading tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding number of tables when loading tables" />
+    <MESSAGE value="add startseite.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="add startseite.html" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2641" y="-101" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605866182449">
@@ -199,9 +207,10 @@
       <screen x="0" y="180" width="1600" height="900" />
     </state>
     <state x="437" y="393" width="717" height="474" key="MultipleFileMergeDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126252274" />
-    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606128770963">
-      <screen x="0" y="180" width="1600" height="900" />
+    <state x="474" y="215" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606726276797">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="474" y="215" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606726276797" />
     <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606128770963" />
     <state x="395" y="186" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605891243964" />
     <state x="603" y="545" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606128724412">
