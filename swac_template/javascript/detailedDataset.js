@@ -2,11 +2,14 @@ const queryString = window.location.search;
 console.log(queryString)
 
 const urlParams = new URLSearchParams(queryString)
-//records.id(urlParams.get(id))
 
-var records = {"records":[{"datacapture":true,"parent_id":7,"type_id":7,"name":"Sensor fuer Ausrichtungstests","description":"Erfasste Werte eines Sensors, der im Verlauf der Messungen unterschiedlich ausgerichtet wurde, um die Auswirkung der verschiedenen Einstrahlungswinkel experimentell nachzuvollziehen.","id":20,"manualcapture":false}]}
+let url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/tbl_observedobject?storage=smartmonitoring&filter=id%2Ceq%2C" + urlParams.get('id') + "&size=1&page=1&countonly=false&deflatt=false"
+
+var records
+
+fetch(url)
+    .then(response => response.json())
+    .then(data => records = data);
 
 
-
-//fetch('tbl_observedobject.json').then(res => res.json()).then(data => console.log(data))
 

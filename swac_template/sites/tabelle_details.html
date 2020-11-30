@@ -15,9 +15,10 @@
         <script src="../libs/uikit/js/uikit.min.js"></script>
         <script src="../swac/swac.js"></script>
         <script src="../data/routes.js"></script>
+        <script src="../javascript/detailedDataset.js"></script>
         <script src="../data/exampledata.js"></script>
         <script src="../data/comments.js"></script>>
-        <script src="../javascript/detailedDataset.js"></script>
+
         <script src="../libs/uikit/js/uikit-icons.min.js"></script>
 
     </head>
@@ -91,7 +92,8 @@
                             <!-- Titel und Beschreibung -->
                             <div class="uk-width-3-4 uk-margin-bottom">
 
-                                <div class="uk-alert-danger" uk-alert>
+                                <!-- Warnung falls Datensaetze fehlerhaft sind -->
+                                <div class="uk-alert-danger uk-hidden" uk-alert>
                                     <a class="uk-alert-close" uk-close></a>
                                     <p>Achtung! Diese Tabelle könnte unvollständige oder fehlerhafte Datensätze enthalten!</p>
                                 </div>
