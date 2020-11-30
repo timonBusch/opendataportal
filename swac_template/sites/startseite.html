@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Startseite</title>
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+
+    <script src="../libs/uikit/js/uikit.min.js"></script>
+    <script src="../libs/uikit/js/uikit-icons.min.js"></script>
+    <script src="../swac/swac.js"></script>
+</head>
+<body>
+<!-- Header -->
+<div class="headContent">
+
+    <!-- Logo einbinden -->
+    <h1 id="logo" class="uk-heading uk-text-center">
+        <img src="../img/logo.png"/>
+    </h1>
+
+    <!-- Navigation zwischen den Seiten -->
+    <div id="navbar" class="uk-text-center">
+        <img src="images/light.jpg" alt="">
+        <div class="uk-position-center">
+            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                <div  class="uk-navbar">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="#">Daten</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Suchfeld -->
+    <form id="searchform" class="uk-search uk-search-default" onkeyup="searchTable()">
+        <span class="uk-search-icon-flip" uk-search-icon></span>
+        <input id="searchbar" class="uk-search-input" type="search" placeholder="Search...">
+    </form>
+
+    <!-- Trenner -->
+    <hr class="uk-divider-icon">
+</div>
+<!-- Startseite -->
+<div class="uk-section uk-section-muted">
+    <h4>Stöbern Sie in den folgenden Kategorien:</h4>
+    <div class="uk-container uk-column-1-4">
+        <a class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" href="outline.html">
+            <div class="uk-card-body">
+                <h5>Wetterdaten</h5>
+                <scan uk-icon="bolt"></scan>
+            </div>
+        </a>
+        <a class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" href="outline.html">
+            <div class="uk-card-body">
+                <h5>Photovoltaik</h5>
+                <scan uk-icon="cog"></scan>
+            </div>
+        </a>
+        <a class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" href="outline.html">
+            <div class="uk-card-body">
+                <h5>Wohlfühlerfasser</h5>
+                <scan uk-icon="heart"></scan>
+            </div>
+        </a>
+        <p class="uk-column-span"></p>
+        <a class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" href="outline.html">
+            <div class="uk-card-body">
+                <h5>Fensterzustand</h5>
+                <scan uk-icon="laptop"></scan>
+            </div>
+        </a>
+        <a class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" href="outline.html">
+            <div class="uk-card-body">
+                <h5>Temperaturdaten</h5>
+                <scan uk-icon="cloud-upload"></scan>
+            </div>
+        </a>
+    </div>
+</div>
+</body>
+<footer>
+    <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+        <li><a href="haftungsausschluss.html">Haftungsausschluss</a></li>
+    </ul>
+    <p>Kontakt<br>
+        <a href="mailto:jelka.wilczek@fh-bielefeld.de">Jelka Wilczek</a>,
+        <a href="mailto:fabian.list@fh-bielefeld.de">Fabian List</a>,
+        <a href="mailto:timon.buschendorf@fh-bielefeld.de">Timon Buschendorf</a>,
+        <a href="mailto:lukas.von_der_heide@fh-bielefeld.de">Lukas von der Heide</a><br>
+        © 2020 – 2020 OpenData Portal (ArbeitsGruppe)
+</footer>
+</html>
