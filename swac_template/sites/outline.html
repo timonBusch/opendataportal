@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <script src="../javascript/getTables.js"></script>
     <script src="../data/fetchedData.js"></script>
+    <script src="../data/exampleCategories.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/global.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
@@ -18,8 +19,8 @@
     <script src="../libs/uikit/js/uikit.min.js"></script>
     <script src="../swac/swac.js"></script>
     <script src="../data/routes.js"></script>
-
     <script src="../javascript/search.js"></script>
+
 </head>
 
 <body>
@@ -77,13 +78,12 @@
                     <div id="tablecount"><h3 id="tableNumber">Anzahl der Treffer: </h3></div>
                     <h1 class="uk-article-title">Filtermöglichkeiten</h1>
                     <h6>Kategorien</h6>
-                    <div id="category-box" class="uk-panel uk-panel-scrollable">
-                        <ul class="uk-list">
-                            <li><label><input class="uk-checkbox" type="checkbox"> Category 1</label></li>
-                            <li><label><input class="uk-checkbox" type="checkbox"> Category 2</label></li>
-                            <li><label><input class="uk-checkbox" type="checkbox"> Category 3</label></li>
-                            <li><label><input class="uk-checkbox" type="checkbox"> Category 4</label></li>
-                        </ul>
+                    <div id="present_example1" swa="Present FROM exampleCategories" style="border: none;">
+                        <div id="category-box" class="uk-panel uk-panel-scrollable">
+                            <ul class="uk-list">
+                                <li class="swac_repeatForSet"><label><input class="uk-checkbox" type="checkbox"> {name}</label></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <!-- Dummy, damit flex trotz fixed position erhalten bleibt -->
@@ -100,7 +100,8 @@
             <section id="outline-body" style="width: 100%;">
                 <div class="tablelist">
                     <!--<div id="present_example4" swa="Present FROM ../data/tbl_observedobject.json" style="border: none;">-->
-                    <div id="present_example4" swa="Present FROM fetchedData" style="border: none;">
+                    <div id="present_example4" swa="Present FROM fetchedData OPTIONS exampleoptions" style="border: none;">
+                        <!--<button onclick="getDataSorted('name')">Sortierungstest</button>-->
                         <article class="swac_repeatForSet">
                             <ul>
                             <div class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body" style="width: auto">
