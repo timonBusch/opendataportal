@@ -1,4 +1,4 @@
-let url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/tbl_observedobject?storage=smartmonitoring&order=DESC&countonly=false&deflatt=false"
+let url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/tbl_observedobject?storage=smartmonitoring&filter=datacapture%2Ceq%2Ctrue&countonly=false&deflatt=false"
 var exampleoptions = {
     showWhenNoData: false,
     sortable: true
