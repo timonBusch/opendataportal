@@ -26,8 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="opendata portal icon is link to startseite">
-      <change beforePath="$PROJECT_DIR$/sites/impressum.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/impressum.html" afterDir="false" />
+    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="opendata portal icon is link to startseite - added also to impressum">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/startseite.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/startseite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/startseite.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/startseite.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +62,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -77,7 +80,11 @@
       <workItem from="1606119072423" duration="458000" />
       <workItem from="1606120667266" duration="9269000" />
       <workItem from="1606726215976" duration="400000" />
-      <workItem from="1606726658695" duration="5128000" />
+      <workItem from="1606726658695" duration="8765000" />
+      <workItem from="1607329423771" duration="28000" />
+      <workItem from="1607329500213" duration="53000" />
+      <workItem from="1607329613369" duration="81000" />
+      <workItem from="1607329848257" duration="5953000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
@@ -212,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606731718797</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="opendata portal icon is link to startseite - added also to impressum">
+      <created>1606731817889</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1606731817889</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,45 +274,7 @@
     <MESSAGE value="fixed header on startseite" />
     <MESSAGE value="changed card stile - startseite" />
     <MESSAGE value="opendata portal icon is link to startseite" />
-    <option name="LAST_COMMIT_MESSAGE" value="opendata portal icon is link to startseite" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2641" y="-101" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605866182449">
-      <screen x="1920" y="-423" width="1920" height="1040" />
-    </state>
-    <state x="2641" y="-101" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1605866182449" />
-    <state x="1700" y="187" width="1394" height="700" key="DiffContextDialog" timestamp="1606126789769">
-      <screen x="1600" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1700" y="187" width="1394" height="700" key="DiffContextDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126789769" />
-    <state x="99" y="100" width="1402" height="701" maximized="true" key="DiffContextDialog/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605890560081" />
-    <state x="23" y="183" width="1538" height="893" key="MergeDialog" timestamp="1606126252267">
-      <screen x="0" y="180" width="1600" height="900" />
-    </state>
-    <state x="23" y="183" width="1538" height="893" key="MergeDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126252267" />
-    <state x="437" y="393" width="717" height="474" key="MultipleFileMergeDialog" timestamp="1606126252274">
-      <screen x="0" y="180" width="1600" height="900" />
-    </state>
-    <state x="437" y="393" width="717" height="474" key="MultipleFileMergeDialog/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606126252274" />
-    <state x="474" y="215" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606731746489">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="474" y="215" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606731746489" />
-    <state x="395" y="366" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606128770963" />
-    <state x="395" y="186" width="802" height="527" key="Vcs.Push.Dialog.v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605891243964" />
-    <state x="724" y="422" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606731722988">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="724" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606731722988" />
-    <state x="603" y="545" width="393" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1600.0.1920.1080/0.180.1600.900@0.180.1600.900" timestamp="1606128724412" />
-    <state x="603" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605890501824" />
-    <state x="705" y="337" width="1441" height="1027" key="dock-window-1" timestamp="1606730626396">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="705" y="337" width="1441" height="1027" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606730626396" />
-    <state x="504" y="15" width="592" height="870" key="find.popup" timestamp="1605892148777">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="504" y="15" width="592" height="870" key="find.popup/1600.0.1920.1200/0.0.1600.900@0.0.1600.900" timestamp="1605892148777" />
+    <MESSAGE value="opendata portal icon is link to startseite - added also to impressum" />
+    <option name="LAST_COMMIT_MESSAGE" value="opendata portal icon is link to startseite - added also to impressum" />
   </component>
 </project>
