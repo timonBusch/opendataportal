@@ -15,3 +15,7 @@
     width: 100%;
     text-align: center;
 }
+
+.remove_border {
+    border: none;
+}

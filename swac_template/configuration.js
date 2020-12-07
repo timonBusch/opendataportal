@@ -71,6 +71,7 @@ SWAC_config.debugmode = true;
 /* Hint mode gives you usefull tipps for useing swac */
 SWAC_config.hintmode = true;
 
+
 /**
  * SWAC core components can be deactivated if they are not needed.
  * 
