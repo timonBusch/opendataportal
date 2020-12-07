@@ -3,3 +3,7 @@ var exampleoptions = {
     sortable: true
 };
 
+function scrollUp(){
+    window.scrollTo(1, 1);
+}
+
