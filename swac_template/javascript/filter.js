@@ -15,13 +15,15 @@ function filter(name) {
 function displayResults() {
     // Variablendeklarierung
     var category, card, ul, i, countTables=0;
-
+    let display = [];
     card = document.getElementById("present_example4");
     ul = card.getElementsByTagName('ul');
     if (checked.length === 0) {
         for (i = 0; i < ul.length; i++) {
             ul[i].style.display = "";
-            countTables++;
+            if (i < ul.length-1){
+                countTables++;
+            }
         }
     } else {
         // Tabellentitel nach Suchbegriff durchlaufen und entsprechend ein-/ausblenden
@@ -29,11 +31,15 @@ function displayResults() {
             for (i = 0; i < ul.length; i++) {
                 category = ul[i].getElementsByClassName("cat")[0];
                 if (category.innerHTML === checked[elem]) {
-                    ul[i].style.display = "";
-                    countTables++;
-                } else {
-                    ul[i].style.display = "none";
+                    display.push(ul[i]);
                 }
+                ul[i].style.display = "none";
+            }
+        }
+        for (elem in display) {
+            ul[elem].style.display = "";
+            if (elem < ul.display-1){
+                countTables++;
             }
         }
     }

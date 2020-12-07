@@ -1,9 +1,28 @@
+function symbol(){
+    var category, card, h, name;
+    card = document.getElementById("category_example_007");
+    h = card.getElementsByTagName("h5");
+    //name = a.getAttribute("id");
+    console.log(h);
+    for (let name in h) {
+        for(let cat_name in name) {
+            console.log(cat_name);
+        }
+        console.log(name);
+    }
+}
+
+window.onload = function () {
+    symbol();
+}
+
+/*
 window.onload = function () {
 
     /*
     data-uk-margin
 
-     */
+
     var category_data = ' { "kategorien": [ "Wetterdaten", "Photovoltaik", "Wohlfühlerfasser", "Fensterzustand", "Temperaturdaten"] }';
 
     var cat = JSON.parse(category_data);
@@ -34,12 +53,12 @@ window.onload = function () {
 
         button.innerHTML += "heart>";
         }
-        */
+
 
         button.appendChild(category);
 
         document.body.appendChild(button);
     }
-
-
 }
+
+ */
