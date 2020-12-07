@@ -17,7 +17,7 @@ const promiseOfSomeJsonData =
                 return 1;
         });
         console.log("in async");
-        document.getElementById("tableNumber");
+        let tableNumber = document.getElementById("tableNumber");
         tableNumber.textContent = "Anzahl der Treffer: " + data["records"].length;
         return data;
     });
@@ -26,5 +26,5 @@ window.onload = async () => {
     let someData = await promiseOfSomeJsonData;
     console.log(fetchedData)
     console.log("onload");
-
+    getFilterFromLS();
 };
