@@ -1,19 +1,30 @@
 #navbar {
-    padding: 10px;
-}
 
-#searchform{
-    left: 45.5%;
 }
 
 .headContent{
     position: sticky;
     top: 0;
-    z-index:10;
+    z-index:100;
     background: #FFFFFF;
 }
 
 #logo {
-    padding-top: 20px;
+    padding-top: 15px;
     padding-bottom: 0px;
+}
+
+#searchsort{
+    display: flex;
+    flex-direction: row;
+}
+
+#searchform{
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+}
+
+img{
+    width: 30%;
 }

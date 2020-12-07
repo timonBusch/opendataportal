@@ -57,10 +57,10 @@ div.clickable { /* Containing div must have a position value */
     text-decoration: none;
     background: rgb(41, 197, 171);
     color: whitesmoke;
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
     font-size: larger;
-    line-height: 60px;
+    line-height: 50px;
     border-radius: 50%;
     text-align: center;
     vertical-align: middle;
@@ -79,4 +79,8 @@ div.clickable { /* Containing div must have a position value */
 #up:hover{
     background: rgb(71, 197, 171);
     box-shadow: 0px 0px 0px 5px rgb(11, 197, 171);
+}
+
+#orderby{
+    margin-right: 40px!important;
 }
