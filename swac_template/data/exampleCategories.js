@@ -6,7 +6,7 @@ exampleCategories[0] = {
 };
 exampleCategories[1] = {
     id: 2,
-    name: "Wetterdatem",
+    name: "Wetterdaten",
     description: "Wie ist das Wetter?"
 };
 exampleCategories[2] = {
