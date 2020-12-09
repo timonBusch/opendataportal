@@ -4,14 +4,28 @@
  *
  * @param name of filteroption
  */
-function filter(name) {
+function updateLS(name) {
     let lsname = "filter"+name;
     if (localStorage.getItem(lsname) === null) {
         localStorage.setItem(lsname, lsname);
     } else {
         localStorage.removeItem(lsname);
     }
-    getFilterFromLS();
+    displayResult(getFilterFromLS());
+}
+
+/**
+ * If the user comes from startpage, filters should be resetted and the selected filter should
+ * operate
+ */
+function startfilter(name) {
+    let storage = getFilterFromLS();
+    for (elem in storage) {
+        localStorage.removeItem("filter"+storage[elem]);
+    }
+
+    let lsname = "filter"+name;
+    localStorage.setItem(lsname, lsname);
 }
 
 /**
@@ -41,7 +55,8 @@ function getFilterFromLS() {
             checkCheckbox(storage[elem].substring(6, storage[elem].length))
         }
     }
-    displayResult(checkedFilter)
+    console.log(checkedFilter)
+    return checkedFilter;
 }
 
 /**
@@ -71,9 +86,9 @@ function displayResult(checkedFilter) {
                 ul[i].style.display = "none";
             }
         }
-        for (elem in display) {
-            ul[elem].style.display = "";
-            if (elem < display.length -1) {
+        for (i = 0; i < display.length; i++) {
+            ul[i].style.display = "";
+            if (i < ul.length-1){
                 countTables++;
             }
         }
@@ -96,3 +111,4 @@ function checkCheckbox(checkedFilter) {
     let checkBox = document.getElementById(checkedFilter);
     checkBox.checked = true;
 }
+

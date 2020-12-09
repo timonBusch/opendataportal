@@ -26,5 +26,8 @@ window.onload = async () => {
     let someData = await promiseOfSomeJsonData;
     console.log(fetchedData)
     console.log("onload");
-    getFilterFromLS();
+    setTimeout(function (){
+        displayResult(getFilterFromLS());
+    }, 1000); //vorerst Timer, weil zu langsam geladen wird. Später mit callback nach cat-fetch
+
 };

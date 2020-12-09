@@ -3,10 +3,10 @@
 <head>
     <title>Übersicht</title>
     <meta charset="UTF-8">
+    <script src="../data/exampleCategories.js"></script>
     <script src="../javascript/filter.js"></script>
     <script src="../javascript/getTables.js"></script>
     <script src="../data/fetchedData.js"></script>
-    <script src="../data/exampleCategories.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/global.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
@@ -24,7 +24,7 @@
     <script src="../javascript/order.js"></script>
 </head>
 
-<body>
+<body style="background-color: #f8f8f8;">
 <!-- Header -->
 <div class="headContent">
 
@@ -57,12 +57,12 @@
             <input id="searchbar" class="uk-search-input" type="search" placeholder="Suche...">
         </form>
 
-                    <select id="orderby" class="uk-select" style="position: fixed;margin-right: 20px;right: 0;width: auto;">
-                        <option onclick="sortData('newest')">Neueste aufsteigend</option>
-                        <option onclick="sortData('oldest')">Neueste absteigend</option>
-                        <option onclick="sortData('asc')">Name aufsteigend</option>
-                        <option onclick="sortData('desc')">Name absteigend</option>
-                    </select>
+        <select id="orderby" class="uk-select" style="position: fixed;margin-right: 20px;right: 0;width: auto;">
+            <option onclick="sortData('newest')">Neueste aufsteigend</option>
+            <option onclick="sortData('oldest')">Neueste absteigend</option>
+            <option onclick="sortData('asc')">Name aufsteigend</option>
+            <option onclick="sortData('desc')">Name absteigend</option>
+        </select>
     </div>
 
     <!-- Trenner -->
@@ -83,7 +83,7 @@
                             <ul class="uk-list">
                                 <li class="swac_repeatForSet">
                                     <label>
-                                        <input class="uk-checkbox filterboxes" type="checkbox" id="{name}" onclick="filter('{name}')"> {name}
+                                        <input class="uk-checkbox filterboxes" type="checkbox" id="{name}" onclick="updateLS('{name}')"> {name}
                                     </label>
                                 </li>
                             </ul>
@@ -103,29 +103,24 @@
             </section>
             <section id="outline-body" style="width: 100%;">
                 <div class="tablelist">
-                    <!--<div id="present_example4" swa="Present FROM ../data/tbl_observedobject.json" style="border: none;">-->
                     <div id="fetchedDatasets" swa="Present FROM fetchedData OPTIONS exampleoptions" style="border: none;">
-                        <button onclick="sortData()">Sortierungstest</button>
                         <article class="swac_repeatForSet">
                             <ul>
-                            <div class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body" style="width: auto">
-                                <!--<a href="tabelle_details.html"></a>-->
-                                <a href="tabelle_details.html?id={id}"></a>
-                                <div id="table-left">
-                                    <h4>{name}</h4>
-                                    <p>{description}</p>
-                                    <p><strong>Kategorie:</strong><div class="cat">Wetterdaten</div></p>
+                                <div class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body" style="width: auto">
+                                    <a href="tabelle_details.html?id={id}"></a>
+                                    <div id="table-left">
+                                        <h4>{name}</h4>
+                                        <p>{description}</p>
+                                        <p><strong>Kategorie:</strong><div class="cat">Wetterdaten</div></p>
+                                    </div>
+                                    <div id="table-right">
+                                        <p><strong>Letzte Änderung</strong></p>
+                                        <p>20.11.2020</p>
+                                        <p><strong>Speicherplatzbedarf</strong></p>
+                                        <p>39MB</p>
+                                    </div>
                                 </div>
-                                <div id="table-right">
-                                    <p><strong>Letzte Änderung</strong></p>
-                                    <p>20.11.2020</p>
-                                    <p><strong>Speicherplatzbedarf</strong></p>
-                                    <p>39MB</p>
-                                </div>
-
-                            </div>
                             </ul>
-                            </a>
                         </article>
                     </div>
                 </div>
