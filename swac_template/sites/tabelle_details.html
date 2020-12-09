@@ -156,9 +156,9 @@
                 <!-- Pop-up fuer Button Vorschau -->
                 <div id="preview_modal" class="uk-modal-container" uk-modal>
 
-                    <div class="uk-modal-dialog uk-modal-body">
+                    <div id="vorschau" class="uk-modal-dialog uk-modal-body">
                         <button class="uk-modal-close-default" type="button" uk-close></button>
-                        <div class="uk-panel-scrollable" id="exampledata" swa="Present FROM dataset TEMPLATE table_for_all_datasets"></div>
+                        <div class="uk-panel-scrollable remove_border" id="exampledata" swa="Present FROM dataset TEMPLATE table_for_all_datasets"></div>
                     </div>
 
                 </div>
@@ -172,10 +172,10 @@
                             <h2 class="uk-modal-title">Datensätze abrufen</h2>
                             <p>Bitte schränken Sie die anzuzeigenden Daten ein:</p>
                             <div class="uk-panel-scrollable uk-height-small uk-width-expand uk-text-center">
-                                <form id="present_attributes" swa="Present FROM dataset_keys" class="uk-grid-small" uk-grid>
+                                <form id="present_attributes" swa="Present FROM dataset_keys" class="uk-grid-small remove_border" uk-grid>
 
                                     <div class="uk-width-1-1 swac_repeatForSet">
-                                        <label><input class="uk-checkbox" type="checkbox" checked> {name}</label>
+                                      <label><input name="checkAttrib" class="uk-checkbox" type="checkbox" value="{name}" checked> {name}</label>
                                     </div>
 
                                 </form>
@@ -189,10 +189,9 @@
                                 <input type="date" id="end" name="trip-start">
                             </div>
 
-
                         </div>
                         <div class="uk-modal-footer uk-text-center">
-                            <button class="uk-button uk-button-primary" type="button">OK</button>
+                            <button id="filter_attributes" onclick="" class="uk-button uk-button-primary" type="button">OK</button>
                         </div>
                     </div>
                 </div>

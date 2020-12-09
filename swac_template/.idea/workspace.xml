@@ -26,10 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="opendata portal icon is link to startseite - added also to impressum">
+    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="startseite category chance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration.js" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javascript/startseite.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/startseite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites/startseite.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/startseite.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1kY85iHRxbTCqje8opnHCYCpLTA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -84,7 +86,11 @@
       <workItem from="1607329423771" duration="28000" />
       <workItem from="1607329500213" duration="53000" />
       <workItem from="1607329613369" duration="81000" />
-      <workItem from="1607329848257" duration="5953000" />
+      <workItem from="1607329848257" duration="7360000" />
+      <workItem from="1607338348837" duration="3000" />
+      <workItem from="1607338447790" duration="20000" />
+      <workItem from="1607342641804" duration="610000" />
+      <workItem from="1607350594625" duration="782000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
@@ -226,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606731817889</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="startseite category chance">
+      <created>1607335846751</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1607335846751</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +288,7 @@
     <MESSAGE value="changed card stile - startseite" />
     <MESSAGE value="opendata portal icon is link to startseite" />
     <MESSAGE value="opendata portal icon is link to startseite - added also to impressum" />
-    <option name="LAST_COMMIT_MESSAGE" value="opendata portal icon is link to startseite - added also to impressum" />
+    <MESSAGE value="startseite category chance" />
+    <option name="LAST_COMMIT_MESSAGE" value="startseite category chance" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-function symbol(){
+/*function symbol(){
     var category, card, h, name;
     card = document.getElementById("category_example_007");
     h = card.getElementsByTagName("h5");
@@ -15,7 +15,7 @@ function symbol(){
 window.onload = function () {
     symbol();
 }
-
+*/
 /*
 window.onload = function () {
 

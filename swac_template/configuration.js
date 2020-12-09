@@ -66,10 +66,11 @@ SWAC_config.lang = 'de';
 SWAC_config.notifyDuration = 5000;
 
 /* Debugging mode for output of SWAC NOTICE and SWAC WARNING messages */
-SWAC_config.debugmode = true;
+//SWAC_config.debugmode = true;
 
 /* Hint mode gives you usefull tipps for useing swac */
-SWAC_config.hintmode = true;
+//SWAC_config.hintmode = true;
+
 
 /**
  * SWAC core components can be deactivated if they are not needed.
