@@ -4,7 +4,7 @@ function searchTable() {
     var input, filter, card, ul, a, i, txtValue, countTables=0;
     input = document.getElementById('searchbar');
     filter = input.value.toUpperCase();
-    card = document.getElementById("present_example4");
+    card = document.getElementById("fetchedDatasets");
     ul = card.getElementsByTagName('ul');
 
     // Tabellentitel nach Suchbegriff durchlaufen und entsprechend ein-/ausblenden
