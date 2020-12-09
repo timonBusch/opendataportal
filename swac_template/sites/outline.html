@@ -58,10 +58,10 @@
         </form>
 
                     <select id="orderby" class="uk-select" style="position: fixed;margin-right: 20px;right: 0;width: auto;">
-                        <option>Neueste absteigend</option>
-                        <option>Neueste aufsteigend</option>
-                        <option>Name absteigend</option>
-                        <option>Name aufsteigend</option>
+                        <option onclick="sortData('newest')">Neueste aufsteigend</option>
+                        <option onclick="sortData('oldest')">Neueste absteigend</option>
+                        <option onclick="sortData('asc')">Name aufsteigend</option>
+                        <option onclick="sortData('desc')">Name absteigend</option>
                     </select>
     </div>
 
@@ -104,8 +104,8 @@
             <section id="outline-body" style="width: 100%;">
                 <div class="tablelist">
                     <!--<div id="present_example4" swa="Present FROM ../data/tbl_observedobject.json" style="border: none;">-->
-                    <div id="present_example4" swa="Present FROM fetchedData OPTIONS exampleoptions" style="border: none;">
-                        <!--<button onclick="getDataSorted('name')">Sortierungstest</button>-->
+                    <div id="fetchedDatasets" swa="Present FROM fetchedData OPTIONS exampleoptions" style="border: none;">
+                        <button onclick="sortData()">Sortierungstest</button>
                         <article class="swac_repeatForSet">
                             <ul>
                             <div class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body" style="width: auto">

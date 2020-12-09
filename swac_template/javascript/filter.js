@@ -52,7 +52,7 @@ function getFilterFromLS() {
 function displayResult(checkedFilter) {
     var category, card, ul, i, countTables=0;
     let display = [];
-    card = document.getElementById("present_example4");
+    card = document.getElementById("fetchedDatasets");
     ul = card.getElementsByTagName('ul');
     if (checkedFilter.length === 0) {
         for (i = 0; i < ul.length; i++) {
