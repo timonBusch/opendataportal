@@ -244,6 +244,41 @@ DEFINTION of SET:\n\
         return sorteddata;
     }
 
+    // public function - created by the opendata group
+    getDataSortedReversed(sortAfter) {
+        let sortoptions = {
+            sortAfter: sortAfter
+        };
+        let sorteddata = {};
+        // Sort at each datasource
+        for (let datasource in this.data) {
+            // Create a map of position and value to sort
+            let mapped = this.data[datasource].map(function (set, position) {
+                return {
+                    index: position,
+                    value: set[this.sortAfter]
+                };
+            }, sortoptions);
+
+            // Sort after value
+            mapped.sort(function (a, b) {
+                if (a.value < b.value) {
+                    return 1;
+                }
+                if (a.value > b.value) {
+                    return -1;
+                }
+                return 0;
+            });
+
+            // Now get for each sorted object the set from the sort position
+            sorteddata[datasource] = mapped.map(function (el) {
+                return this.data[datasource][el.index];
+            }, this);
+        }
+        return sorteddata;
+    }
+
     //public function
     removeData(fromName) {
         delete this.data[fromName];
