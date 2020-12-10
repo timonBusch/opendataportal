@@ -56,7 +56,7 @@ class View {
                 resolve();
             } else if (template) {
                 // Insert loading message
-                this.insertLoadingElem('Loading template for ' + this.requestor.id);
+                this.insertLoadingElem(SWAC_language.core.loadingtemplate + this.requestor.id);
 
                 // Load template code
                 let thisRef = this;

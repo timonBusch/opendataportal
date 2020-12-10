@@ -529,13 +529,18 @@ SWAC_model.getFromReference = function (reference) {
         }
 
         let dataRequest = {
-            fromName: SWAC_model.getSetnameFromRefernece(reference)
+            fromName: SWAC_model.getSetnameFromRefernece(reference),
+            fromWheres: {}
         };
         let setid = SWAC_model.getIdFromReference(reference);
         if (setid) {
-            dataRequest.fromWheres = {
-                id: setid
-            };
+            dataRequest.fromWheres['id'] = setid;
+        }
+        let params = SWAC_model.getParametersFromReference(reference);
+        if(params) {
+            for(let curParam of params) {
+                dataRequest.fromWheres[curParam.key] = curParam.value;
+            }
         }
 
         SWAC_model.load(dataRequest).then(function (data) {
@@ -556,6 +561,10 @@ SWAC_model.getIdFromReference = function (reference) {
     let lastSlashPos = reference.lastIndexOf('/');
     let idrefpart = reference.substring(lastSlashPos);
     let matches = idrefpart.match(/\d+/);
+    if(!matches) {
+        SWAC_debug.addDebugMessage("model","Reference contains no number.");
+        return null;
+    }
     let numbers = matches.map(Number);
     return numbers[0];
 };
@@ -567,16 +576,39 @@ SWAC_model.getIdFromReference = function (reference) {
  * @returns {String} Name of the set the reference points to
  */
 SWAC_model.getSetnameFromRefernece = function (reference) {
-    let setname;
-    if (reference.includes('?')) {
-        let lastaskpos = reference.lastIndexOf('?');
-        setname = reference.substring(0, lastaskpos);
-    } else {
-        let lastslashpos = reference.lastIndexOf('/');
-        setname = reference.substring(0, lastslashpos);
+    let setname = reference.replace('ref://', '');
+    if (setname.includes('?')) {
+        let lastaskpos = setname.lastIndexOf('?');
+        setname = setname.substring(0, lastaskpos);
+    } else if(setname.includes('/')) {
+        let lastslashpos = setname.lastIndexOf('/');
+        setname = setname.substring(0, lastslashpos);
     }
-    setname = setname.replace('ref://', '');
     return setname;
+};
+
+/**
+ * Gets the params that are stored in the reference.
+ * 
+ * @param {String} reference String begining with ref://
+ * @returns {Object[]} Objects with key and value attribute for each param
+ */
+SWAC_model.getParametersFromReference = function(reference) {
+    if (reference.includes('?')) {
+        let firstaskpos = reference.indexOf('?');
+        let paramsstr = reference.substring(firstaskpos+1, reference.length);
+        let paramsarr = paramsstr.split('&');
+        let params = [];
+        for(let curParam of paramsarr) {
+            let param = curParam.split('=');
+            params.push({
+                key: param[0],
+                value: param[1]
+            });
+        }
+        return params;
+    }
+    return null;
 };
 
 /**

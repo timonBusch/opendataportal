@@ -204,7 +204,9 @@ DEFINTION of SET:\n\
     // public function
     addDataFromReference(reference) {
         let thisRef = this;
-        SWAC_model.getFromReference(reference).then(thisRef.addData);
+        SWAC_model.getFromReference(reference).then(function(dataCapsle){
+            thisRef.addData(dataCapsle.metadata.fromName,dataCapsle.data);
+            });
     }
 
     // public function
@@ -246,6 +248,11 @@ DEFINTION of SET:\n\
     removeData(fromName) {
         delete this.data[fromName];
         SWAC_debug.addDebugMessage('component', 'Removed all data from datasource >' + fromName + '<', this.requestor);
+        // Get and remove all repeated elements
+        let repeateds = this.requestor.querySelectorAll('[swac_setname="'+fromName+'"]');
+        for(let curRepeated of repeateds) {
+            curRepeated.parentElement.removeChild(curRepeated);
+        }
     }
 
     //public function
@@ -520,6 +527,10 @@ DEFINTION of SET:\n\
 
     // public function
     update() {
+
+        
+        
+        
         SWAC_debug.addDebugMessage('Component', 'update() function not implemented yet.', this.requestor);
     }
 

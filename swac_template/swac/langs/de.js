@@ -6,6 +6,7 @@ var core_de = {
     loaderror: 'Die Anwendung konnte nicht geladen werden. Klicken sie auf OK um es noch einmal zu versuchen.',
     backendnotready: 'Das Backend ist nicht erreichbar. Die Anwendung wird fortgesetzt sobald der Server wieder erreichbar ist.',
     loadingdata: "Lade Daten f&uuml;r >%requestorid%<",
+    loadingtemplate: "Lade Ansicht f&uuml;r",
     showWhenNoData: "True zeigt die Komponente auch dann, wenn sie keine Daten bekommt",
     apinotinstalled: "Die API wurde noch nicht korrekt installiert. Installieren Sie zunächst die API für den Datenabruf.",
     allreadycompleted: "Das Setup wurde bereits abgeschlossen. Das Setup kann nicht wiederholt werden.",

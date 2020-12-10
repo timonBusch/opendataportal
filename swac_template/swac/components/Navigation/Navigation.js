@@ -133,6 +133,14 @@ class Navigation extends Component {
             if (exportBtn) {
                 exportBtn.addEventListener('click', this.exportSitemapCode.bind(this));
             }
+            // Remove empty swac_forChilds
+            let forChilds = this.requestor.querySelectorAll('.swac_forChilds');
+            for(let curForChilds of forChilds) {
+                // Get number of childs
+                if(curForChilds.children.length===1) {
+                    curForChilds.parentNode.removeChild(curForChilds);
+                }
+            }
             resolve();
         });
     }

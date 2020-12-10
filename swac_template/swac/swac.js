@@ -6,14 +6,28 @@
 /**
  * Create an SWAC instance, if page is loaded
  */
+var SWAC_config = {};
 document.addEventListener("DOMContentLoaded", function () {
-    // Load configuration
-    let firstSlashPos = window.location.pathname.indexOf("/sites/");
-    let approot = window.location.pathname.substr(0, firstSlashPos);
+    // Locate swac
+    let scriptTags = document.getElementsByTagName('script');
+    for(let curScript of scriptTags) {
+        let swacPos = curScript.src.indexOf('swac/swac.js');
+        if(swacPos >= 0) {
+            SWAC_config.swac_root = curScript.src.substr(0,swacPos);
+            break;
+        }
+    }
+
+    // Locate app
+    let siteFoldPos = window.location.pathname.indexOf("/sites/");
+    SWAC_config.app_root = window.location.pathname.substr(0,window.location.pathname.length -1);
+    if (siteFoldPos > 0) {
+        SWAC_config.app_root = window.location.pathname.substr(0, siteFoldPos);
+    }
     // Load configuration
     var tag = document.createElement("script");
     tag.id = 'config';
-    tag.src = approot + "/configuration.js";
+    tag.src = SWAC_config.app_root + "/configuration.js";
     document.getElementsByTagName("head")[0].appendChild(tag);
     tag.addEventListener('load', function (evt) {
         SWAC.loadGlobalComponents();
@@ -26,7 +40,7 @@ SWAC.loadingdependencies = [];
 // List of loaded dependencies
 SWAC.loadeddependencies = [],
 // Version information
-        SWAC.version = "27.10.2020";
+        SWAC.version = "10.12.2020";
 
 /**
  * Loads the global components
