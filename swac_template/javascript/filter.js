@@ -23,9 +23,10 @@ function startfilter(name) {
     for (elem in storage) {
         localStorage.removeItem("filter"+storage[elem]);
     }
-
-    let lsname = "filter"+name;
-    localStorage.setItem(lsname, lsname);
+    if (name !== "all"){
+        let lsname = "filter"+name;
+        localStorage.setItem(lsname, lsname);
+    }
 }
 
 /**
