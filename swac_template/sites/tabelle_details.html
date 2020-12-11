@@ -143,7 +143,7 @@
                         <a class="uk-button uk-button-default" href="#datasets_modal" uk-toggle>Datensätze abrufen</a>
                         <div class="uk-inline">
                             <a class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: download"></a>
-                            <button class="uk-button uk-button-default">JSON-Export</button>
+                            <button id="export_json" class="uk-button uk-button-default">JSON-Export</button>
                         </div>
                         <div class="uk-inline">
                             <a class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: download"></a>
@@ -158,7 +158,8 @@
 
                     <div id="vorschau" class="uk-modal-dialog uk-modal-body">
                         <button class="uk-modal-close-default" type="button" uk-close></button>
-                        <div class="uk-panel-scrollable remove_border" id="exampledata" swa="Present FROM dataset TEMPLATE table_for_all_datasets"></div>
+                        <div class="uk-panel-scrollable remove_border" id="data_preview"
+                             swa="Present FROM dataset TEMPLATE table_for_all_datasets"></div>
                     </div>
 
                 </div>
@@ -181,17 +182,17 @@
                                 </form>
                             </div>
 
-                            <div class="uk-margin-top">
-                                <label for="start">von:</label>
+                            <div id="timestamp" class="uk-margin-top">
+                                <!-- <label for="start">von:</label> -->
                                 <input type="date" id="start" name="trip-start">
 
-                                <label for="start">bis:</label>
-                                <input type="date" id="end" name="trip-start">
+                               <!-- <label for="start">bis:</label> -->
+                                <!-- <input type="date" id="end" name="trip-start"> -->
                             </div>
 
                         </div>
                         <div class="uk-modal-footer uk-text-center">
-                            <button id="filter_attributes" onclick="" class="uk-button uk-button-primary" type="button">OK</button>
+                            <button id="filter_attributes" class="uk-button uk-button-primary uk-modal-close" type="button" >OK</button>
                         </div>
                     </div>
                 </div>
