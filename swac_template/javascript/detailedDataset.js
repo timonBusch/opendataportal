@@ -7,6 +7,7 @@ window.onload = function () {
     })
 
     document.getElementById("filter_attributes").addEventListener("click", filter_attributes)
+    document.getElementById("export_json").addEventListener("click", exportComponentAsJson)
 }
 
 const queryString = window.location.search;
@@ -19,14 +20,24 @@ const url_dataset = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand
 const url_dataset_count = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=0&countonly=true&deflatt=false"
 const url_dataset_keys = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/collection/data_" + id + "/getAttributes?storage=smartmonitoring"
 
-
+/**
+ * Get data from smartdata REST API
+ * @param url
+ * @returns {Promise<any>}
+ */
 async function getData(url) {
     let resonse = await fetch(url);
     return await resonse.json()
 }
 
+/**
+ * Checks which boxes are checked and returnes them
+ * @param chkboxName
+ * @returns {[]|null}
+ */
 // Pass the checkbox name to the function
 function getCheckedBoxes(chkboxName) {
+
     var checkboxes = document.getElementsByName(chkboxName);
     var checkboxesChecked = [];
     // loop over them all
@@ -40,8 +51,17 @@ function getCheckedBoxes(chkboxName) {
     return checkboxesChecked.length > 0 ? checkboxesChecked : null;
 }
 
+/**
+ * Generates the API call to only get the selected attributes
+ * @param evt
+ */
 let filter_attributes = function (evt) {
+
     var checkedBoxes = getCheckedBoxes("checkAttrib")
+    let component = document.getElementById("data_preview")
+    let dateFrom = document.getElementById("start")
+
+    component.swac_comp.removeAllData()
 
     let include_string = ""
     checkedBoxes.forEach(item => {
@@ -52,15 +72,40 @@ let filter_attributes = function (evt) {
         }
     })
 
-    let new_dataset_url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_32?storage=smartmonitoring&includes=" + include_string + "&page=2&countonly=false&deflatt=false"
+    // T<Stunde>3A<Minuten>3A<Sekunden>
+    // data_30 20 Mai 2015 T09%3A32%3A47
+    if(dateFrom.value !== "") {
+        include_string += "&filter=ts%2Ceq%2C" + dateFrom.value  + "T00%3A00%3A00"
+    }
+
+    let new_dataset_url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&includes=" + include_string + "&size=20&countonly=false&deflatt=false"
     getData(new_dataset_url).then(data => {
-        console.log(data)
         dataset = data
+        setComponentData(component)
     })
-    //console.log(dataset)
+
+
+}
+
+/**
+ * Set the data of a component
+ * @param component
+ */
+function setComponentData(component) {
+    component.swac_comp.addData("data_preview", dataset.records)
+
+}
+
+/**
+ * Exports a component as JSON file
+ */
+function exportComponentAsJson() {
+    let component = document.getElementById("data_preview")
+    component.swac_comp.exportJson()
 }
 
 
+// Call Api and set variable for SWAC components
 var description_record;
 getData(url_description).then(data => {
     description_record = data
