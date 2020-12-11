@@ -8,6 +8,7 @@ const promiseOfSomeJsonData =
     fetch(url)
     .then(r=>r.json())
     .then(data => {
+        console.log(fetchedData)
         fetchedData = data["records"].sort(function(a,b){
             if(a.name == b.name)
                 return 0;
@@ -19,15 +20,15 @@ const promiseOfSomeJsonData =
         console.log("in async");
         let tableNumber = document.getElementById("tableNumber");
         tableNumber.textContent = "Anzahl der Treffer: " + data["records"].length;
-        return data;
+        return fetchedData;
     });
 
 window.onload = async () => {
     let someData = await promiseOfSomeJsonData;
-    console.log(fetchedData)
     console.log("onload");
     setTimeout(function (){
         displayResult(getFilterFromLS());
+        sortData("asc");
     }, 1000); //vorerst Timer, weil zu langsam geladen wird. Später mit callback nach cat-fetch
 
 };

@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/startseite.css">
 
     <script src="../libs/uikit/js/uikit.min.js"></script>
     <script src="../libs/uikit/js/uikit-icons.min.js"></script>
@@ -18,7 +19,7 @@
     <script src="../javascript/filter.js"></script>
     <script src="../javascript/startseite.js"></script>
 </head>
-<body>
+<body style="background-color: #f8f8f8;">
 <!-- Header -->
 <div class="headContent">
 
@@ -54,16 +55,32 @@
     <hr class="uk-divider-icon">
 </div>
 <!-- Startseite -->
+<h2 id="headline">Stöbern Sie in den folgenden Kategorien</h2>
 <div class="uk-section uk-section-muted">
-    <h4>Stöbern Sie in den folgenden Kategorien:</h4>
     <div class="uk-container uk-column-1-4">
+        <div id="showAll" style="border: none;">
+            <div class="uk-container uk-column-1-4">
+                <a id="category_card_all" class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" onclick="startfilter('all')" href="outline.html">
+                    <div class="uk-card-body">
+                        <h5 id="all">Alles</h5>
+                    </div>
+                </a>
+                <div uk-drop>
+                    <div class="uk-card uk-card-body uk-card-default uk-animation-fade hovertext">Zeigt alle Kategorien an.</div>
+                </div>
+            </div>
+        </div>
         <div id="category_example_007" swa="Present FROM exampleCategories" style="border: none;">
             <div class="uk-container uk-column-1-4 swac_repeatForSet">
                 <a id="category_card" class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" onclick="startfilter('{name}')" href="outline.html">
                     <div class="uk-card-body">
                         <h5 id="{name}">{name}</h5>
                     </div>
+                    <div uk-drop>
+                        <div class="uk-card uk-card-body uk-card-default uk-animation-fade hovertext">{description}</div>
+                    </div>
                 </a>
+
             </div>
         </div>
     </div>

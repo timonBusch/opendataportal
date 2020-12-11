@@ -33,7 +33,6 @@ function sortData(option){
             let rSortedArray = fd.swac_comp.getDataSortedReversed("name");
             fd.swac_comp.removeAllData();
             //fd.swac_comp.addDataFromReference(rSortedArray);
-
             let rfdd = rSortedArray["fetchedData"];
             for (elem in rfdd) {
                 fd.swac_comp.addSet("fetchedData", rfdd[elem]);
