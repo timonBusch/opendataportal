@@ -81,15 +81,12 @@ function displayResult(checkedFilter) {
             for (i = 0; i < ul.length; i++) {
                 category = ul[i].getElementsByClassName("cat")[0];
                 if (category.innerHTML.includes(checkedFilter[elem])) {
-                    console.log("pushed");
-                    console.log(ul[i].getElementsByClassName("cat")[0].innerHTML);
                     display.push(ul[i]);
                 }
                 ul[i].style.display = "none";
             }
         }
         for (i = 0; i < display.length; i++) {
-            console.log(display[i].getElementsByClassName("cat")[0].innerHTML);
             if(display[i].style.display !== ""){
                 countTables ++;
             }

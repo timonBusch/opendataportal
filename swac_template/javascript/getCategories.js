@@ -7,7 +7,6 @@ function getCategories(){
         .then(r=>r.json())
         .then(data => {
             categories = data;
-            console.log("got categories");
             return data;
         });
 }
