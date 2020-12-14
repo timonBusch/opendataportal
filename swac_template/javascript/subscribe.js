@@ -1,13 +1,4 @@
 
-window.onload = function () {
-
-    document.getElementById("subscribe").addEventListener("click", function () {
-        subscribe()
-    })
-
-
-}
-
 function postData(url, data) {
     return fetch(url, {
         body: JSON.stringify(data),
@@ -25,6 +16,8 @@ function postData(url, data) {
         .then(response => response.json())
 }
 
-function subscribe(email) {
+function subscribe() {
+    let mail = document.getElementById("subscribe_input")
+    alert(mail.value)
 
 }

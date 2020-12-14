@@ -15,8 +15,12 @@
         <script src="../libs/uikit/js/uikit.min.js"></script>
         <script src="../swac/swac.js"></script>
         <script src="../data/routes.js"></script>
+        <script src="../javascript/subscribe.js"></script>
+        <script src="../javascript/comments.js"></script>
+
         <script src="../javascript/detailedDataset.js"></script>
-        <script src="../data/comments.js"></script>>
+
+
 
         <script src="../libs/uikit/js/uikit-icons.min.js"></script>
 
@@ -119,10 +123,10 @@
                                             <div class="uk-modal-body">
                                                 <h2 class="uk-modal-title uk-text-center">Tabelle abonnieren</h2>
                                                 <p>Bitte geben Sie ihre Mailadresse an um über neue Daten in dieser Tabelle informiert zu werden:</p>
-                                                <input id="subscribe_input" class="uk-input" placeholder="E-Mail">
+                                                <input id="subscribe_input" placeholder="E-Mail">
                                             </div>
                                             <div class="uk-modal-footer uk-text-center">
-                                                <button id="subscribe" class="uk-button uk-button-primary" type="button">OK</button>
+                                                <button id="subscribe_bt" class="uk-button uk-button-primary" type="button">OK</button>
                                             </div>
                                         </div>
                                     </div>
@@ -207,8 +211,9 @@
                     <div class="uk-width-1-4">
                         <h3 class="uk-text-left">Verfasse ein Kommentar</h3>
                         <div class="uk-card uk-card-default uk-card-body">
-                            <textarea class="uk-textarea" rows="5" placeholder="Kommentar"></textarea>
-                            <button class="uk-button uk-button-default uk-margin-top">Absenden</button>
+                            <input id="comment_author" class="uk-input uk-margin-small-bottom" placeholder="Autor">
+                            <textarea id="comment_area" class="uk-textarea" rows="5" placeholder="Kommentar"></textarea>
+                            <button id="comment_bt" class="uk-button uk-button-default uk-margin-top">Absenden</button>
                         </div>
                     </div>
 

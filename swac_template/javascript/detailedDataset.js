@@ -9,6 +9,9 @@ window.onload = function () {
     document.getElementById("filter_attributes").addEventListener("click", filter_attributes)
     document.getElementById("export_json").addEventListener("click", exportComponentAsJson)
     document.getElementById("export_csv").addEventListener("click", exportComponentAsCSV)
+    document.getElementById("comment_bt").addEventListener("click", postComment)
+    document.getElementById("subscribe_bt").addEventListener("click", subscribe)
+
 }
 
 const queryString = window.location.search;
@@ -95,6 +98,12 @@ function setComponentData(component) {
     component.swac_comp.addData("data_preview", dataset.records)
 }
 
+function subscribe() {
+     document.getElementById("subscribe_input").value = "test1"
+    //console.log(mail.value)
+
+}
+
 /**
  * Exports a component as JSON file
  */
@@ -126,6 +135,7 @@ var dataset_keys;
 getData(url_dataset_keys).then(data => {
     dataset_keys = data
 })
+
 
 SWAC_reactions.addReaction(function () {
 
