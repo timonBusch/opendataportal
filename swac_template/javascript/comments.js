@@ -1,6 +1,15 @@
+const queryStringx = window.location.search;
 
+const urlParamsx = new URLSearchParams(queryStringx)
+let id_comments = urlParamsx.get('id')
 
-
+/**
+ * Make post request to api content type
+ * application/x-www-form-urlencoded;charset=UTF-8
+ * @param url
+ * @param data to store
+ * @returns {Promise<any>}
+ */
 function postData(url, data) {
     return fetch(url, {
         body: data,
@@ -17,11 +26,10 @@ function postData(url, data) {
         .then(response => response.json())
 }
 
+/**
+ * Get comment from UI and transform to x-www-form-urlencoded
+ */
 function postComment() {
-    const queryString = window.location.search;
-
-    const urlParams = new URLSearchParams(queryString)
-    let id = urlParams.get('id')
 
     let author = document.getElementById("comment_author").value
     let text = document.getElementById("comment_area").value
@@ -29,7 +37,7 @@ function postComment() {
    let comment = {
        'author': author,
        'content': text,
-       'tableId': id
+       'tableId': id_comments
     }
 
     let formBody = []
@@ -40,26 +48,29 @@ function postComment() {
     }
     formBody = formBody.join("&")
 
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/comment/addComment", formBody).then(function (data) {
-        console.log(data)
-    })
+    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/comment/addComment", formBody)
 
-    getComments().then(data => {
-        comments = data
-    })
     //updateComments()
 
 }
 
+/**
+ * Update SWAC component for comments TODO: Fix only deleting
+ */
 function updateComments() {
 
-    let component = document.getElementById("present_comments")
-    component.swac_comp.removeAllData()
-    component.swac_comp.addData(comments)
+    getComments().then(data => {
+        comments = data
+        let component = document.getElementById("present_comments")
+
+        component.swac_comp.removeAllData()
+        component.swac_comp.addData("present_comments", comments.records)
+    })
+
 }
 
 async function getComments() {
-    let response = await fetch("http://localhost:8080/opendataportal-1.0-SNAPSHOT/comment");
+    let response = await fetch("http://localhost:8080/opendataportal-1.0-SNAPSHOT/comment/tableId?tableId=" + id_comments);
     return await response.json()
 }
 

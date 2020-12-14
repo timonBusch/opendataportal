@@ -21,3 +21,11 @@ function subscribe() {
     alert(mail.value)
 
 }
+
+function promptInput(input = "") {
+    UIkit.util.on('#subscribe_modal', 'click', function (e) {
+        UIkit.modal.prompt('Name:', 'Your name').then(function (name) {
+            console.log('Prompted:', name)
+        });
+    });
+}
