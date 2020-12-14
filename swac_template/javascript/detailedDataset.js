@@ -8,6 +8,7 @@ window.onload = function () {
 
     document.getElementById("filter_attributes").addEventListener("click", filter_attributes)
     document.getElementById("export_json").addEventListener("click", exportComponentAsJson)
+    document.getElementById("export_csv").addEventListener("click", exportComponentAsCSV)
 }
 
 const queryString = window.location.search;
@@ -84,7 +85,6 @@ let filter_attributes = function (evt) {
         setComponentData(component)
     })
 
-
 }
 
 /**
@@ -93,7 +93,6 @@ let filter_attributes = function (evt) {
  */
 function setComponentData(component) {
     component.swac_comp.addData("data_preview", dataset.records)
-
 }
 
 /**
@@ -103,6 +102,13 @@ function exportComponentAsJson() {
     let component = document.getElementById("data_preview")
     component.swac_comp.exportJson()
 }
+
+function exportComponentAsCSV() {
+    let component = document.getElementById("data_preview")
+    component.swac_comp.exportCSV()
+
+}
+
 
 
 // Call Api and set variable for SWAC components
