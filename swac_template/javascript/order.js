@@ -13,10 +13,22 @@ function sortData(option){
 
     switch(option) {
         case "newest":
-            // Zugang zu eigener DB erforderlich
+            let newestSortedArray = fd.swac_comp.getDataSorted("updateTime");
+            fd.swac_comp.removeAllData();
+            //fd.swac_comp.addDataFromReference(sortedArray);
+            let nfdd = newestSortedArray["fetchedData"];
+            for (elem in nfdd) {
+                fd.swac_comp.addSet("fetchedData", nfdd[elem]);
+            }
             break;
         case "oldest":
-            // Zugang zu eigener DB erforderlich
+            let oldestSortedArray = fd.swac_comp.getDataSortedReversed("updateTime");
+            fd.swac_comp.removeAllData();
+            //fd.swac_comp.addDataFromReference(sortedArray);
+            let ofdd = oldestSortedArray["fetchedData"];
+            for (elem in ofdd) {
+                fd.swac_comp.addSet("fetchedData", ofdd[elem]);
+            }
             break;
         case "asc":
             let sortedArray = fd.swac_comp.getDataSorted("title");
