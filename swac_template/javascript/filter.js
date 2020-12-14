@@ -56,7 +56,6 @@ function getFilterFromLS() {
             checkCheckbox(storage[elem].substring(6, storage[elem].length))
         }
     }
-    console.log(checkedFilter)
     return checkedFilter;
 }
 
@@ -81,17 +80,20 @@ function displayResult(checkedFilter) {
         for (elem in checkedFilter) {
             for (i = 0; i < ul.length; i++) {
                 category = ul[i].getElementsByClassName("cat")[0];
-                if (category.innerHTML === checkedFilter[elem]) {
+                if (category.innerHTML.includes(checkedFilter[elem])) {
+                    console.log("pushed");
+                    console.log(ul[i].getElementsByClassName("cat")[0].innerHTML);
                     display.push(ul[i]);
                 }
                 ul[i].style.display = "none";
             }
         }
         for (i = 0; i < display.length; i++) {
-            ul[i].style.display = "";
-            if (i < ul.length-1){
-                countTables++;
+            console.log(display[i].getElementsByClassName("cat")[0].innerHTML);
+            if(display[i].style.display !== ""){
+                countTables ++;
             }
+            display[i].style.display = "";
         }
     }
 

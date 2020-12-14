@@ -4,6 +4,7 @@
     <title>Übersicht</title>
     <meta charset="UTF-8">
     <script src="../data/exampleCategories.js"></script>
+    <script src="../javascript/getCategories.js"></script>
     <script src="../javascript/filter.js"></script>
     <script src="../javascript/getTables.js"></script>
     <script src="../data/fetchedData.js"></script>
@@ -78,7 +79,7 @@
                     <hr class="uk-divider-icon">
                     <h3 style="margin-top:0px;">Filtermöglichkeiten</h3>
                     <h6>Kategorien</h6>
-                    <div id="present_example1" swa="Present FROM exampleCategories" style="border: none;">
+                    <div id="present_example1" swa="Present FROM categories" style="border: none;">
                         <div id="category-box" class="uk-panel uk-panel-scrollable" style="min-height: 250px;">
                             <ul class="uk-list">
                                 <li class="swac_repeatForSet">
@@ -103,15 +104,15 @@
             </section>
             <section id="outline-body" style="width: 100%;">
                 <div class="tablelist">
-                    <div id="fetchedDatasets" swa="Present FROM fetchedData OPTIONS exampleoptions" style="border: none;">
+                    <div id="fetchedDatasets" swa="Present FROM fetchedData OPTIONS fdOptions" style="border: none;">
                         <article class="swac_repeatForSet">
                             <ul>
-                                <div class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body" style="width: auto">
+                                <div id="{id}" class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body" style="width: auto">
                                     <a href="tabelle_details.html?id={id}"></a>
                                     <div id="table-left">
-                                        <h4>{name}</h4>
+                                        <h4>{title}</h4>
                                         <p>{description}</p>
-                                        <p><strong>Kategorie:</strong><div class="cat">Wetterdaten</div></p>
+                                        <p><strong>Kategorie:</strong><div class="cat">{categories}</div></p>
                                     </div>
                                     <div id="table-right">
                                         <p><strong>Letzte Änderung</strong></p>
