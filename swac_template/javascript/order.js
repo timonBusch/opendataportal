@@ -13,31 +13,40 @@ function sortData(option){
 
     switch(option) {
         case "newest":
-            // Zugang zu eigener DB erforderlich
+            let newestSortedArray = fd.swac_comp.getDataSorted("updateTime");
+            fd.swac_comp.removeAllData();
+            //fd.swac_comp.addDataFromReference(sortedArray);
+            let nfdd = newestSortedArray["fetchedData"];
+            for (elem in nfdd) {
+                fd.swac_comp.addSet("fetchedData", nfdd[elem]);
+            }
             break;
         case "oldest":
-            // Zugang zu eigener DB erforderlich
+            let oldestSortedArray = fd.swac_comp.getDataSortedReversed("updateTime");
+            fd.swac_comp.removeAllData();
+            //fd.swac_comp.addDataFromReference(sortedArray);
+            let ofdd = oldestSortedArray["fetchedData"];
+            for (elem in ofdd) {
+                fd.swac_comp.addSet("fetchedData", ofdd[elem]);
+            }
             break;
         case "asc":
-            let sortedArray = fd.swac_comp.getDataSorted("name");
-            console.log(fd.swac_comp)
+            let sortedArray = fd.swac_comp.getDataSorted("title");
             fd.swac_comp.removeAllData();
             //fd.swac_comp.addDataFromReference(sortedArray);
             let fdd = sortedArray["fetchedData"];
             for (elem in fdd) {
                 fd.swac_comp.addSet("fetchedData", fdd[elem]);
             }
-            console.log(fd.swac_comp)
             break;
         case "desc":
-            let rSortedArray = fd.swac_comp.getDataSortedReversed("name");
+            let rSortedArray = fd.swac_comp.getDataSortedReversed("title");
             fd.swac_comp.removeAllData();
             //fd.swac_comp.addDataFromReference(rSortedArray);
             let rfdd = rSortedArray["fetchedData"];
             for (elem in rfdd) {
                 fd.swac_comp.addSet("fetchedData", rfdd[elem]);
             }
-            console.log(fd.swac_comp)
             break;
     }
 }
