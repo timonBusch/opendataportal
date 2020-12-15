@@ -17,10 +17,8 @@
         <script src="../data/routes.js"></script>
         <script src="../javascript/subscribe.js"></script>
         <script src="../javascript/comments.js"></script>
-
+        <script src="../javascript/validatedData.js"></script>
         <script src="../javascript/detailedDataset.js"></script>
-
-
 
         <script src="../libs/uikit/js/uikit-icons.min.js"></script>
 
@@ -39,7 +37,6 @@
 
             <!-- Navigation zwischen den Seiten -->
             <div id="navbar" class="uk-text-center">
-                <img src="images/light.jpg" alt="">
                 <div class="uk-position-center">
                     <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
                         <div  class="uk-navbar">
@@ -73,8 +70,8 @@
 
 
                 <!-- Titel der Tabelle, Beschreibung und Details -->
-                <h3 id="number_dataset">X Datensätze zur verfügung</h3>
-                <div id="present_details" swa="Present FROM description_record" style="border: none" >
+                <h3 id="number_dataset">Datensätze zur verfügung</h3>
+                <div id="present_details" swa="Present FROM categories_updateTime" style="border: none" >
                     <div class="swac_repeatForSet">
 
 
@@ -87,11 +84,11 @@
 
                                     <dl class="uk-description-list">
                                         <dt>Kategorie</dt>
-                                        <dd>Wetterdaten</dd>
+                                        <dd id="category">{categories}</dd>
                                         <dt>Speicherplatzbedarf</dt>
                                         <dd>15,56 GB</dd>
-                                        <dt>Erstellungsdatum</dt>
-                                        <dd>01.05.2020</dd>
+                                        <dt>Letztes Update</dt>
+                                        <dd id="updateTime">{updateTime}</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -100,7 +97,7 @@
                             <div class="uk-width-3-4 uk-margin-bottom">
 
                                 <!-- Warnung falls Datensaetze fehlerhaft sind -->
-                                <div class="uk-alert-danger uk-hidden" uk-alert>
+                                <div id="warning" class="uk-alert-danger uk-hidden" uk-alert>
                                     <a class="uk-alert-close" uk-close></a>
                                     <p>Achtung! Diese Tabelle könnte unvollständige oder fehlerhafte Datensätze enthalten!</p>
                                 </div>
@@ -109,8 +106,9 @@
 
                                     <article class="uk-article uk-text-left">
 
-                                        <a href="#subscribe_modal" class="uk-icon-button" uk-icon="bell" uk-toggle></a>
-                                        <h1 class="uk-article-title">{name}</h1>
+                                        <a id="subscribe_icon" class="uk-icon-button" uk-icon="bell" href="#subscribe_modal" uk-toggle></a>
+
+                                        <h1 class="uk-article-title">{title}</h1>
 
                                         <p class="uk-text-lead">{description}</p>
                                     </article>
@@ -153,7 +151,21 @@
                             <a class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: download"></a>
                             <button id="export_csv" class="uk-button uk-button-default">CSV-Export</button>
                         </div>
-                        <button class="uk-button uk-button-default">Codebeispiel</button>
+
+                        <div class="uk-button-group">
+                            <button class="uk-button uk-button-default">Codebeispiele</button>
+                            <div class="uk-inline">
+                                <button class="uk-button uk-button-default" type="button"><span uk-icon="icon:  triangle-down"></span></button>
+                                <div uk-dropdown="mode: click; boundary: ! .uk-button-group; boundary-align: true;">
+                                    <ul class="uk-nav uk-dropdown-nav">
+                                        <li class="uk-active"><a href="#">Java</a></li>
+                                        <li><a href="#">Python</a></li>
+                                        <li><a href="#">JavaScript</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -227,7 +239,7 @@
                                     <div class="uk-card uk-card-default uk-card-body">
                                         <article class="uk-article uk-text-left">
 
-                                            <p class="uk-article-meta">Written by <a href="#">{author}</a> on {timestamp}.</p>
+                                            <p class="uk-article-meta">Written by <a href="#">{author}</a> on {creationTime}.</p>
 
                                             <p>{content}</p>
 

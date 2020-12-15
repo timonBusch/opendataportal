@@ -1,16 +1,21 @@
 
 window.onload = function () {
+
+
+
     getData(url_dataset_count).then(data => {
         let count = data
         let number = document.getElementById("number_dataset");
         number.textContent = count.records[0].count + " Datensätze zur Verfügung";
     })
 
+
     document.getElementById("filter_attributes").addEventListener("click", filter_attributes)
     document.getElementById("export_json").addEventListener("click", exportComponentAsJson)
     document.getElementById("export_csv").addEventListener("click", exportComponentAsCSV)
     document.getElementById("comment_bt").addEventListener("click", postComment)
-    document.getElementById("subscribe_bt").addEventListener("click", subscribe)
+    document.getElementById("subscribe_icon").addEventListener("click", promptInput)
+
 
 }
 
@@ -23,6 +28,7 @@ const url_description = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTests
 const url_dataset = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false"
 const url_dataset_count = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=0&countonly=true&deflatt=false"
 const url_dataset_keys = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/collection/data_" + id + "/getAttributes?storage=smartmonitoring"
+const url_category_updateTime = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category/tbl_cat_id?tbl_cat_id=" + id
 
 /**
  * Get data from smartdata REST API
@@ -118,6 +124,14 @@ function exportComponentAsCSV() {
 
 }
 
+var categories_updateTime
+
+getData(url_category_updateTime).then(data => {
+    console.log(data)
+    categories_updateTime = data
+
+})
+
 
 
 // Call Api and set variable for SWAC components
@@ -135,6 +149,8 @@ var dataset_keys;
 getData(url_dataset_keys).then(data => {
     dataset_keys = data
 })
+
+
 
 
 SWAC_reactions.addReaction(function () {
