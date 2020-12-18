@@ -1,4 +1,5 @@
 let url = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category"
+var fetchedData = [];
 var fdOptions = {
     showWhenNoData: false,
     sortable: true
