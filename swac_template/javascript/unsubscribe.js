@@ -22,7 +22,7 @@ function unsubscribe() {
 
     postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/subscriber/rmvSubscriber", formBody)
 
-    window.location.href="../sites/outline.html";
+
 
 }
 
@@ -39,5 +39,6 @@ function postData(url, data) {
         redirect: 'follow',
         referrer: 'no-referrer',
     })
-        .then(response => response.json())
+        .then(response => window.location.href="../sites/outline.html")
+
 }
