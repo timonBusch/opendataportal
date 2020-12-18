@@ -20,6 +20,7 @@ function sortData(option){
             for (elem in nfdd) {
                 fd.swac_comp.addSet("fetchedData", nfdd[elem]);
             }
+            console.log(fd.swac_comp);
             break;
         case "oldest":
             let oldestSortedArray = fd.swac_comp.getDataSortedReversed("updateTime");
@@ -49,6 +50,7 @@ function sortData(option){
             }
             break;
     }
+    displayResult(getFilterFromLS());
 }
 
 /**
