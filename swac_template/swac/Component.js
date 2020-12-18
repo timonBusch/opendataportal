@@ -581,9 +581,6 @@ DEFINTION of SET:\n\
         document.body.removeChild(link);
     }
 
-    exportCSV() {
-        console.log(this.data)
-    }
 
     /**
      * Method to be executed after plugins where be loaded.
