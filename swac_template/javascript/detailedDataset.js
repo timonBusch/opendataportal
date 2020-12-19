@@ -14,7 +14,12 @@ window.onload = function () {
     document.getElementById("export_json").addEventListener("click", exportComponentAsJson)
     document.getElementById("export_csv").addEventListener("click", exportComponentAsCSV)
     document.getElementById("comment_bt").addEventListener("click", postComment)
-    document.getElementById("subscribe_icon").addEventListener("click", promptInput)
+    //document.getElementById("subscribe_icon").addEventListener("click", subscribe)
+    document.getElementById("subscribe_bt").addEventListener("click", function (e) {
+        e.preventDefault()
+        let mail = document.getElementById("subscribe_input").value
+       console.log(mail)
+    })
 
 
 }
@@ -104,9 +109,9 @@ function setComponentData(component) {
     component.swac_comp.addData("data_preview", dataset.records)
 }
 
-function subscribe() {
-     document.getElementById("subscribe_input").value = "test1"
-    //console.log(mail.value)
+let subscribe = function () {
+    let mail = document.getElementById("subscribe_input")
+    console.log(mail.value)
 
 }
 
@@ -119,8 +124,19 @@ function exportComponentAsJson() {
 }
 
 function exportComponentAsCSV() {
-    let component = document.getElementById("data_preview")
-    component.swac_comp.exportCSV()
+
+
+    const items = dataset.records
+    const replacer = (key, value) => value === null ? '' : value // specify how you want to handle null values here
+    const header = Object.keys(items[0])
+    let csv = items.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
+    csv.unshift(header.join(','))
+    csv = csv.join('\r\n')
+    console.log(csv)
+
+    let dataURL = 'data:text/csv;charset=utf-8,' + csv;
+    var encodedUri = encodeURI(dataURL);
+    window.open(encodedUri);
 
 }
 
@@ -131,8 +147,6 @@ getData(url_category_updateTime).then(data => {
     categories_updateTime = data
 
 })
-
-
 
 // Call Api and set variable for SWAC components
 var description_record;
@@ -147,7 +161,7 @@ getData(url_dataset).then(data =>{
 
 var dataset_keys;
 getData(url_dataset_keys).then(data => {
-    dataset_keys = data
+    dataset_keys = data.attributes
 })
 
 

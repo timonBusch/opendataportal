@@ -15,13 +15,13 @@ function postData(url, data) {
     })
         .then(response => response.json())
 }
-
+/*
 function subscribe() {
     let mail = document.getElementById("subscribe_input")
     alert(mail.value)
 
 }
-
+*/
 function promptInput(input = "") {
     UIkit.util.on('#subscribe_modal', 'click', function (e) {
         UIkit.modal.prompt('Name:', 'Your name').then(function (name) {
