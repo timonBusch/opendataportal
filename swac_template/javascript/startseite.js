@@ -21,22 +21,42 @@ function getCheckedBoxes(chkboxName) {
 }
 
 /**
+ * Checks if the category already exists
+ *
+ * @param catName
+ * @returns {boolean}
+ */
+function isNewCategory(catName){
+    for (var i = 0; i <categories.length; i++){
+        if (categories[i]["name"] === catName){
+            return false;
+        }
+    }
+    return true;
+}
+
+/**
  * Checks if the inputs are filled - if yes, the methods to send POST-requests are executed
  */
 function addCategory(){
-    let alertMsg = "Bitte geben Sie einen Namen, eine Beschreibung und mindestens eine Tabelle an."
+    let missingMsg = "Bitte geben Sie einen Namen, eine Beschreibung und mindestens eine Tabelle an.";
+    let duplicateMsg = "Eine Kategorie mit diesem Namen ist bereits vorhanden.";
     var checkedTables = [];
     var checkedBoxes = getCheckedBoxes("checkedTables");
     var catName = document.getElementById("catname").value;
     var catDescription = document.getElementById("catdescription").value;
     if (checkedBoxes !== null && catDescription !== "" && catName !== "") {
-        checkedBoxes.forEach(item => {
-            checkedTables.push(item);
-        })
-        postCategory(catName, catDescription);
-        postTBL_Category(catName, checkedTables);
+        if (isNewCategory(catName)) {
+            checkedBoxes.forEach(item => {
+                checkedTables.push(item);
+            })
+            postCategory(catName, catDescription);
+            postTBL_Category(catName, checkedTables);
+        } else {
+            alert(duplicateMsg)
+        }
     } else {
-        alert(alertMsg);
+        alert(missingMsg);
     }
 }
 
@@ -94,8 +114,8 @@ function postCategory(name, description) {
 function postTBL_Category(catName, checkedTables) {
     let formBody = [];
     let idsEncodedKey = encodeURIComponent("table_ids");
-    let idsEncodedValue = encodeURIComponent(checkedTables)
-    formBody.push(idsEncodedKey + "=" + idsEncodedValue)
+    let idsEncodedValue = encodeURIComponent(checkedTables);
+    formBody.push(idsEncodedKey + "=" + idsEncodedValue);
     let nameEncodedKey = encodeURIComponent("name");
     let nameEncodedValue = encodeURIComponent(catName);
     formBody.push(nameEncodedKey + "=" + nameEncodedValue);
@@ -109,12 +129,10 @@ const promiseOfSomeJsonData =
     fetch(url)
         .then(r=>r.json())
         .then(data => {
-            fetchedtables = data
-            console.log("in async");
+            fetchedtables = data;
             return fetchedtables;
         });
 
 window.onload = async () => {
     let someData = await promiseOfSomeJsonData;
-    console.log("onload");
 };
