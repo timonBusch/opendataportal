@@ -151,21 +151,8 @@
                             <a class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: download"></a>
                             <button id="export_csv" class="uk-button uk-button-default">CSV-Export</button>
                         </div>
+                        <a class="uk-button uk-button-default" href="#code_example_modal" uk-toggle>Codebeispiele</a>
 
-                        <div class="uk-button-group">
-                            <button class="uk-button uk-button-default">Codebeispiele</button>
-                            <div class="uk-inline">
-                                <button class="uk-button uk-button-default" type="button"><span uk-icon="icon:  triangle-down"></span></button>
-                                <div uk-dropdown="mode: click; boundary: ! .uk-button-group; boundary-align: true;">
-                                    <ul class="uk-nav uk-dropdown-nav">
-                                        <li class="uk-active"><a href="#">Java</a></li>
-                                        <li><a href="#">Python</a></li>
-                                        <li><a href="#">JavaScript</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -213,6 +200,16 @@
                     </div>
                 </div>
 
+                <!-- Pop-up Code Beispiele -->
+                <div id="code_example_modal" class="uk-modal-container" uk-modal>
+
+                    <div id="" class="uk-modal-dialog uk-modal-body">
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+
+                    </div>
+
+                </div>
+
                 <!-- Trenner -->
                 <hr class="uk-divider-icon">
 
@@ -257,8 +254,6 @@
 
             </div>
         </div>
-
-
 
 
         <footer>
