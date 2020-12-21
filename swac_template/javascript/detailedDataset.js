@@ -14,8 +14,7 @@ window.onload = function () {
     document.getElementById("export_json").addEventListener("click", exportComponentAsJson)
     document.getElementById("export_csv").addEventListener("click", exportComponentAsCSV)
     document.getElementById("comment_bt").addEventListener("click", postComment)
-    //document.getElementById("subscribe_icon").addEventListener("click", subscribe)
-    document.getElementById("subscribe_bt").addEventListener("click", )
+    document.getElementById("subscribe_bt").addEventListener("click", subscribe)
 
 
 }
