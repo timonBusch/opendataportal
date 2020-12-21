@@ -15,11 +15,7 @@ window.onload = function () {
     document.getElementById("export_csv").addEventListener("click", exportComponentAsCSV)
     document.getElementById("comment_bt").addEventListener("click", postComment)
     //document.getElementById("subscribe_icon").addEventListener("click", subscribe)
-    document.getElementById("subscribe_bt").addEventListener("click", function (e) {
-        e.preventDefault()
-        let mail = document.getElementById("subscribe_input").value
-       console.log(mail)
-    })
+    document.getElementById("subscribe_bt").addEventListener("click", )
 
 
 }
@@ -94,6 +90,7 @@ let filter_attributes = function (evt) {
     }
 
     let new_dataset_url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&includes=" + include_string + "&size=20&countonly=false&deflatt=false"
+    console.log(new_dataset_url)
     getData(new_dataset_url).then(data => {
         dataset = data
         setComponentData(component)
@@ -109,11 +106,6 @@ function setComponentData(component) {
     component.swac_comp.addData("data_preview", dataset.records)
 }
 
-let subscribe = function () {
-    let mail = document.getElementById("subscribe_input")
-    console.log(mail.value)
-
-}
 
 /**
  * Exports a component as JSON file
