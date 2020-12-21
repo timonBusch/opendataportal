@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <title>Startseite</title>
 
-    <script src="../data/exampleCategories.js"></script>
-    <script src="../javascript/getCategories.js"></script>
-    <script src="../javascript/getTables.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/global.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
@@ -14,102 +11,103 @@
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" type="text/css" href="../css/startseite.css">
 
+    <script src="../javascript/getCategories.js"></script>
     <script src="../libs/uikit/js/uikit.min.js"></script>
     <script src="../libs/uikit/js/uikit-icons.min.js"></script>
     <script src="../swac/swac.js"></script>
     <script src="../javascript/filter.js"></script>
     <script src="../javascript/startseite.js"></script>
 </head>
+
 <body style="background-color: #f8f8f8;">
-<!-- Header -->
-<div class="headContent">
+    <!-- Header -->
+    <div class="headContent">
 
-    <!-- Logo einbinden -->
-    <h1 id="logo" class="uk-heading uk-text-center">
-        <a href="startseite.html">
-            <img src="../img/logo.png"/>
-        </a>
-    </h1>
+        <!-- Logo einbinden -->
+        <h1 id="logo" class="uk-heading uk-text-center">
+            <a href="startseite.html">
+                <img src="../img/logo.png"/>
+            </a>
+        </h1>
 
-    <!-- Navigation zwischen den Seiten -->
-    <div id="navbar" class="uk-text-center">
-        <img src="images/light.jpg" alt="">
-        <div class="uk-position-center">
-            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-                <div  class="uk-navbar">
-                    <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="outline.html">Daten</a></li>
-                        <li><a href="impressum.html">Impressum</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
-
-    <div>
-        <a id="newcat" class="uk-button uk-button-default" href="#datasets_modal" uk-toggle style="position: relative; width: 400px; left: 50%; margin-left: -200px; border-radius: 30px 30px 30px 30px;">
-            Neue Kategorie hinzufügen
-        </a>
-    </div>
-
-    <!-- Trenner -->
-    <hr class="uk-divider-icon">
-</div>
-<!-- Startseite -->
-<h2 id="headline">Stöbern Sie in den folgenden Kategorien</h2>
-<div class="uk-section uk-section-muted" style="position: relative; width: 1800px; left: 50%; margin-left: -590px;">
-    <div class="uk-column-1-4">
-        <div id="showAll" style="border: none;">
-            <div class="uk-column-1-4">
-                <a id="category_card_all" class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" onclick="startfilter('all')" href="outline.html" style="margin-bottom:30px">
-                    <div class="uk-card-body">
-                        <h5 id="all">Alles</h5>
+        <!-- Navigation zwischen den Seiten -->
+        <div id="navbar" class="uk-text-center">
+            <img src="images/light.jpg" alt="">
+            <div class="uk-position-center">
+                <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                    <div  class="uk-navbar">
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-active"><a href="outline.html">Daten</a></li>
+                            <li><a href="impressum.html">Impressum</a></li>
+                        </ul>
                     </div>
-                </a>
-                <div uk-drop>
-                    <div class="uk-card uk-card-body uk-card-default uk-animation-fade hovertext" style="padding: 20px;">ZEIGT ALLE TABELLEN AN</div>
-                </div>
+                </nav>
             </div>
         </div>
-        <div id="category_example_007" swa="Present FROM categories" style="border: none;">
-            <div class="uk-column-1-4 swac_repeatForSet" style="margin-bottom:30px">
-                <a id="category_card" class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" onclick="startfilter('{name}')" href="outline.html">
-                    <div class="uk-card-body">
-                        <h5 id="{name}">{name}</h5>
-                    </div>
+
+        <div>
+            <a id="newcat" class="uk-button uk-button-default" href="#datasets_modal" uk-toggle style="position: relative; width: 400px; left: 50%; margin-left: -200px; border-radius: 30px 30px 30px 30px;">
+                Neue Kategorie hinzufügen
+            </a>
+        </div>
+
+        <!-- Trenner -->
+        <hr class="uk-divider-icon">
+    </div>
+
+    <!-- Startseite -->
+    <h2 id="headline">Stöbern Sie in den folgenden Kategorien</h2>
+    <div class="uk-section uk-section-muted" style="position: relative; width: 1400px; left: 50%; margin-left: -700px;">
+        <div class="uk-column-1-4">
+            <div id="showAll" style="border: none;">
+                <div class="uk-column-1-4">
+                    <a id="category_card_all" class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" onclick="startfilter('all')" href="outline.html" style="margin-bottom:30px">
+                        <div class="uk-card-body">
+                            <h5 id="all">Alles</h5>
+                        </div>
+                    </a>
                     <div uk-drop>
-                        <div class="uk-card uk-card-body uk-card-default uk-animation-fade hovertext" style="padding: 20px;">{description}</div>
+                        <div class="uk-card uk-card-body uk-card-default uk-animation-fade hovertext" style="padding: 20px;">ZEIGT ALLE TABELLEN AN</div>
                     </div>
-                </a>
-
+                </div>
+            </div>
+            <div id="present_categories" swa="Present FROM categories" style="border: none;">
+                <div class="uk-column-1-4 swac_repeatForSet" style="margin-bottom:30px">
+                    <a id="category_card" class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" onclick="startfilter('{name}')" href="outline.html">
+                        <div class="uk-card-body">
+                            <h5 id="{name}">{name}</h5>
+                        </div>
+                        <div uk-drop>
+                            <div class="uk-card uk-card-body uk-card-default uk-animation-fade hovertext" style="padding: 20px;">{description}</div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div id="datasets_modal" uk-modal>
-    <div class="uk-modal-dialog" style="border-radius: 10px 10px 10px 10px;">
-        <button class="uk-modal-close-default" type="button" uk-close></button>
 
-        <div class="uk-modal-body uk-text-center">
-            <h2 class="uk-modal-title">Kategorie hinzufügen</h2>
-            <input type="text" id="catname" name="catName" placeholder="Kategoriename">
-            <textarea id="catdescription" name="catName" placeholder="Beschreibung..."></textarea>
-            <p>Bitte wählen Sie die Tabellen aus, die zur Kategorie gehören:</p>
-            <div class="uk-panel-scrollable uk-height-small uk-width-expand uk-text-center">
-                <form id="present_tables" swa="Present FROM fetchedData" class="uk-grid-small remove_border" uk-grid>
-                    <div class="swac_repeatForSet" style="width: 100%; text-align: initial;">
-                        <label><input name="checkedTables" class="uk-checkbox" type="checkbox" value="{title}" id="{tbl_id}"> {title}</label>
-                    </div>
-                </form>
+    <!-- Popup: Add category -->
+    <div id="datasets_modal" uk-modal>
+        <div class="uk-modal-dialog" style="border-radius: 10px 10px 10px 10px;">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-body uk-text-center">
+                <h2 class="uk-modal-title">Kategorie hinzufügen</h2>
+                <input type="text" id="catname" name="catName" placeholder="Kategoriename">
+                <textarea id="catdescription" name="catName" placeholder="Beschreibung..."></textarea>
+                <p>Bitte wählen Sie die Tabellen aus, die zur Kategorie gehören:</p>
+                <div class="uk-panel-scrollable uk-height-small uk-width-expand uk-text-center">
+                    <form id="present_tables" swa="Present FROM fetchedtables" class="uk-grid-small remove_border" uk-grid>
+                        <div class="swac_repeatForSet" style="width: 100%; text-align: initial;">
+                            <label><input name="checkedTables" class="uk-checkbox" type="checkbox" value="{title}" id="{tbl_id}"> {title}</label>
+                        </div>
+                    </form>
+                </div>
             </div>
-
-
-        </div>
-        <div class="uk-modal-footer uk-text-center" style="border-radius: 0px 0px 10px 10px">
-            <button id="addCategory" class="uk-button uk-button-primary uk-modal-close" type="button" onclick="addCategory()">Fertig</button>
+            <div class="uk-modal-footer uk-text-center" style="border-radius: 0px 0px 10px 10px">
+                <button id="addCategory" class="uk-button uk-button-primary uk-modal-close" type="button" onclick="addCategory()">Fertig</button>
+            </div>
         </div>
     </div>
-</div>
 </body>
 <footer>
     <ul>

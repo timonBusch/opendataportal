@@ -1,3 +1,11 @@
+let url = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category"
+var fetchedtables = [];
+
+/**
+ * Checks which boxes are checked and returns their ids
+ * @param chkboxName
+ * @returns {[]|null}
+ */
 function getCheckedBoxes(chkboxName) {
     var checkboxes = document.getElementsByName(chkboxName);
     var checkboxesChecked = [];
@@ -12,23 +20,53 @@ function getCheckedBoxes(chkboxName) {
     return checkboxesChecked.length > 0 ? checkboxesChecked : null;
 }
 
+/**
+ * Checks if the category already exists
+ *
+ * @param catName
+ * @returns {boolean}
+ */
+function isNewCategory(catName){
+    for (var i = 0; i <categories.length; i++){
+        if (categories[i]["name"] === catName){
+            return false;
+        }
+    }
+    return true;
+}
+
+/**
+ * Checks if the inputs are filled - if yes, the methods to send POST-requests are executed
+ */
 function addCategory(){
-    let alertMsg = "Bitte geben Sie einen Namen, eine Beschreibung und mindestens eine Tabelle an."
+    let missingMsg = "Bitte geben Sie einen Namen, eine Beschreibung und mindestens eine Tabelle an.";
+    let duplicateMsg = "Eine Kategorie mit diesem Namen ist bereits vorhanden.";
     var checkedTables = [];
     var checkedBoxes = getCheckedBoxes("checkedTables");
     var catName = document.getElementById("catname").value;
     var catDescription = document.getElementById("catdescription").value;
     if (checkedBoxes !== null && catDescription !== "" && catName !== "") {
-        checkedBoxes.forEach(item => {
-            checkedTables.push(item);
-        })
-        postCategory(catName, catDescription);
-        postTBL_Category(catName, checkedTables);
+        if (isNewCategory(catName)) {
+            checkedBoxes.forEach(item => {
+                checkedTables.push(item);
+            })
+            postCategory(catName, catDescription);
+            postTBL_Category(catName, checkedTables);
+        } else {
+            alert(duplicateMsg)
+        }
     } else {
-        alert(alertMsg);
+        alert(missingMsg);
     }
 }
 
+/**
+ * Posts given data to the given url
+ *
+ * @param url
+ * @param data
+ * @returns {Promise<void>}
+ */
 function postData(url, data) {
     return fetch(url, {
         body: data,
@@ -45,13 +83,17 @@ function postData(url, data) {
         .then(response => console.log(response));
 }
 
-
+/**
+ * POST to insert a new category
+ *
+ * @param name
+ * @param description
+ */
 function postCategory(name, description) {
     let category = {
         'name': name,
         'description': description
     }
-
     let formBody = [];
     for (let property in category) {
         let encodedKey = encodeURIComponent(property);
@@ -63,11 +105,17 @@ function postCategory(name, description) {
     postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addCategory", formBody);
 }
 
+/**
+ * POST to record the selected tables which belong to the created category
+ *
+ * @param catName - category name
+ * @param checkedTables - selected tables
+ */
 function postTBL_Category(catName, checkedTables) {
     let formBody = [];
     let idsEncodedKey = encodeURIComponent("table_ids");
-    let idsEncodedValue = encodeURIComponent(checkedTables)
-    formBody.push(idsEncodedKey + "=" + idsEncodedValue)
+    let idsEncodedValue = encodeURIComponent(checkedTables);
+    formBody.push(idsEncodedKey + "=" + idsEncodedValue);
     let nameEncodedKey = encodeURIComponent("name");
     let nameEncodedValue = encodeURIComponent(catName);
     formBody.push(nameEncodedKey + "=" + nameEncodedValue);
@@ -76,3 +124,15 @@ function postTBL_Category(catName, checkedTables) {
 
     postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addTBLCategory", formBody);
 }
+
+const promiseOfSomeJsonData =
+    fetch(url)
+        .then(r=>r.json())
+        .then(data => {
+            fetchedtables = data;
+            return fetchedtables;
+        });
+
+window.onload = async () => {
+    let someData = await promiseOfSomeJsonData;
+};

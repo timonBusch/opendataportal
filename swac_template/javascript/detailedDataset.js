@@ -1,25 +1,4 @@
 
-window.onload = function () {
-
-
-
-    getData(url_dataset_count).then(data => {
-        let count = data
-        let number = document.getElementById("number_dataset");
-        number.textContent = count.records[0].count + " Datensätze zur Verfügung";
-    })
-
-
-    document.getElementById("filter_attributes").addEventListener("click", filter_attributes)
-    document.getElementById("export_json").addEventListener("click", exportComponentAsJson)
-    document.getElementById("export_csv").addEventListener("click", exportComponentAsCSV)
-    document.getElementById("comment_bt").addEventListener("click", postComment)
-    //document.getElementById("subscribe_icon").addEventListener("click", subscribe)
-    document.getElementById("subscribe_bt").addEventListener("click", )
-
-
-}
-
 const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString)
@@ -30,6 +9,25 @@ const url_dataset = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand
 const url_dataset_count = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=0&countonly=true&deflatt=false"
 const url_dataset_keys = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/collection/data_" + id + "/getAttributes?storage=smartmonitoring"
 const url_category_updateTime = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category/tbl_cat_id?tbl_cat_id=" + id
+
+window.onload = function () {
+
+    getData(url_dataset_count).then(data => {
+        let count = data
+        let number = document.getElementById("number_dataset");
+        number.textContent = count.records[0].count + " Datensätze zur Verfügung";
+    })
+
+    document.getElementById("filter_attributes").addEventListener("click", filter_attributes)
+    document.getElementById("export_json").addEventListener("click", exportComponentAsJson)
+    document.getElementById("export_csv").addEventListener("click", exportComponentAsCSV)
+    document.getElementById("comment_bt").addEventListener("click", postComment)
+    document.getElementById("subscribe_bt").addEventListener("click", subscribe)
+
+    subscribe(("http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false"))
+
+}
+
 
 /**
  * Get data from smartdata REST API
@@ -66,7 +64,7 @@ function getCheckedBoxes(chkboxName) {
  * Generates the API call to only get the selected attributes
  * @param evt
  */
-let filter_attributes = function (evt) {
+function filter_attributes(){
 
     var checkedBoxes = getCheckedBoxes("checkAttrib")
     let component = document.getElementById("data_preview")
@@ -90,11 +88,12 @@ let filter_attributes = function (evt) {
     }
 
     let new_dataset_url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&includes=" + include_string + "&size=20&countonly=false&deflatt=false"
-    console.log(new_dataset_url)
+    setJavaExample(new_dataset_url)
     getData(new_dataset_url).then(data => {
         dataset = data
         setComponentData(component)
     })
+
 
 }
 
