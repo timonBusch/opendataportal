@@ -1,5 +1,5 @@
 """
-to start with phyton, you need to install requests:
+to start with python, you need to install requests:
 pip install requests
 OR
 conda install requests
