@@ -6,13 +6,12 @@ conda install requests
 """
 
 import requests
+import json
 
 #response is an object
 response = requests.get("http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_11?storage=smartmonitoring&includes=pmpp%2Cid%2Cu0%2Cumpp%2Cts%2Cmodule_temp&size=20&countonly=false&deflatt=false")
 
 #you can make it to json like this:
-import json
-
 print(response.json())
 
 """

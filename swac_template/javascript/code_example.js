@@ -1,7 +1,7 @@
 
 
 
-function setJavaExample(apiURL) {
+function setExample(apiURL) {
 
     let exJava =
         "import java.io.BufferedReader;\n" +
@@ -130,5 +130,48 @@ function setJavaExample(apiURL) {
         "\n" +
         "}\n"
 
+    let exPython = "\"\"\"\n" +
+        "to start with python, you need to install requests:\n" +
+        "pip install requests\n" +
+        "OR\n" +
+        "conda install requests\n" +
+        "\"\"\"\n" +
+        "\n" +
+        "import requests\n" +
+        "import json\n" +
+        "\n" +
+        "#response is an object\n" +
+        "response = requests.get(\""+ apiURL +"\")\n" +
+        "\n" +
+        "#you can make it to json like this:\n" +
+        "print(response.json())\n" +
+        "\n" +
+        "\"\"\"\n" +
+        "response.status_code\n" +
+        "\n" +
+        "helps to find errors.\n" +
+        "200: Everything went okay, and the result has been returned (if any).\n" +
+        "301: The server is redirecting you to a different endpoint. This can happen when a company switches domain names, or an endpoint name is changed.\n" +
+        "400: The server thinks you mad a bad request. This can happen when you do not send along the right data, among other things.\n" +
+        "401: The server thinks you are not authenticated. Many APIs require login ccredentials, so this happens when you do not send the right credentials to access an AIP.\n" +
+        "403: The resource you are trying to access is forbidden: you do not have the right permissions to see it.\n" +
+        "404: The resource yuo tried to access was not found on the server.\n" +
+        "503: The server is not ready to handle the request.\n" +
+        "\"\"\"\n"
+
+    let exJavaScript =
+        "function getData() {\n" +
+        "    fetch(\""+ apiURL +"\").then(function(response) {\n" +
+        "        return response.json();\n" +
+        "    }).then(function(data) {\n" +
+        "        console.log(data);\n" +
+        "    }).catch(function() {\n" +
+        "        console.log(\"Booo\");\n" +
+        "    });\n" +
+        "}"
+
     document.getElementById("example_java").innerText = exJava
+    document.getElementById("example_python").innerText = exPython
+    document.getElementById("example_javaScript").innerText = exJavaScript
 }
+

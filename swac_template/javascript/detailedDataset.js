@@ -24,7 +24,7 @@ window.onload = function () {
     document.getElementById("comment_bt").addEventListener("click", postComment)
     document.getElementById("subscribe_bt").addEventListener("click", subscribe)
 
-    subscribe(("http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false"))
+    setExample("http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false")
 
 }
 
@@ -88,7 +88,7 @@ function filter_attributes(){
     }
 
     let new_dataset_url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&includes=" + include_string + "&size=20&countonly=false&deflatt=false"
-    setJavaExample(new_dataset_url)
+    setExample(new_dataset_url)
     getData(new_dataset_url).then(data => {
         dataset = data
         setComponentData(component)
@@ -115,7 +115,6 @@ function exportComponentAsJson() {
 }
 
 function exportComponentAsCSV() {
-
 
     const items = dataset.records
     const replacer = (key, value) => value === null ? '' : value // specify how you want to handle null values here
@@ -154,7 +153,6 @@ var dataset_keys;
 getData(url_dataset_keys).then(data => {
     dataset_keys = data.attributes
 })
-
 
 
 
