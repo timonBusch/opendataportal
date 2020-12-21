@@ -1,3 +1,11 @@
+let url = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category"
+var fetchedtables = [];
+
+/**
+ * Checks which boxes are checked and returns their ids
+ * @param chkboxName
+ * @returns {[]|null}
+ */
 function getCheckedBoxes(chkboxName) {
     var checkboxes = document.getElementsByName(chkboxName);
     var checkboxesChecked = [];
@@ -12,6 +20,9 @@ function getCheckedBoxes(chkboxName) {
     return checkboxesChecked.length > 0 ? checkboxesChecked : null;
 }
 
+/**
+ * Checks if the inputs are filled - if yes, the methods to send POST-requests are executed
+ */
 function addCategory(){
     let alertMsg = "Bitte geben Sie einen Namen, eine Beschreibung und mindestens eine Tabelle an."
     var checkedTables = [];
@@ -29,6 +40,13 @@ function addCategory(){
     }
 }
 
+/**
+ * Posts given data to the given url
+ *
+ * @param url
+ * @param data
+ * @returns {Promise<void>}
+ */
 function postData(url, data) {
     return fetch(url, {
         body: data,
@@ -45,13 +63,17 @@ function postData(url, data) {
         .then(response => console.log(response));
 }
 
-
+/**
+ * POST to insert a new category
+ *
+ * @param name
+ * @param description
+ */
 function postCategory(name, description) {
     let category = {
         'name': name,
         'description': description
     }
-
     let formBody = [];
     for (let property in category) {
         let encodedKey = encodeURIComponent(property);
@@ -63,6 +85,12 @@ function postCategory(name, description) {
     postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addCategory", formBody);
 }
 
+/**
+ * POST to record the selected tables which belong to the created category
+ *
+ * @param catName - category name
+ * @param checkedTables - selected tables
+ */
 function postTBL_Category(catName, checkedTables) {
     let formBody = [];
     let idsEncodedKey = encodeURIComponent("table_ids");
@@ -76,3 +104,17 @@ function postTBL_Category(catName, checkedTables) {
 
     postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addTBLCategory", formBody);
 }
+
+const promiseOfSomeJsonData =
+    fetch(url)
+        .then(r=>r.json())
+        .then(data => {
+            fetchedtables = data
+            console.log("in async");
+            return fetchedtables;
+        });
+
+window.onload = async () => {
+    let someData = await promiseOfSomeJsonData;
+    console.log("onload");
+};
