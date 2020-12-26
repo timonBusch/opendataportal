@@ -18,7 +18,9 @@
         <script src="../javascript/subscribe.js"></script>
         <script src="../javascript/comments.js"></script>
         <script src="../javascript/validatedData.js"></script>
+        <script src="../javascript/code_example.js"></script>
         <script src="../javascript/detailedDataset.js"></script>
+
 
         <script src="../libs/uikit/js/uikit-icons.min.js"></script>
 
@@ -121,6 +123,27 @@
                     </div>
                 </div>
 
+                <!-- Pop-up Code Beispiele -->
+                <div id="code_example_modal" class="uk-modal-container" uk-modal>
+
+                    <div id="" class="uk-modal-dialog uk-modal-body">
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+
+                        <ul uk-tab>
+                            <li><a href="#">Java</a></li>
+                            <li><a href="#">Python</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                        </ul>
+
+                        <ul class="uk-switcher uk-margin">
+                            <li><pre><code id="example_java"></code></pre></li>
+                            <li><pre><code id="example_python"></code></pre></li>
+                            <li><pre><code id="example_javaScript"></code></pre></li>
+                        </ul>
+                    </div>
+
+                </div>
+
                 <!-- Pop-up zum abonnieren der Tabelle -->
                 <div id="subscribe_modal" uk-modal>
                     <div class="uk-modal-dialog">
@@ -200,15 +223,7 @@
                     </div>
                 </div>
 
-                <!-- Pop-up Code Beispiele -->
-                <div id="code_example_modal" class="uk-modal-container" uk-modal>
 
-                    <div id="" class="uk-modal-dialog uk-modal-body">
-                        <button class="uk-modal-close-default" type="button" uk-close></button>
-
-                    </div>
-
-                </div>
 
                 <!-- Trenner -->
                 <hr class="uk-divider-icon">
