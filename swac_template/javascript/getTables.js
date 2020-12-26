@@ -20,9 +20,7 @@ const promiseOfSomeJsonData =
 window.onload = async () => {
     let someData = await promiseOfSomeJsonData;
     console.log("onload");
-    setTimeout(function (){
+    SWAC_reactions.addReaction(function () {
         displayResult(getFilterFromLS());
-        //sortData("asc");
-    }, 1500); //vorerst Timer, weil zu langsam geladen wird. Später mit callback nach cat-fetch
-
+    }, "present_categories");
 };

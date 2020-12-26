@@ -10,43 +10,39 @@ var exampleoptions = {
  */
 function sortData(option){
     let fd = document.getElementById("fetchedDatasets");
-
+    let sortedArray = [];
+    let sortedFetchedData = [];
     switch(option) {
         case "newest":
-            let newestSortedArray = fd.swac_comp.getDataSorted("updateTime");
+            sortedArray = fd.swac_comp.getDataSorted("updateTime");
             fd.swac_comp.removeAllData();
-            //fd.swac_comp.addDataFromReference(sortedArray);
-            let nfdd = newestSortedArray["fetchedData"];
-            for (elem in nfdd) {
-                fd.swac_comp.addSet("fetchedData", nfdd[elem]);
+            sortedFetchedData = sortedArray["fetchedData"];
+            for (elem in sortedFetchedData) {
+                fd.swac_comp.addSet("fetchedData", sortedFetchedData[elem]);
             }
-            console.log(fd.swac_comp);
             break;
         case "oldest":
-            let oldestSortedArray = fd.swac_comp.getDataSortedReversed("updateTime");
+            sortedArray = fd.swac_comp.getDataSortedReversed("updateTime");
             fd.swac_comp.removeAllData();
-            //fd.swac_comp.addDataFromReference(sortedArray);
-            let ofdd = oldestSortedArray["fetchedData"];
-            for (elem in ofdd) {
-                fd.swac_comp.addSet("fetchedData", ofdd[elem]);
+            sortedFetchedData = sortedArray["fetchedData"];
+            for (elem in sortedFetchedData) {
+                fd.swac_comp.addSet("fetchedData", sortedFetchedData[elem]);
             }
             break;
         case "asc":
-            let sortedArray = fd.swac_comp.getDataSorted("title");
+            sortedArray = fd.swac_comp.getDataSorted("title");
             fd.swac_comp.removeAllData();
-            //fd.swac_comp.addDataFromReference(sortedArray);
-            let fdd = sortedArray["fetchedData"];
-            for (elem in fdd) {
-                fd.swac_comp.addSet("fetchedData", fdd[elem]);
+            sortedFetchedData = sortedArray["fetchedData"];
+            for (elem in sortedFetchedData) {
+                fd.swac_comp.addSet("fetchedData", sortedFetchedData[elem]);
             }
             break;
         case "desc":
-            let rSortedArray = fd.swac_comp.getDataSortedReversed("title");
+            sortedArray = fd.swac_comp.getDataSortedReversed("title");
             fd.swac_comp.removeAllData();
-            //fd.swac_comp.addDataFromReference(rSortedArray);
-            let rfdd = rSortedArray["fetchedData"];
-            for (elem in rfdd) {
-                fd.swac_comp.addSet("fetchedData", rfdd[elem]);
+            sortedFetchedData = sortedArray["fetchedData"];
+            for (elem in sortedFetchedData) {
+                fd.swac_comp.addSet("fetchedData", sortedFetchedData[elem]);
             }
             break;
     }
