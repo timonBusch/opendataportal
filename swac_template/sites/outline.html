@@ -107,7 +107,7 @@
                                         <p>
                                             <div class="uk-inline" style="z-index: 50;">
                                                 <strong>Kategorien:</strong>
-                                                <button uk-icon="icon: pencil" uk-toggle="target: #addToCategory_modal" type="button" onclick="addCat(2, '{categories}')" class="uk-button uk-button-default" type="button" style="border: none; padding: 0; margin-top: -10px;"></button>
+                                                <button uk-icon="icon: pencil" uk-toggle="target: #addToCategory_modal" type="button" onclick="setChecks('{tbl_id}', '{categories}')" class="uk-button uk-button-default" type="button" style="border: none; padding: 0; margin-top: -10px;"></button>
                                             </div>
                                         <p>
                                         <div class="cat">{categories}</div>
@@ -139,13 +139,13 @@
             <div class="uk-panel-scrollable uk-height-small uk-width-expand uk-text-center">
                 <form id="present_toAddCategories" swa="Present FROM fetchedCategories" class="uk-grid-small remove_border" uk-grid>
                     <div class="swac_repeatForSet" style="width: 100%; text-align: initial;">
-                        <label><input name="checkedTables" class="uk-checkbox" type="checkbox" value="{name}" id="cat_{id}"> {name}</label>
+                        <label><input name="checkedCategories" class="uk-checkbox" type="checkbox" value="{name}" id="cat_{id}"> {name}</label>
                     </div>
                 </form>
             </div>
         </div>
         <div class="uk-modal-footer uk-text-center" style="border-radius: 0px 0px 10px 10px">
-            <button id="addToCategoryBtn" class="uk-button uk-button-primary uk-modal-close" type="button" onclick="addToCategory()">Fertig</button>
+            <button id="addToCategoryBtn" class="uk-button uk-button-primary uk-modal-close" type="button" onclick="editCategories()">Fertig</button>
         </div>
     </div>
 </div>
