@@ -35,6 +35,7 @@
 .tablebox{
     display:flex!important;
 }
+
 div.clickable a {
     position:absolute;
     width:100%;

@@ -20,6 +20,7 @@
     <script src="../data/routes.js"></script>
     <script src="../javascript/search.js"></script>
     <script src="../javascript/order.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.5/dist/js/uikit-icons.min.js"></script>
 </head>
 
 <body style="background-color: #f8f8f8;">
@@ -75,7 +76,7 @@
                     <hr class="uk-divider-icon">
                     <h3 style="margin-top:0px;">Filtermöglichkeiten</h3>
                     <h6>Kategorien</h6>
-                    <div id="present_categories" swa="Present FROM categories" style="border: none;">
+                    <div id="present_categories" swa="Present FROM fetchedCategories" style="border: none;">
                         <div id="category-box" class="uk-panel uk-panel-scrollable" style="min-height: 250px;">
                             <ul class="uk-list">
                                 <li class="swac_repeatForSet">
@@ -103,7 +104,13 @@
                                     <div id="table-left">
                                         <h4>{title}</h4>
                                         <p>{description}</p>
-                                        <p><strong>Kategorie:</strong><div class="cat">{categories}</div></p>
+                                        <p>
+                                            <div class="uk-inline" style="z-index: 50;">
+                                                <strong>Kategorien:</strong>
+                                                <button uk-icon="icon: pencil" uk-toggle="target: #addToCategory_modal" type="button" onclick="addCat(2, '{categories}')" class="uk-button uk-button-default" type="button" style="border: none; padding: 0; margin-top: -10px;"></button>
+                                            </div>
+                                        <p>
+                                        <div class="cat">{categories}</div>
                                     </div>
                                     <div id="table-right">
                                         <p><strong>Letzte Änderung</strong></p>
@@ -119,6 +126,27 @@
             </section>
         </div>
         <a onclick="scrollUp()" id="up">up</a>
+    </div>
+</div>
+
+<!-- Popup: Add to category -->
+<div id="addToCategory_modal" uk-modal>
+    <div class="uk-modal-dialog" style="border-radius: 10px 10px 10px 10px;">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-body uk-text-center">
+            <h2 class="uk-modal-title">Kategorien der Tabelle bearbeiten</h2>
+            <p>Bitte wählen Sie entsprechende Kategorien aus:</p>
+            <div class="uk-panel-scrollable uk-height-small uk-width-expand uk-text-center">
+                <form id="present_toAddCategories" swa="Present FROM fetchedCategories" class="uk-grid-small remove_border" uk-grid>
+                    <div class="swac_repeatForSet" style="width: 100%; text-align: initial;">
+                        <label><input name="checkedTables" class="uk-checkbox" type="checkbox" value="{name}" id="cat_{id}"> {name}</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="uk-modal-footer uk-text-center" style="border-radius: 0px 0px 10px 10px">
+            <button id="addToCategoryBtn" class="uk-button uk-button-primary uk-modal-close" type="button" onclick="addToCategory()">Fertig</button>
+        </div>
     </div>
 </div>
 </body>

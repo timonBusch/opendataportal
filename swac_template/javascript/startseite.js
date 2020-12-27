@@ -27,8 +27,8 @@ function getCheckedBoxes(chkboxName) {
  * @returns {boolean}
  */
 function isNewCategory(catName){
-    for (var i = 0; i <categories.length; i++){
-        if (categories[i]["name"] === catName){
+    for (var i = 0; i < fetchedCategories.length; i++){
+        if (fetchedCategories[i]["name"] === catName){
             return false;
         }
     }
