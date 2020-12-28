@@ -12,6 +12,7 @@
     <noscript>
         <link rel="stylesheet" type="text/css" href="../css/noscript.css">
     </noscript>
+    <script src="../javascript/postData.js"></script>
     <script src="../swac/swac.js"></script>
     <script src="../javascript/getCategories.js"></script>
     <script src="../javascript/filter.js"></script>
@@ -99,7 +100,7 @@
                     <div id="fetchedDatasets" swa="Present FROM fetchedData OPTIONS fdOptions" style="border: none;">
                         <article class="swac_repeatForSet">
                             <ul>
-                                <div id="{id}" class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body" style="width: auto">
+                                <div id="{tbl_id}" class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body" style="width: auto">
                                     <a href="tabelle_details.html?id={tbl_id}"></a>
                                     <div id="table-left">
                                         <h4>{title}</h4>
@@ -107,7 +108,7 @@
                                         <p>
                                             <div class="uk-inline" style="z-index: 50;">
                                                 <strong>Kategorien:</strong>
-                                                <button uk-icon="icon: pencil" uk-toggle="target: #addToCategory_modal" type="button" onclick="setChecks('{tbl_id}', '{categories}')" class="uk-button uk-button-default" type="button" style="border: none; padding: 0; margin-top: -10px;"></button>
+                                                <button uk-icon="icon: pencil" uk-toggle="target: #addToCategory_modal" type="button" onclick="setChecks('{tbl_id}')" class="uk-button uk-button-default" type="button" style="border: none; padding: 0; margin-top: -10px;"></button>
                                             </div>
                                         <p>
                                         <div class="cat">{categories}</div>

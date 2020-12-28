@@ -15,12 +15,13 @@ getCategories();
 let checkedCategories = [];
 let tbl_id;
 
-function setChecks(id, cats){
+function setChecks(id){
+    let cats = document.getElementById(id).getElementsByClassName("cat")[0].textContent;
     let i;
     tbl_id = id;
     checkedCategories = [];
     for (i = 0; i < fetchedCategories.length; i++) {
-        if (fetchedCategories[i]["name"].includes(cats)) {
+        if (cats.includes(fetchedCategories[i]["name"])) {
             let checkBox = document.getElementById("cat_"+fetchedCategories[i]["id"]);
             checkBox.checked = true;
             checkedCategories.push(fetchedCategories[i]["id"].toString())
@@ -57,48 +58,55 @@ function containsAny(source,target){
 
 function assignCategories(startCategories, finCategories){
     let i;
-    for(i = 0; i < finCategories.length; i++){
-        if(containsAny(startCategories, finCategories[i])){
-            let index = startCategories.indexOf(finCategories[i]);
-            if (index > -1) {
-                startCategories.splice(index, 1);
-            }
-            index = finCategories.indexOf(finCategories[i]);
-            if (index > -1) {
-                finCategories.splice(index, 1);
+    if (finCategories == null) {
+        deleteCategories(startCategories);
+    } else {
+        for (i = 0; i < finCategories.length; i++) {
+            if (typeof startCategories !== 'undefined' && startCategories.length > 0) {
+                if (containsAny(startCategories, finCategories[i])) {
+                    let index = startCategories.indexOf(finCategories[i]);
+                    if (index > -1) {
+                        startCategories.splice(index, 1);
+                    }
+                    index = finCategories.indexOf(finCategories[i]);
+                    if (index > -1) {
+                        finCategories.splice(index, 1);
+                    }
+                }
+                deleteCategories(startCategories);
             }
         }
+        insertCategories(finCategories)
     }
-    console.log(startCategories); // deleten
-    console.log(finCategories); // inserten
 }
 
 function insertCategories(finCategories){
     let formBody = [];
     let tblidEncodedKey = encodeURIComponent("table_id");
-    let tblidEncodedValue = encodeURIComponent(id);
+    let tblidEncodedValue = encodeURIComponent(tbl_id);
     formBody.push(tblidEncodedKey + "=" + tblidEncodedValue);
-    let catidsEncodedKey = encodeURIComponent("cat_ids");
+    let catidsEncodedKey = encodeURIComponent("category_ids");
     let catidsEncodedValue = encodeURIComponent(finCategories);
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
 
     formBody = formBody.join("&");
 
     // Im Backend implementieren
-    // postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/insertTBLCategories", formBody);
+    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addTBLCategories", formBody);
 }
 
 function deleteCategories(startCategories){
     let formBody = [];
     let tblidEncodedKey = encodeURIComponent("table_id");
-    let tblidEncodedValue = encodeURIComponent(id);
+    let tblidEncodedValue = encodeURIComponent(tbl_id);
     formBody.push(tblidEncodedKey + "=" + tblidEncodedValue);
-    let catidsEncodedKey = encodeURIComponent("cat_ids");
+    let catidsEncodedKey = encodeURIComponent("category_ids");
     let catidsEncodedValue = encodeURIComponent(startCategories);
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
 
     formBody = formBody.join("&");
 
     // Im Backend implementieren
-    // postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/deleteTBLCategories", formBody);
+    console.log("to delete")
+    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/deleteTBLCategories", formBody);
 }

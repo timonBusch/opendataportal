@@ -161,9 +161,9 @@ function deleteCategory(){
     formBody.push(EncodedKey + "=" + EncodedValue);
     formBody = formBody.join("&");
 
-    //postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/deleteCategory", formBody);
+    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/deleteCategory", formBody);
     // if successfull, then:
-    location.reload()
+    //location.reload()
 }
 
 
@@ -180,7 +180,7 @@ function updateCategory(catDescription){
         formBody.push(encodedKey + "=" + encodedValue)
     }
     formBody = formBody.join("&")
-    //postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/updateCategory", formBody);
+    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/updateCategory", formBody);
     // if successfull, then:
-    location.reload()
+    //location.reload()
 }
