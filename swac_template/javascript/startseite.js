@@ -1,5 +1,6 @@
 let url = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category"
 var fetchedtables = [];
+let actCategory;
 
 /**
  * Checks which boxes are checked and returns their ids
@@ -136,3 +137,50 @@ const promiseOfSomeJsonData =
 window.onload = async () => {
     let someData = await promiseOfSomeJsonData;
 };
+
+function setActCategory(id){
+    actCategory = id;
+}
+
+function editCategory(){
+    let missingMsg = "Bitte geben Sie eine Beschreibung an.";
+    var catDescription = document.getElementById("categorydescription").value;
+    if (catDescription !== "") {
+        console.log("Kategoriebeschreibung anpassen von " + actCategory)
+        updateCategory(catDescription)
+    } else {
+        alert(missingMsg);
+    }
+}
+
+function deleteCategory(){
+    console.log("Löschen der Kategorie " + actCategory)
+    let formBody = [];
+    let EncodedKey = encodeURIComponent("id");
+    let EncodedValue = encodeURIComponent(actCategory);
+    formBody.push(EncodedKey + "=" + EncodedValue);
+    formBody = formBody.join("&");
+
+    //postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/deleteCategory", formBody);
+    // if successfull, then:
+    location.reload()
+}
+
+
+function updateCategory(catDescription){
+    let category = {
+        'id': actCategory,
+        'description': catDescription
+    }
+
+    let formBody = []
+    for (let property in category) {
+        let encodedKey = encodeURIComponent(property)
+        let encodedValue = encodeURIComponent(category[property])
+        formBody.push(encodedKey + "=" + encodedValue)
+    }
+    formBody = formBody.join("&")
+    //postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/updateCategory", formBody);
+    // if successfull, then:
+    location.reload()
+}
