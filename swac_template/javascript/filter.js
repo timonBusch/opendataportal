@@ -1,4 +1,4 @@
-let display = [];
+let filter = [];
 
 /**
  * If a filteroption is checked/unchecked the item will be added/removed from ls
@@ -67,48 +67,32 @@ function getFilterFromLS() {
  * @param checkedFilter - checked filteroptions
  */
 function displayResult(checkedFilter) {
+    filter = [];
     var category, card, ul, i, j, countTables=0;
-    display = [];
     card = document.getElementById("fetchedDatasets");
-    if (searched.length === 0){
-        ul = card.getElementsByTagName('ul');
-    } else {
-        j = searched.length;
-        ul = [];
-        while(j--) ul[j] = searched[j];
-    }
-    //ul = card.getElementsByTagName('ul');
+    ul = card.getElementsByTagName('ul');
+    // wenn kein Filter, alles in Display
     if (checkedFilter.length === 0) {
         for (i = 0; i < ul.length; i++) {
-            ul[i].style.display = "";
-            if (i < ul.length-1){
-                countTables++;
+            if(filter.indexOf(ul[i]) === -1) {
+                filter.push(ul[i]);
             }
         }
     } else {
+        // wenn Filter gesetzt: für jedes Häkchen:
         for (elem in checkedFilter) {
             for (i = 0; i < ul.length; i++) {
                 category = ul[i].getElementsByClassName("cat")[0];
                 if (category.innerHTML.includes(checkedFilter[elem])) {
-                    display.push(ul[i]);
+                    if(filter.indexOf(ul[i]) === -1) {
+                        filter.push(ul[i]);
+                    }
                 }
-                ul[i].style.display = "none";
             }
         }
-        for (i = 0; i < display.length; i++) {
-            if(display[i].style.display !== ""){
-                countTables ++;
-            }
-            display[i].style.display = "";
-        }
     }
-
-    tableNumber = document.getElementById('tableNumber');
-    if(checkedFilter === "") {
-        tableNumber.textContent = "Anzahl der Treffer: " + ul.length;
-    } else{
-        tableNumber.textContent = "Anzahl der Treffer: " + countTables.toString();
-    }
+    console.log(filter.length)
+    displayElements()
 }
 
 /**
