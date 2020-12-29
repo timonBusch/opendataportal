@@ -18,5 +18,7 @@ function postData(url, data) {
         redirect: 'follow',
         referrer: 'no-referrer',
     })
-        .then(response => console.log(response));
+        .then(response => {
+            location.reload()
+        });
 }

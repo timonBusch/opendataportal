@@ -62,29 +62,6 @@ function addCategory(){
 }
 
 /**
- * Posts given data to the given url
- *
- * @param url
- * @param data
- * @returns {Promise<void>}
- */
-function postData(url, data) {
-    return fetch(url, {
-        body: data,
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
-        },
-        method: 'POST',
-        mode: 'cors',
-        redirect: 'follow',
-        referrer: 'no-referrer',
-    })
-        .then(response => console.log(response));
-}
-
-/**
  * POST to insert a new category
  *
  * @param name
@@ -126,18 +103,6 @@ function postTBL_Category(catName, checkedTables) {
     postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addTBLCategory", formBody);
 }
 
-const promiseOfSomeJsonData =
-    fetch(url)
-        .then(r=>r.json())
-        .then(data => {
-            fetchedtables = data;
-            return fetchedtables;
-        });
-
-window.onload = async () => {
-    let someData = await promiseOfSomeJsonData;
-};
-
 function setActCategory(id){
     actCategory = id;
 }
@@ -162,8 +127,6 @@ function deleteCategory(){
     formBody = formBody.join("&");
 
     postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/deleteCategory", formBody);
-    // if successfull, then:
-    //location.reload()
 }
 
 
@@ -180,7 +143,17 @@ function updateCategory(catDescription){
         formBody.push(encodedKey + "=" + encodedValue)
     }
     formBody = formBody.join("&")
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/updateCategory", formBody);
-    // if successfull, then:
-    //location.reload()
+    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/updateCategory", formBody)
 }
+
+const promiseOfSomeJsonData =
+    fetch(url)
+        .then(r=>r.json())
+        .then(data => {
+            fetchedtables = data;
+            return fetchedtables;
+        });
+
+window.onload = async () => {
+    let someData = await promiseOfSomeJsonData;
+};

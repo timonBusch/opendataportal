@@ -47,15 +47,34 @@ function allStorage() {
 }
 
 /**
+ * Checks if LocalStorage might have deleted categories,
+ * if so, the category will be removed
+ *
+ * @param categoryInLS
+ * @returns {boolean}
+ */
+function checkLS(categoryInLS){
+    let categoryNames = [];
+    let i = fetchedCategories.length;
+    while(i--) categoryNames[i] = fetchedCategories[i]["name"];
+    if (categoryNames.includes(categoryInLS.substring(6,categoryInLS.length))) {
+        return true;
+    } else {
+        localStorage.removeItem(categoryInLS);
+        return false;
+    }
+}
+
+/**
  * Get all filteroptions from ls
  */
 function getFilterFromLS() {
     let checkedFilter = [];
     let storage = allStorage();
     for (elem in storage){
-        if (storage[elem].substring(0, 6) === "filter"){
+        if (storage[elem].substring(0, 6) === "filter" && checkLS(storage[elem])){
             checkedFilter.push(storage[elem].substring(6, storage[elem].length));
-            checkCheckbox(storage[elem].substring(6, storage[elem].length))
+            checkCheckbox(storage[elem].substring(6, storage[elem].length));
         }
     }
     return checkedFilter;
