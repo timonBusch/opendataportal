@@ -1,7 +1,9 @@
 let searched = [];
+let doneSearch = false;
+
 function searchTable() {
     // Variablendeklarierung
-    var input, filter, card, ul, a, i, j, txtValue;
+    var input, filter, card, ul, a, i, txtValue;
     searched = [];
 
     input = document.getElementById('searchbar');
@@ -18,16 +20,17 @@ function searchTable() {
             searched.push(ul[i]);
         }
     }
+    doneSearch = true;
     displayElements()
 }
 
 function displayElements(){
-    let elements;
-    if (searched.length > 0 && filter.length > 0) {
-        elements = filter.filter(value => searched.includes(value));
-    }
-    else {
-        elements = arrayUnique(filter.concat(searched));
+    let elements = [];
+    if (searched.length > 0 && filtered.length > 0) {
+        elements = filtered.filter(value => searched.includes(value));
+    } else if (searched.length === 0 && doneSearch === false){
+        let i = filtered.length;
+        while(i--) elements[i] = filtered[i];
     }
     let i, card, ul;
     card = document.getElementById("fetchedDatasets");

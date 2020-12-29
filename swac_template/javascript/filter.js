@@ -1,4 +1,4 @@
-let filter = [];
+let filtered = [];
 
 /**
  * If a filteroption is checked/unchecked the item will be added/removed from ls
@@ -37,7 +37,7 @@ function startfilter(name) {
  * @returns list of items in storage
  */
 function allStorage() {
-    var values = [],
+    let values = [],
         keys = Object.keys(localStorage),
         i = keys.length;
     while (i--) {
@@ -67,31 +67,28 @@ function getFilterFromLS() {
  * @param checkedFilter - checked filteroptions
  */
 function displayResult(checkedFilter) {
-    filter = [];
-    var category, card, ul, i, j, countTables=0;
+    filtered = [];
+    let category, card, ul, i;
     card = document.getElementById("fetchedDatasets");
     ul = card.getElementsByTagName('ul');
-    // wenn kein Filter, alles in Display
     if (checkedFilter.length === 0) {
         for (i = 0; i < ul.length; i++) {
-            if(filter.indexOf(ul[i]) === -1) {
-                filter.push(ul[i]);
+            if(filtered.indexOf(ul[i]) === -1) {
+                filtered.push(ul[i]);
             }
         }
     } else {
-        // wenn Filter gesetzt: für jedes Häkchen:
         for (elem in checkedFilter) {
             for (i = 0; i < ul.length; i++) {
                 category = ul[i].getElementsByClassName("cat")[0];
                 if (category.innerHTML.includes(checkedFilter[elem])) {
-                    if(filter.indexOf(ul[i]) === -1) {
-                        filter.push(ul[i]);
+                    if(filtered.indexOf(ul[i]) === -1) {
+                        filtered.push(ul[i]);
                     }
                 }
             }
         }
     }
-    console.log(filter.length)
     displayElements()
 }
 
