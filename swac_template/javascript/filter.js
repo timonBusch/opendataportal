@@ -1,3 +1,5 @@
+let display = [];
+
 /**
  * If a filteroption is checked/unchecked the item will be added/removed from ls
  * If added: key and value have the same string ("filter"+name)
@@ -65,10 +67,17 @@ function getFilterFromLS() {
  * @param checkedFilter - checked filteroptions
  */
 function displayResult(checkedFilter) {
-    var category, card, ul, i, countTables=0;
-    let display = [];
+    var category, card, ul, i, j, countTables=0;
+    display = [];
     card = document.getElementById("fetchedDatasets");
-    ul = card.getElementsByTagName('ul');
+    if (searched.length === 0){
+        ul = card.getElementsByTagName('ul');
+    } else {
+        j = searched.length;
+        ul = [];
+        while(j--) ul[j] = searched[j];
+    }
+    //ul = card.getElementsByTagName('ul');
     if (checkedFilter.length === 0) {
         for (i = 0; i < ul.length; i++) {
             ul[i].style.display = "";
@@ -96,7 +105,7 @@ function displayResult(checkedFilter) {
 
     tableNumber = document.getElementById('tableNumber');
     if(checkedFilter === "") {
-        tableNumber.textContent = "Anzahl der Treffer: " + fetchedData.length;
+        tableNumber.textContent = "Anzahl der Treffer: " + ul.length;
     } else{
         tableNumber.textContent = "Anzahl der Treffer: " + countTables.toString();
     }

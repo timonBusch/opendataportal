@@ -9,7 +9,6 @@ const promiseOfSomeJsonData =
     fetch(url)
     .then(r=>r.json())
     .then(data => {
-        console.log(fetchedData)
         fetchedData = data
         console.log("in async");
         let tableNumber = document.getElementById("tableNumber");
@@ -20,6 +19,7 @@ const promiseOfSomeJsonData =
 window.onload = async () => {
     let someData = await promiseOfSomeJsonData;
     console.log("onload");
+    document.getElementById('searchbar').value = "";
     SWAC_reactions.addReaction(function () {
         displayResult(getFilterFromLS());
     }, "present_categories");

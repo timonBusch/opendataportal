@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -28,8 +31,8 @@
   <component name="ChangeListManager">
     <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="startseite category chance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration.js" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javascript/startseite.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/startseite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/filter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +71,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -91,6 +95,27 @@
       <workItem from="1607338447790" duration="20000" />
       <workItem from="1607342641804" duration="610000" />
       <workItem from="1607350594625" duration="782000" />
+      <workItem from="1607510929184" duration="2801000" />
+      <workItem from="1607601503311" duration="619000" />
+      <workItem from="1607602462717" duration="2872000" />
+      <workItem from="1607675929427" duration="13102000" />
+      <workItem from="1607771352889" duration="3807000" />
+      <workItem from="1607775418044" duration="271000" />
+      <workItem from="1607865297081" duration="5690000" />
+      <workItem from="1607932964849" duration="5351000" />
+      <workItem from="1607940202216" duration="12944000" />
+      <workItem from="1608039059754" duration="4230000" />
+      <workItem from="1608224130941" duration="2153000" />
+      <workItem from="1608280495802" duration="11630000" />
+      <workItem from="1608399363349" duration="1676000" />
+      <workItem from="1608537181923" duration="16956000" />
+      <workItem from="1608645080818" duration="950000" />
+      <workItem from="1608934725784" duration="1531000" />
+      <workItem from="1608973008604" duration="5418000" />
+      <workItem from="1609009022980" duration="7456000" />
+      <workItem from="1609060331677" duration="4978000" />
+      <workItem from="1609159314165" duration="14265000" />
+      <workItem from="1609245024832" duration="4180000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
@@ -290,5 +315,35 @@
     <MESSAGE value="opendata portal icon is link to startseite - added also to impressum" />
     <MESSAGE value="startseite category chance" />
     <option name="LAST_COMMIT_MESSAGE" value="startseite category chance" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2610" y="-156" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608286143670">
+      <screen x="1920" y="-423" width="1920" height="1040" />
+    </state>
+    <state x="2610" y="-156" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1608286143670" />
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1609016062573">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1280.680@0.0.1280.680" timestamp="1609016062573" />
+    <state x="121" y="51" key="MergeDialog" timestamp="1609016083538">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="51" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1609016083538" />
+    <state x="2873" y="-423" width="974" height="1047" key="dock-window-1" timestamp="1607508969632">
+      <screen x="1920" y="-423" width="1920" height="1040" />
+    </state>
+    <state x="2873" y="-423" width="974" height="1047" key="dock-window-1/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1607508969632" />
+    <state x="2682" y="-76" width="585" height="592" key="find.popup" timestamp="1608547375639">
+      <screen x="1920" y="-423" width="1920" height="1040" />
+    </state>
+    <state x="2682" y="-76" width="585" height="592" key="find.popup/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1608547375639" />
+    <state x="2536" y="29" key="run.anything.popup" timestamp="1607684903097">
+      <screen x="1920" y="-423" width="1920" height="1040" />
+    </state>
+    <state x="2536" y="29" key="run.anything.popup/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1607684903097" />
+    <state x="2543" y="-198" width="672" height="678" key="search.everywhere.popup" timestamp="1608546201357">
+      <screen x="1920" y="-423" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="-198" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1608546201357" />
   </component>
 </project>
