@@ -51,8 +51,8 @@ function addCategory(){
             checkedBoxes.forEach(item => {
                 checkedTables.push(item);
             })
-            postCategory(catName, catDescription);
-            postTBL_Category(catName, checkedTables);
+            postCategory(catName, catDescription).then(r => postTBL_Category(catName, checkedTables));
+            //postTBL_Category(catName, checkedTables);
         } else {
             alert(duplicateMsg)
         }
@@ -67,7 +67,7 @@ function addCategory(){
  * @param name
  * @param description
  */
-function postCategory(name, description) {
+async function postCategory(name, description) {
     let category = {
         'name': name,
         'description': description
@@ -80,7 +80,20 @@ function postCategory(name, description) {
     }
     formBody = formBody.join("&");
 
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addCategory", formBody);
+    let response = await fetch("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addCategory", {
+        body: formBody,
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        method: 'POST',
+        mode: 'cors',
+        dataType: 'json',
+        redirect: 'follow',
+        referrer: 'no-referrer',
+    })
+    return await response
 }
 
 /**

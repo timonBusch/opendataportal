@@ -9,9 +9,16 @@ var exampleoptions = {
  * @param option - Decides the sortAfter-criteria
  */
 function sortData(option){
+    // filtered und searched in arrays clonen
+    // alles visible stellen (oder nur swac_no=1?)
+    // sortieren
+    // wieder in filtered und searched
+    // displayElements
     let fd = document.getElementById("fetchedDatasets");
     let sortedArray = [];
     let sortedFetchedData = [];
+
+    // sortieren
     switch(option) {
         case "newest":
             sortedArray = fd.swac_comp.getDataSorted("updateTime");
@@ -46,7 +53,11 @@ function sortData(option){
             }
             break;
     }
+
+    // alles wieder ausblenden
+    searchTable();
     displayResult(getFilterFromLS());
+
 }
 
 /**
