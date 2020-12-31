@@ -69,6 +69,8 @@ function filter_attributes(){
     var checkedBoxes = getCheckedBoxes("checkAttrib")
     let component = document.getElementById("data_preview")
     let dateFrom = document.getElementById("start")
+    let dateTo = document.getElementById("end")
+    let correctInput = true
 
     component.swac_comp.removeAllData()
 
@@ -82,18 +84,42 @@ function filter_attributes(){
     })
 
     // T<Stunde>3A<Minuten>3A<Sekunden>
-    // data_30 20 Mai 2015 T09%3A32%3A47
-    if(dateFrom.value !== "") {
-        include_string += "&filter=ts%2Ceq%2C" + dateFrom.value  + "T00%3A00%3A00"
+    if(dateFrom.value !== "" && dateTo.value !== "") {
+        include_string += "&filter=ts%2Cbt%2C" + dateFrom.value  + "T00%3A00%3A00" + "%2C" + dateTo.value +"T00%3A00%3A00"
+    }else {
+       // alert("hey")
     }
 
-    let new_dataset_url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&includes=" + include_string + "&size=20&countonly=false&deflatt=false"
-    setExample(new_dataset_url)
-    getData(new_dataset_url).then(data => {
-        dataset = data
-        setComponentData(component)
-    })
+    let amoutInput = document.getElementById("data_amount")
+    let size = 0
+    if(isNaN(amoutInput.value)) {
+       correctInput = false
+    }else if(amoutInput.value === ""){
+        size = 20
 
+    }else if(amoutInput.value > 500) {
+        correctInput = false
+    }else {
+        size = amoutInput.value
+    }
+
+    if(correctInput) {
+
+        let new_dataset_url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&includes=" + include_string + "&size=" + size + "&countonly=false&deflatt=false"
+        setExample(new_dataset_url)
+        getData(new_dataset_url).then(data => {
+            dataset = data
+            setComponentData(component)
+        })
+
+        UIkit.modal("#datasets_modal").toggle()
+    }else {
+        document.getElementById("data_amount").classList.add("uk-animation-shake")
+
+        setTimeout(function (){
+            document.getElementById("data_amount").classList.remove("uk-animation-shake")
+        }, 1000)
+    }
 
 }
 
@@ -159,8 +185,6 @@ getData(url_dataset_keys).then(data => {
 SWAC_reactions.addReaction(function () {
 
 }, "exampledata")
-
-
 
 
 
