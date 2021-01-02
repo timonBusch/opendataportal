@@ -170,8 +170,11 @@ function setExample(apiURL) {
         "    });\n" +
         "}"
 
+    let exMatlab = "jsondecode(urlread(\"" + apiURL +"\"));"
+
     document.getElementById("example_java").innerText = exJava
     document.getElementById("example_python").innerText = exPython
     document.getElementById("example_javaScript").innerText = exJavaScript
+    document.getElementById("example_matlab").innerText = exMatlab
 }
 
