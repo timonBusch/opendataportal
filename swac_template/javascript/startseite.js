@@ -23,7 +23,6 @@ function getCheckedBoxes(chkboxName) {
 
 /**
  * Checks if the category already exists
- *
  * @param catName
  * @returns {boolean}
  */
@@ -52,7 +51,6 @@ function addCategory(){
                 checkedTables.push(item);
             })
             postCategory(catName, catDescription).then(r => postTBL_Category(catName, checkedTables));
-            //postTBL_Category(catName, checkedTables);
         } else {
             alert(duplicateMsg)
         }
@@ -63,7 +61,6 @@ function addCategory(){
 
 /**
  * POST to insert a new category
- *
  * @param name
  * @param description
  */
@@ -80,7 +77,7 @@ async function postCategory(name, description) {
     }
     formBody = formBody.join("&");
 
-    let response = await fetch("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addCategory", {
+    let response = await fetch(caturl+"/addCategory", {
         body: formBody,
         cache: 'no-cache',
         credentials: 'same-origin',
@@ -98,7 +95,6 @@ async function postCategory(name, description) {
 
 /**
  * POST to record the selected tables which belong to the created category
- *
  * @param catName - category name
  * @param checkedTables - selected tables
  */
@@ -110,16 +106,23 @@ function postTBL_Category(catName, checkedTables) {
     let nameEncodedKey = encodeURIComponent("name");
     let nameEncodedValue = encodeURIComponent(catName);
     formBody.push(nameEncodedKey + "=" + nameEncodedValue);
-
     formBody = formBody.join("&");
 
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addTBLCategory", formBody);
+    postData(caturl+"/addTBLCategory", formBody);
 }
 
+/**
+ * If a category-edit-button (edit or delete) is pushed, actCategory is set so other functions know which category they
+ * have to work with at the moment.
+ * @param id - category id
+ */
 function setActCategory(id){
     actCategory = id;
 }
 
+/**
+ * Checks if the category-description, the user has set, is valid.
+ */
 function editCategory(){
     let missingMsg = "Bitte geben Sie eine Beschreibung an.";
     var catDescription = document.getElementById("categorydescription").value;
@@ -131,6 +134,9 @@ function editCategory(){
     }
 }
 
+/**
+ * Prepares the POST request to delete a category
+ */
 function deleteCategory(){
     console.log("Löschen der Kategorie " + actCategory)
     let formBody = [];
@@ -139,10 +145,13 @@ function deleteCategory(){
     formBody.push(EncodedKey + "=" + EncodedValue);
     formBody = formBody.join("&");
 
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/deleteCategory", formBody);
+    postData(caturl+"/deleteCategory", formBody);
 }
 
-
+/**
+ * Prepares the POST request to update a category description
+ * @param catDescription
+ */
 function updateCategory(catDescription){
     let category = {
         'id': actCategory,
@@ -156,7 +165,7 @@ function updateCategory(catDescription){
         formBody.push(encodedKey + "=" + encodedValue)
     }
     formBody = formBody.join("&")
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/updateCategory", formBody)
+    postData(caturl+"/updateCategory", formBody)
 }
 
 const promiseOfSomeJsonData =
