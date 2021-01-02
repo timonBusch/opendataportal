@@ -12,13 +12,12 @@ window.onload = function () {
 }
 
 function getSettings(index) {
-    let seconds = "0";
-    let minutes = "0";
-    let hours = "*";
-    let day_of_month = "*";
-    let month = "*";
-    let day_of_week = "?";
-
+    let seconds = "0"
+    let minutes = "0"
+    let hours = "*"
+    let day_of_month = "*"
+    let month = "*"
+    let day_of_week = "?"
 
     if(index === 42 || index === 0) {
         minutes = document.getElementById("hourly_minutes").value
