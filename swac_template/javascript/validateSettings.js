@@ -39,7 +39,7 @@ function getSettings(index) {
         'settings' : seconds + " " + minutes + " " + hours + " " + day_of_month + " " + month + " " + day_of_week
     }
     console.log(settings)
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/schedule/addScheduleDate", toUrlencoded(settings))
+    postDataWithout("http://localhost:8080/opendataportal-1.0-SNAPSHOT/schedule/addScheduleDate", toUrlencoded(settings))
 }
 
 
