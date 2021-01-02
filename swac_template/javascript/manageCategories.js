@@ -1,5 +1,21 @@
+let caturl = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/category"
+var fetchedCategories = [];
 let checkedCategories = [];
 let tbl_id;
+
+/**
+ * Fetches categories from server
+ */
+function getCategories(){
+    console.log("to_server");
+    fetch(caturl)
+        .then(r=>r.json())
+        .then(data => {
+            fetchedCategories = data;
+            return data;
+        });
+}
+getCategories();
 
 /**
  * In outline.html: if a category should be edited, this function is executed to save the categoriesthat belongs to
