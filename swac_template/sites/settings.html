@@ -9,14 +9,14 @@
     <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/startseite.css">
 
-    <script src="../javascript/getCategories.js"></script>
     <script src="../libs/uikit/js/uikit.min.js"></script>
     <script src="../libs/uikit/js/uikit-icons.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.5/dist/js/uikit-icons.min.js"></script>
     <script src="../swac/swac.js"></script>
+    <script src="../javascript/postData.js"></script>
     <script src="../javascript/validateSettings.js"></script>
+
 </head>
 
 <body style="background-color: #f8f8f8;">
@@ -61,24 +61,24 @@
                 <div class="uk-card uk-card-default">
                    <span class="uk-card-title">Validierungseinstellungen</span>
                     <div class="uk-card-body">
-                        <ul uk-tab>
+
+                        <ul class="uk-subnav uk-subnav-pill" uk-switcher>
                             <li><a href="#">Stündlich</a></li>
                             <li><a href="#">Täglich</a></li>
                             <li><a href="#">Wöchentlich</a></li>
-
                         </ul>
 
-                        <ul id="switcher1" class="uk-switcher uk-margin">
+                        <ul id="switcher" class="uk-switcher uk-margin">
                             <li>
                                 <form>
-
+                                    <span>Minute </span>
                                     <select id="hourly_minutes" class="uk-select">
+                                        <option value="00">00</option>
                                         <option value="10">10</option>
                                         <option value="20">20</option>
                                         <option value="30">30</option>
                                         <option value="40">40</option>
                                         <option value="50">50</option>
-                                        <option value="60">60</option>
                                     </select>
 
                                 </form>
@@ -87,14 +87,15 @@
                                 <span>Uhrzeit </span><input id="daily_time" type="time">
                             </li>
                             <li>
+                                <p>Tag</p>
                                 <select id="weekly_day" class="uk-select">
-                                    <option value="0">Montag</option>
-                                    <option value="1">Dienstag</option>
-                                    <option value="2">Mittwoch</option>
-                                    <option value="3">Donnerstag</option>
-                                    <option value="4">Freitag</option>
-                                    <option value="5">Samstag</option>
-                                    <option value="6">Sonntag</option>
+                                    <option value="Mon">Montag</option>
+                                    <option value="Tue">Dienstag</option>
+                                    <option value="Wed">Mittwoch</option>
+                                    <option value="Thu">Donnerstag</option>
+                                    <option value="Fri">Freitag</option>
+                                    <option value="Sat">Samstag</option>
+                                    <option value="Sun">Sonntag</option>
                                 </select>
                                 <span>Uhrzeit </span><input id="weekly_time" type="time">
                             </li>

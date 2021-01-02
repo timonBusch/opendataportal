@@ -55,7 +55,7 @@ function postComment() {
 }
 
 /**
- * Update SWAC component for comments TODO: Fix only deleting
+ * Update SWAC component for comments
  */
 function updateComments() {
 
