@@ -1,6 +1,11 @@
 let caturl = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/category"
 var fetchedCategories = [];
+let checkedCategories = [];
+let tbl_id;
 
+/**
+ * Fetches categories from server
+ */
 function getCategories(){
     console.log("to_server");
     fetch(caturl)
@@ -10,11 +15,13 @@ function getCategories(){
             return data;
         });
 }
-
 getCategories();
-let checkedCategories = [];
-let tbl_id;
 
+/**
+ * In outline.html: if a category should be edited, this function is executed to save the categoriesthat belongs to
+ * the given table to the array checkedCategories
+ * @param id - table ID
+ */
 function setChecks(id){
     let cats = document.getElementById(id).getElementsByClassName("cat")[0].textContent;
     let i;
@@ -32,6 +39,11 @@ function setChecks(id){
     }
 }
 
+/**
+ * Checks which boxes are checked and returns their ID
+ * @param chkboxName
+ * @returns {[]|null}
+ */
 function getCheckedBoxes(chkboxName) {
     var checkboxes = document.getElementsByName(chkboxName);
     var checkboxesChecked = [];
@@ -46,16 +58,32 @@ function getCheckedBoxes(chkboxName) {
     return checkboxesChecked.length > 0 ? checkboxesChecked : null;
 }
 
+/**
+ * Gets the categories, that are selected by the user in "addToCategory_modal" (outline.html)
+ */
 function editCategories(){
     var finCategories = getCheckedBoxes("checkedCategories");
     assignCategories(checkedCategories, finCategories);
 }
 
-function containsAny(source,target){
+/**
+ * Checks if an element is part of another array
+ * @param source - array
+ * @param target - element
+ * @returns {boolean}
+ */
+function containsAny(source, target){
     var result = source.filter(function(item){ return target.indexOf(item) > -1});
     return (result.length > 0);
 }
 
+/**
+ * All the categories in startCategories should be deleted.
+ * All the categories in finCategories should be inserted.
+ * If a category is part of both arrays, nothing should be done with it.
+ * @param startCategories - the categories, that have belonged to the table before the user selection
+ * @param finCategories - the categories, that the user has selected to be the categories of the table
+ */
 function assignCategories(startCategories, finCategories){
     let i;
     if (finCategories == null) {
@@ -80,6 +108,10 @@ function assignCategories(startCategories, finCategories){
     }
 }
 
+/**
+ * Prepares the POST request to insert the selected categories into the "relation"-table (between table and category)
+ * @param finCategories - array with the categories to insert
+ */
 function insertCategories(finCategories){
     let formBody = [];
     let tblidEncodedKey = encodeURIComponent("table_id");
@@ -88,13 +120,15 @@ function insertCategories(finCategories){
     let catidsEncodedKey = encodeURIComponent("category_ids");
     let catidsEncodedValue = encodeURIComponent(finCategories);
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
-
     formBody = formBody.join("&");
 
-    // Im Backend implementieren
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addTBLCategories", formBody);
+    postData(caturl+"/addTBLCategories", formBody);
 }
 
+/**
+ * Prepares the POST request to delete the selected categories from the "relation"-table (between table and category)
+ * @param startCategories - array with the categories to delete
+ */
 function deleteCategories(startCategories){
     let formBody = [];
     let tblidEncodedKey = encodeURIComponent("table_id");
@@ -103,10 +137,7 @@ function deleteCategories(startCategories){
     let catidsEncodedKey = encodeURIComponent("category_ids");
     let catidsEncodedValue = encodeURIComponent(startCategories);
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
-
     formBody = formBody.join("&");
 
-    // Im Backend implementieren
-    console.log("to delete")
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/deleteTBLCategories", formBody);
+    postData(caturl+"/deleteTBLCategories", formBody);
 }
