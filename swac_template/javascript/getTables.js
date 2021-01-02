@@ -16,11 +16,21 @@ const promiseOfSomeJsonData =
         return fetchedData;
     });
 
+const filterWhenReady = function (requestors) {
+    let present_categories_req = requestors['present_categories'];
+    let fetchedDatasets_req = requestors['fetchedDatasets'];
+    displayResult(getFilterFromLS());
+};
+
 window.onload = async () => {
     let someData = await promiseOfSomeJsonData;
     console.log("onload");
     document.getElementById('searchbar').value = "";
+    /*
     SWAC_reactions.addReaction(function () {
         displayResult(getFilterFromLS());
     }, "present_categories");
+     */
+    SWAC_reactions.addReaction(filterWhenReady, "present_categories", "fetchedDatasets");
 };
+

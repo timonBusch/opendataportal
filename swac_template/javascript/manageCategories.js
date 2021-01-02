@@ -79,32 +79,33 @@ function containsAny(source, target){
 
 /**
  * All the categories in startCategories should be deleted.
- * All the categories in finCategories should be inserted.
+ * All the categories in finCategories should be inserted -> toInsert.
  * If a category is part of both arrays, nothing should be done with it.
  * @param startCategories - the categories, that have belonged to the table before the user selection
  * @param finCategories - the categories, that the user has selected to be the categories of the table
  */
 function assignCategories(startCategories, finCategories){
+    let toInsert = [];
     let i;
     if (finCategories == null) {
         deleteCategories(startCategories);
     } else {
         for (i = 0; i < finCategories.length; i++) {
-            if (typeof startCategories !== 'undefined' && startCategories.length > 0) {
-                if (containsAny(startCategories, finCategories[i])) {
-                    let index = startCategories.indexOf(finCategories[i]);
-                    if (index > -1) {
-                        startCategories.splice(index, 1);
-                    }
-                    index = finCategories.indexOf(finCategories[i]);
-                    if (index > -1) {
-                        finCategories.splice(index, 1);
-                    }
+            if (containsAny(startCategories, finCategories[i])) {
+                let index = startCategories.indexOf(finCategories[i]);
+                if (index > -1) {
+                    startCategories.splice(index, 1);
                 }
-                deleteCategories(startCategories);
+                index = finCategories.indexOf(finCategories[i]);
+                if (index > -1) {
+                    toInsert.push(finCategories[i]);
+                }
+            } else {
+                toInsert.push(finCategories[i]);
             }
         }
-        insertCategories(finCategories)
+        deleteCategories(startCategories);
+        insertCategories(toInsert);
     }
 }
 
