@@ -12,21 +12,34 @@ window.onload = function () {
 }
 
 function getSettings(index) {
+    let seconds = "0";
+    let minutes = "0";
+    let hours = "*";
+    let day_of_month = "*";
+    let month = "*";
+    let day_of_week = "?";
+
+
     if(index === 42 || index === 0) {
-        let minutes = document.getElementById("hourly_minutes")
-        console.log(minutes.value)
-        let settings = {
-            'settings' : minutes
-        }
-        postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/schedule/addScheduleDate", toUrlencoded(settings))
+        minutes = document.getElementById("hourly_minutes").value
     }else if(index === 1) {
         let time = document.getElementById("daily_time")
-        console.log(time.value)
+        let array = time.value.split(":")
+        minutes = array[1]
+        hours = array[0]
     }else if(index === 2) {
-        let day = document.getElementById("weekly_day")
+        day_of_week = document.getElementById("weekly_day").value
         let time = document.getElementById("weekly_time")
-        console.log(day.value + " " + time.value)
+        let array = time.value.split(":")
+        minutes = array[1]
+        hours = array[0]
     }
+
+    let settings = {
+        'settings' : seconds + " " + minutes + " " + hours + " " + day_of_month + " " + month + " " + day_of_week
+    }
+    console.log(settings)
+    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/schedule/addScheduleDate", toUrlencoded(settings))
 }
 
 
