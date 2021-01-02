@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Einstellungen</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/startseite.css">
+
+    <script src="../javascript/getCategories.js"></script>
+    <script src="../libs/uikit/js/uikit.min.js"></script>
+    <script src="../libs/uikit/js/uikit-icons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.5/dist/js/uikit-icons.min.js"></script>
+    <script src="../swac/swac.js"></script>
+    <script src="../javascript/validateSettings.js"></script>
+</head>
+
+<body style="background-color: #f8f8f8;">
+<!-- Header -->
+<div class="headContent">
+
+    <!-- Logo einbinden -->
+    <h1 id="logo" class="uk-heading uk-text-center">
+        <a href="startseite.html">
+            <img src="../img/logo.png"/>
+        </a>
+    </h1>
+
+    <!-- Navigation zwischen den Seiten -->
+    <div id="navbar" class="uk-text-center">
+        <img src="images/light.jpg" alt="">
+        <div class="uk-position-center">
+            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                <div  class="uk-navbar">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="outline.html">Daten</a></li>
+                        <li><a href="settings.html">Einstellungen</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- Trenner -->
+    <hr class="uk-divider-icon">
+</div>
+
+<!-- Einstellungen -->
+<div class="uk-section uk-section-muted">
+        <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body uk-hidden"></div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default">
+                   <span class="uk-card-title">Validierungseinstellungen</span>
+                    <div class="uk-card-body">
+                        <ul uk-tab>
+                            <li><a href="#">Stündlich</a></li>
+                            <li><a href="#">Täglich</a></li>
+                            <li><a href="#">Wöchentlich</a></li>
+
+                        </ul>
+
+                        <ul id="switcher1" class="uk-switcher uk-margin">
+                            <li>
+                                <form>
+
+                                    <select id="hourly_minutes" class="uk-select">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="40">40</option>
+                                        <option value="50">50</option>
+                                        <option value="60">60</option>
+                                    </select>
+
+                                </form>
+                            </li>
+                            <li>
+                                <span>Uhrzeit </span><input id="daily_time" type="time">
+                            </li>
+                            <li>
+                                <select id="weekly_day" class="uk-select">
+                                    <option value="0">Montag</option>
+                                    <option value="1">Dienstag</option>
+                                    <option value="2">Mittwoch</option>
+                                    <option value="3">Donnerstag</option>
+                                    <option value="4">Freitag</option>
+                                    <option value="5">Samstag</option>
+                                    <option value="6">Sonntag</option>
+                                </select>
+                                <span>Uhrzeit </span><input id="weekly_time" type="time">
+                            </li>
+
+                        </ul>
+                        <button id="confirm" class="uk-button uk-button-primary">Anwenden</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div>
+                <div class="uk-card uk-card-default uk-card-body uk-hidden"></div>
+            </div>
+        </div>
+</div>
+
+</body>
+<footer>
+    <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+        <li><a href="haftungsausschluss.html">Haftungsausschluss</a></li>
+    </ul>
+    <p>Kontakt<br>
+        <a href="mailto:jelka.wilczek@fh-bielefeld.de">Jelka Wilczek</a>,
+        <a href="mailto:fabian.list@fh-bielefeld.de">Fabian List</a>,
+        <a href="mailto:timon.buschendorf@fh-bielefeld.de">Timon Buschendorf</a>,
+        <a href="mailto:lukas.von_der_heide@fh-bielefeld.de">Lukas von der Heide</a><br>
+        © 2020 – 2020 OpenData Portal (ArbeitsGruppe)
+</footer>
+</html>
