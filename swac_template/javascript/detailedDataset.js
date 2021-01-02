@@ -24,6 +24,8 @@ window.onload = function () {
     document.getElementById("comment_bt").addEventListener("click", postComment)
     document.getElementById("subscribe_bt").addEventListener("click", subscribe)
 
+
+
     setExample("http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false")
 
 }
@@ -92,7 +94,7 @@ function filter_attributes(){
 
     let amoutInput = document.getElementById("data_amount")
     let size = 0
-    if(isNaN(amoutInput.value)) {
+    if(isNaN(amoutInput.value) || Math.sign(amoutInput.value) === -1) {
        correctInput = false
     }else if(amoutInput.value === ""){
         size = 20
@@ -140,6 +142,9 @@ function exportComponentAsJson() {
     component.swac_comp.exportJson()
 }
 
+/**
+ * Exports the current state of the filtered dataset in a CSV file
+ */
 function exportComponentAsCSV() {
 
     const items = dataset.records
@@ -156,6 +161,8 @@ function exportComponentAsCSV() {
 
 }
 
+// Call Api and set variable for SWAC components
+
 var categories_updateTime
 
 getData(url_category_updateTime).then(data => {
@@ -164,7 +171,6 @@ getData(url_category_updateTime).then(data => {
 
 })
 
-// Call Api and set variable for SWAC components
 var description_record;
 getData(url_description).then(data => {
     description_record = data
@@ -179,8 +185,6 @@ var dataset_keys;
 getData(url_dataset_keys).then(data => {
     dataset_keys = data.attributes
 })
-
-
 
 SWAC_reactions.addReaction(function () {
 
