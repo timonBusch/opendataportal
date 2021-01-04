@@ -28,25 +28,12 @@ function postComment() {
 
     postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/comment/addComment", formBody)
 
-    //updateComments()
-
 }
 
 /**
- * Update SWAC component for comments
+ * Fetches comments from backend
+ * @returns {Promise<any>}
  */
-function updateComments() {
-
-    getComments().then(data => {
-        comments = data
-        let component = document.getElementById("present_comments")
-
-        component.swac_comp.removeAllData()
-        component.swac_comp.addData("present_comments", comments.records)
-    })
-
-}
-
 async function getComments() {
     let response = await fetch("http://localhost:8080/opendataportal-1.0-SNAPSHOT/comment/tableId?tableId=" + id_comments);
     return await response.json()
