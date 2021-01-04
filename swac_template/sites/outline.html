@@ -21,7 +21,7 @@
     <script src="../data/routes.js"></script>
     <script src="../javascript/search.js"></script>
     <script src="../javascript/order.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.5/dist/js/uikit-icons.min.js"></script>
+    <script src="../libs/uikit/js/uikit-icons.min.js"></script>
 </head>
 
 <body style="background-color: #f8f8f8;">
@@ -76,8 +76,8 @@
                 <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden filter">
                     <div id="tablecount"><h3 id="tableNumber">Anzahl der Treffer: </h3></div>
                     <hr class="uk-divider-icon">
-                    <h3 style="margin-top:0px;">Filtermöglichkeiten</h3>
-                    <h6>Kategorien</h6>
+                    <h3 style="margin-top:0;">Filtermöglichkeiten</h3>
+                    <h4 style="margin-top:0;">Kategorien</h4>
                     <div id="present_categories" swa="Present FROM fetchedCategories" style="border: none;">
                         <div id="category-box" class="uk-panel uk-panel-scrollable" style="min-height: 250px;">
                             <ul class="uk-list">
@@ -117,8 +117,6 @@
                                     <div id="table-right">
                                         <p><strong>Letzte Änderung</strong></p>
                                         <p>{updateTime}</p>
-                                        <p><strong>Speicherplatzbedarf</strong></p>
-                                        <p>39MB</p>
                                     </div>
                                 </div>
                             </ul>
