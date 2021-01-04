@@ -201,23 +201,26 @@
 
                         </div>
                         -->
-                       <table id="data_preview" swa="Present FROM dataset" class="uk-table uk-table-striped">
-                           <thead>
-                           <tr>
-                               <th class="swac_repeatForAttribute">
-                                   <span>{attrName}</span>
-                               </th>
-                           </tr>
-                           </thead>
-                           <tbody id="dataset_data">
-                           <tr class="swac_repeatForSet">
-                               <td class="swac_repeatForValue">
-                                   <span uk-tooltip="title: {attrName}">{*}</span>
-                               </td>
-                           </tr>
+                        <div class="uk-panel-scrollable">
+                            <table id="data_preview" swa="Present FROM dataset" class="uk-table uk-table-striped">
+                                <thead>
+                                <tr>
+                                    <th class="swac_repeatForAttribute">
+                                        <span>{attrName}</span>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="dataset_data">
+                                <tr class="swac_repeatForSet">
+                                    <td class="swac_repeatForValue">
+                                        <span uk-tooltip="title: {attrName}">{*}</span>
+                                    </td>
+                                </tr>
 
-                           </tbody>
-                       </table>
+                                </tbody>
+                            </table>
+                        </div>
+
 
                     </div>
 
