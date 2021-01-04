@@ -85,8 +85,6 @@ function filter_attributes(){
     // T<Stunde>3A<Minuten>3A<Sekunden>
     if(dateFrom.value !== "" && dateTo.value !== "") {
         include_string += "&filter=ts%2Cbt%2C" + dateFrom.value  + "T00%3A00%3A00" + "%2C" + dateTo.value +"T00%3A00%3A00"
-    }else {
-       // alert("hey")
     }
 
     // Get and check given amount
@@ -103,6 +101,7 @@ function filter_attributes(){
         size = amoutInput.value
     }
 
+    // Set component to filtered dataset
     if(correctInput) {
 
         let new_dataset_url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&includes=" + include_string + "&size=" + size + "&countonly=false&deflatt=false"
@@ -164,7 +163,6 @@ function exportComponentAsCSV() {
 var categories_updateTime
 
 getData(url_category_updateTime).then(data => {
-    console.log(data)
     categories_updateTime = data
 
 })
@@ -177,6 +175,19 @@ getData(url_dataset).then(data =>{
 var dataset_keys;
 getData(url_dataset_keys).then(data => {
     dataset_keys = data.attributes
+    if(dataset_keys !== undefined) {
+        for(let i =0; i < dataset_keys.length; i++) {
+            if(dataset_keys[i].name === "id") {
+                dataset_keys.splice(i,1)
+            }
+        }
+        dataset_keys.sort(function (a, b) {
+            if(a.name < b.name) {return -1;}
+            if(a.name > b.name) {return 1}
+            return 0
+        })
+    }
+
 })
 
 SWAC_reactions.addReaction(function () {

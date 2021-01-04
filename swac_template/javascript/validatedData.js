@@ -8,6 +8,7 @@ function invalidDataExists() {
     getValid().then(data => {
         if (data.valid !== "") {
             document.getElementById("warning").classList.remove("uk-hidden")
+            document.getElementById("warning_info").innerText = "Attribute: " + data.valid.replaceAll(";", " ")
         }
     })
 }

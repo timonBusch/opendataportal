@@ -102,6 +102,7 @@
                                 <div id="warning" class="uk-alert-danger uk-hidden" uk-alert>
                                     <a class="uk-alert-close" uk-close></a>
                                     <p>Achtung! Diese Tabelle könnte unvollständige oder fehlerhafte Datensätze enthalten!</p>
+                                    <p id="warning_info"></p>
                                 </div>
 
                                 <div class="uk-card uk-card-default uk-card-body">
@@ -194,8 +195,30 @@
 
                     <div id="vorschau" class="uk-modal-dialog uk-modal-body">
                         <button class="uk-modal-close-default" type="button" uk-close></button>
+                        <!--
                         <div class="uk-panel-scrollable remove_border" id="data_preview"
-                             swa="Present FROM dataset TEMPLATE table_for_all_datasets"></div>
+                             swa="Present FROM dataset TEMPLATE table_for_all_datasets">
+
+                        </div>
+                        -->
+                       <table id="data_preview" swa="Present FROM dataset" class="uk-table uk-table-striped">
+                           <thead>
+                           <tr>
+                               <th class="swac_repeatForAttribute">
+                                   <span>{attrName}</span>
+                               </th>
+                           </tr>
+                           </thead>
+                           <tbody id="dataset_data">
+                           <tr class="swac_repeatForSet">
+                               <td class="swac_repeatForValue">
+                                   <span uk-tooltip="title: {attrName}">{*}</span>
+                               </td>
+                           </tr>
+
+                           </tbody>
+                       </table>
+
                     </div>
 
                 </div>
