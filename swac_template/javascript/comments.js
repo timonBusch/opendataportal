@@ -3,28 +3,6 @@ const queryStringx = window.location.search;
 const urlParamsx = new URLSearchParams(queryStringx)
 let id_comments = urlParamsx.get('id')
 
-/**
- * Make post request to api content type
- * application/x-www-form-urlencoded;charset=UTF-8
- * @param url
- * @param data to store
- * @returns {Promise<any>}
- */
-function postData(url, data) {
-    return fetch(url, {
-        body: data,
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
-        },
-        method: 'POST',
-        mode: 'cors',
-        redirect: 'follow',
-        referrer: 'no-referrer',
-    })
-        .then(response => response.json())
-}
 
 /**
  * Get comment from UI and transform to x-www-form-urlencoded

@@ -43,9 +43,7 @@ function postDataWithout(url, data) {
         redirect: 'follow',
         referrer: 'no-referrer',
     })
-        .then(response => {
-            response.json()
-        });
+        .then(response => response.json());
 }
 
 function toUrlencoded(data) {

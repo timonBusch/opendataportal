@@ -4,7 +4,6 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
 let id = urlParams.get('id')
 
-const url_description = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/tbl_observedobject?storage=smartmonitoring&filter=id%2Ceq%2C" + urlParams.get('id') + "&size=1&page=1&countonly=false&deflatt=false"
 const url_dataset = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false"
 const url_dataset_count = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=0&countonly=true&deflatt=false"
 const url_dataset_keys = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/collection/data_" + id + "/getAttributes?storage=smartmonitoring"
@@ -23,8 +22,6 @@ window.onload = function () {
     document.getElementById("export_csv").addEventListener("click", exportComponentAsCSV)
     document.getElementById("comment_bt").addEventListener("click", postComment)
     document.getElementById("subscribe_bt").addEventListener("click", subscribe)
-
-
 
     setExample("http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false")
 
@@ -92,6 +89,7 @@ function filter_attributes(){
        // alert("hey")
     }
 
+    // Get and check given amount
     let amoutInput = document.getElementById("data_amount")
     let size = 0
     if(isNaN(amoutInput.value) || Math.sign(amoutInput.value) === -1) {
@@ -169,11 +167,6 @@ getData(url_category_updateTime).then(data => {
     console.log(data)
     categories_updateTime = data
 
-})
-
-var description_record;
-getData(url_description).then(data => {
-    description_record = data
 })
 
 var dataset;
