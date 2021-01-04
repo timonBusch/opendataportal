@@ -32,6 +32,7 @@ function getSettings(index) {
         let array = time.value.split(":")
         minutes = array[1]
         hours = array[0]
+        day_of_month = "?"
     }
 
     let settings = {
