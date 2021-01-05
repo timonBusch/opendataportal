@@ -150,7 +150,6 @@ function exportComponentAsCSV() {
     let csv = items.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
     csv.unshift(header.join(','))
     csv = csv.join('\r\n')
-    console.log(csv)
 
     let dataURL = 'data:text/csv;charset=utf-8,' + csv;
     var encodedUri = encodeURI(dataURL);

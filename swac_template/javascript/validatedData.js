@@ -6,9 +6,9 @@ let id_valid = new URLSearchParams(window.location.search).get('id')
  */
 function invalidDataExists() {
     getValid().then(data => {
-        if (data.valid !== "") {
+        console.log(data)
+        if (data.valid !== undefined && data.valid !== "") {
             document.getElementById("warning").classList.remove("uk-hidden")
-            document.getElementById("warning_info").innerText = "Attribute: " + data.valid.replaceAll(";", " ")
         }
     })
 }
