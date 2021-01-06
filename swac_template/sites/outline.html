@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Übersicht</title>
     <meta charset="UTF-8">
@@ -9,9 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/outline.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <noscript>
-        <link rel="stylesheet" type="text/css" href="../css/noscript.css">
-    </noscript>
+
     <script src="../swac/swac.js"></script>
     <script src="../javascript/manageCategories.js"></script>
     <script src="../javascript/postData.js"></script>
@@ -25,132 +23,128 @@
 </head>
 
 <body style="background-color: #f8f8f8;">
-<!-- Header -->
-<div class="headContent">
+    <!-- Header -->
+    <div class="headContent">
+        <!-- Logo  -->
+        <h1 id="logo" class="uk-heading uk-text-center">
+            <a href="index.html">
+                <img src="../img/logo.png"/>
+            </a>
+        </h1>
 
-    <!-- Logo einbinden -->
-    <h1 id="logo" class="uk-heading uk-text-center">
-        <a href="index.html">
-            <img src="../img/logo.png"/>
-        </a>
-    </h1>
-
-    <!-- Navigation zwischen den Seiten -->
-    <div id="navbar" class="uk-text-center">
-        <img src="images/light.jpg" alt="">
-        <div class="uk-position-center">
-            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-                <div  class="uk-navbar">
-                    <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="#">Daten</a></li>
-                        <li><a href="settings.html">Einstellungen</a></li>
-                        <li><a href="impressum.html">Impressum</a></li>
-                    </ul>
-                </div>
-            </nav>
+        <!-- Navbar between sites -->
+        <div id="navbar" class="uk-text-center">
+            <div class="uk-position-center">
+                <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                    <div  class="uk-navbar">
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-active"><a href="#">Daten</a></li>
+                            <li><a href="settings.html">Einstellungen</a></li>
+                            <li><a href="impressum.html">Impressum</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
+
+        <!-- sort and order -->
+        <div id="searchsort">
+            <form id="searchform" class="uk-search uk-search-default" onSubmit="return false" onkeyup="searchTable()">
+                <span class="uk-search-icon-flip" uk-search-icon></span>
+                <input id="searchbar" class="uk-search-input" type="search" placeholder="Suche...">
+            </form>
+            <select id="orderby" class="uk-select" style="position: absolute;margin-right: 20px;right: 0;width: auto;">
+                <option onclick="sortData('newest')">Neueste aufsteigend</option>
+                <option onclick="sortData('oldest')">Neueste absteigend</option>
+                <option onclick="sortData('asc')" selected>Name aufsteigend</option>
+                <option onclick="sortData('desc')">Name absteigend</option>
+            </select>
+        </div>
+
+        <hr class="uk-divider-icon">
     </div>
-
-    <!-- Suchfeld und Ordnen -->
-    <div id="searchsort">
-        <form id="searchform" class="uk-search uk-search-default" onSubmit="return false" onkeyup="searchTable()">
-            <span class="uk-search-icon-flip" uk-search-icon></span>
-            <input id="searchbar" class="uk-search-input" type="search" placeholder="Suche...">
-        </form>
-
-        <select id="orderby" class="uk-select" style="position: absolute;margin-right: 20px;right: 0;width: auto;">
-            <option onclick="sortData('newest')">Neueste aufsteigend</option>
-            <option onclick="sortData('oldest')">Neueste absteigend</option>
-            <option onclick="sortData('asc')" selected>Name aufsteigend</option>
-            <option onclick="sortData('desc')">Name absteigend</option>
-        </select>
-    </div>
-
-    <!-- Trenner -->
-    <hr class="uk-divider-icon">
-</div>
-<div class="uk-section uk-section-muted" style="padding-top: 20px;">
-    <div class="uk-container uk-container-expand">
-        <div id="hull">
-            <div class="uk-width-1-4 uk-text-left">
-                <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden filter">
-                    <div id="tablecount"><h3 id="tableNumber">Anzahl der Treffer: </h3></div>
-                    <hr class="uk-divider-icon">
-                    <h3 style="margin-top:0;">Filtermöglichkeiten</h3>
-                    <h4 style="margin-top:0;">Kategorien</h4>
-                    <div id="present_categories" swa="Present FROM fetchedCategories" style="border: none;">
-                        <div id="category-box" class="uk-panel uk-panel-scrollable" style="min-height: 250px;">
-                            <ul class="uk-list">
-                                <li class="swac_repeatForSet">
-                                    <label>
-                                        <input class="uk-checkbox filterboxes" type="checkbox" id="{name}" onclick="updateLS('{name}')"> {name}
-                                    </label>
-                                </li>
-                            </ul>
+    <div class="uk-section uk-section-muted" style="padding-top: 20px;">
+        <div class="uk-container uk-container-expand">
+            <div id="hull">
+                <div class="uk-width-1-4 uk-text-left">
+                    <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden filter">
+                        <div id="tablecount"><h3 id="tableNumber">Anzahl der Treffer: </h3></div>
+                        <hr class="uk-divider-icon">
+                        <h3 style="margin-top:0;">Filtermöglichkeiten</h3>
+                        <h4 style="margin-top:0;">Kategorien</h4>
+                        <div id="present_categories" swa="Present FROM fetchedCategories" style="border: none;">
+                            <div id="category-box" class="uk-panel uk-panel-scrollable" style="min-height: 250px;">
+                                <ul class="uk-list">
+                                    <li class="swac_repeatForSet">
+                                        <label>
+                                            <input class="uk-checkbox filterboxes" type="checkbox" id="{name}" onclick="updateLS('{name}')"> {name}
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Dummy, damit flex trotz fixed position erhalten bleibt -->
-                <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden dummy">
-                    <h1 class="uk-article-title">Filtermöglichkeiten</h1>
-                </div>
-            </div>
-
-            <section id="outline-body" style="width: 100%;">
-                <div class="tablelist">
-                    <div id="fetchedDatasets" swa="Present FROM fetchedData" style="border: none;">
-                        <article class="swac_repeatForSet">
-                            <ul>
-                                <div id="{tbl_id}" class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body" style="width: auto">
-                                    <a href="tabelle_details.html?id={tbl_id}"></a>
-                                    <div id="table-left">
-                                        <h4>{title}</h4>
-                                        <p>{description}</p>
-                                        <p>
-                                            <div class="uk-inline" style="z-index: 50;">
-                                                <strong>Kategorien:</strong>
-                                                <button uk-icon="icon: pencil" uk-toggle="target: #addToCategory_modal" type="button" onclick="setChecks('{tbl_id}')" class="uk-button uk-button-default" type="button" style="border: none; padding: 0; margin-top: -10px;"></button>
-                                            </div>
-                                        <p>
-                                        <div class="cat">{categories}</div>
-                                    </div>
-                                    <div id="table-right">
-                                        <p><strong>Tabellenname</strong></p>
-                                        <p>{name}</p>
-                                        <p><strong>Letzte Änderung</strong></p>
-                                        <p>{updateTime}</p>
-                                    </div>
-                                </div>
-                            </ul>
-                        </article>
+                    <!-- Dummy, to establish flex even the position is fixed -->
+                    <div class="uk-card uk-card-default uk-card-body uk-overflow-hidden dummy">
+                        <h1 class="uk-article-title">Filtermöglichkeiten</h1>
                     </div>
                 </div>
-            </section>
-        </div>
-        <a onclick="scrollUp()" id="up">up</a>
-    </div>
-</div>
 
-<!-- Popup: Add to category -->
-<div id="addToCategory_modal" uk-modal>
-    <div class="uk-modal-dialog" style="border-radius: 10px 10px 10px 10px;">
-        <button class="uk-modal-close-default" type="button" uk-close></button>
-        <div class="uk-modal-body uk-text-center">
-            <h2 class="uk-modal-title">Kategorien der Tabelle bearbeiten</h2>
-            <p>Bitte wählen Sie entsprechende Kategorien aus:</p>
-            <div class="uk-panel-scrollable uk-height-small uk-width-expand uk-text-center">
-                <form id="present_toAddCategories" swa="Present FROM fetchedCategories" class="uk-grid-small remove_border" uk-grid>
-                    <div class="swac_repeatForSet" style="width: 100%; text-align: initial;">
-                        <label><input name="checkedCategories" class="uk-checkbox" type="checkbox" value="{name}" id="cat_{id}"> {name}</label>
+                <section id="outline-body" style="width: 100%;">
+                    <div class="tablelist">
+                        <div id="fetchedDatasets" swa="Present FROM fetchedData" style="border: none;">
+                            <article class="swac_repeatForSet">
+                                <ul>
+                                    <div id="{tbl_id}" class="uk-box-shadow-small uk-box-shadow-hover-large uk-padding tablebox clickable uk-card uk-card-default uk-card-body" style="width: auto">
+                                        <a href="tabelle_details.html?id={tbl_id}"></a>
+                                        <div id="table-left">
+                                            <h4>{title}</h4>
+                                            <p>{description}</p>
+                                            <p>
+                                                <div class="uk-inline" style="z-index: 50;">
+                                                    <strong>Kategorien:</strong>
+                                                    <button uk-icon="icon: pencil" uk-toggle="target: #addToCategory_modal" type="button" onclick="setChecks('{tbl_id}')" class="uk-button uk-button-default" type="button" style="border: none; padding: 0; margin-top: -10px;"></button>
+                                                </div>
+                                            <p>
+                                            <div class="cat">{categories}</div>
+                                        </div>
+                                        <div id="table-right">
+                                            <p><strong>Tabellenname</strong></p>
+                                            <p>{name}</p>
+                                            <p><strong>Letzte Änderung</strong></p>
+                                            <p>{updateTime}</p>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </article>
+                        </div>
                     </div>
-                </form>
+                </section>
+            </div>
+            <a onclick="scrollUp()" id="up">up</a>
+        </div>
+    </div>
+
+    <!-- Popup: Add to category -->
+    <div id="addToCategory_modal" uk-modal>
+        <div class="uk-modal-dialog" style="border-radius: 10px 10px 10px 10px;">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-body uk-text-center">
+                <h2 class="uk-modal-title">Kategorien der Tabelle bearbeiten</h2>
+                <p>Bitte wählen Sie entsprechende Kategorien aus:</p>
+                <div class="uk-panel-scrollable uk-height-small uk-width-expand uk-text-center">
+                    <form id="present_toAddCategories" swa="Present FROM fetchedCategories" class="uk-grid-small remove_border" uk-grid>
+                        <div class="swac_repeatForSet" style="width: 100%; text-align: initial;">
+                            <label><input name="checkedCategories" class="uk-checkbox" type="checkbox" value="{name}" id="cat_{id}"> {name}</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="uk-modal-footer uk-text-center" style="border-radius: 0px 0px 10px 10px">
+                <button id="addToCategoryBtn" class="uk-button uk-button-primary uk-modal-close" type="button" onclick="editCategories()">Fertig</button>
             </div>
         </div>
-        <div class="uk-modal-footer uk-text-center" style="border-radius: 0px 0px 10px 10px">
-            <button id="addToCategoryBtn" class="uk-button uk-button-primary uk-modal-close" type="button" onclick="editCategories()">Fertig</button>
-        </div>
     </div>
-</div>
 </body>
 <footer>
     <ul>
