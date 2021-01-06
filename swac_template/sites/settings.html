@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Einstellungen</title>
@@ -20,96 +20,99 @@
 </head>
 
 <body style="background-color: #f8f8f8;">
-    <!-- Header -->
-    <div class="headContent">
+<!-- Header -->
+<div class="headContent">
 
-        <!-- Logo  -->
-        <h1 id="logo" class="uk-heading uk-text-center">
-            <a href="index.html">
-                <img src="../img/logo.png"/>
-            </a>
-        </h1>
+    <!-- Logo einbinden -->
+    <h1 id="logo" class="uk-heading uk-text-center">
+        <a href="index.html">
+            <img src="../img/logo.png"/>
+        </a>
+    </h1>
 
-        <!-- Navbar between sites -->
-        <div id="navbar" class="uk-text-center uk-margin-large-top">
-            <div class="uk-position-center">
-                <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-                    <div  class="uk-navbar">
-                        <ul class="uk-navbar-nav">
-                            <li class="uk-active"><a href="outline.html">Daten</a></li>
-                            <li><a href="settings.html">Einstellungen</a></li>
-                            <li><a href="impressum.html">Impressum</a></li>
-                        </ul>
-                    </div>
-                </nav>
+    <!-- Navigation zwischen den Seiten -->
+    <div id="navbar" class="uk-text-center uk-margin-large-top">
+        <img src="images/light.jpg" alt="">
+        <div class="uk-position-center">
+            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                <div  class="uk-navbar">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="outline.html">Daten</a></li>
+                        <li><a href="settings.html">Einstellungen</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- Trenner -->
+    <hr class="uk-divider-icon">
+</div>
+
+<!-- Einstellungen -->
+<div class="uk-section uk-section-muted">
+    <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body uk-hidden"></div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default">
+                <span class="uk-card-title">Validierungseinstellungen</span>
+                <div class="uk-card-body">
+
+                    <ul class="uk-subnav uk-subnav-pill" uk-switcher>
+                        <li><a href="#">Stündlich</a></li>
+                        <li><a href="#">Täglich</a></li>
+                        <li><a href="#">Wöchentlich</a></li>
+                    </ul>
+
+                    <ul id="switcher" class="uk-switcher uk-margin">
+                        <li>
+                            <form>
+                                <span>Minute </span>
+                                <select id="hourly_minutes" class="uk-select">
+                                    <option value="00">00</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                </select>
+
+                            </form>
+                        </li>
+                        <li>
+                            <span>Uhrzeit </span><input id="daily_time" type="time" value="00:00">
+                        </li>
+                        <li>
+                            <p>Tag</p>
+                            <select id="weekly_day" class="uk-select">
+                                <option value="MON">Montag</option>
+                                <option value="TUE">Dienstag</option>
+                                <option value="WED">Mittwoch</option>
+                                <option value="THU">Donnerstag</option>
+                                <option value="FRI">Freitag</option>
+                                <option value="SAT">Samstag</option>
+                                <option value="SUN">Sonntag</option>
+                            </select>
+                            <span>Uhrzeit </span><input id="weekly_time" type="time" value="00:00">
+                        </li>
+
+                    </ul>
+                    <button id="confirm" class="uk-button uk-button-primary">Anwenden</button>
+                </div>
             </div>
+
+
         </div>
 
-        <hr class="uk-divider-icon">
+        <div>
+            <div class="uk-card uk-card-default uk-card-body uk-hidden"></div>
+        </div>
     </div>
-
-    <!-- Settings -->
-    <div class="uk-section uk-section-muted">
-            <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
-                <div>
-                    <div class="uk-card uk-card-default uk-card-body uk-hidden"></div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-default">
-                       <span class="uk-card-title">Validierungseinstellungen</span>
-                        <div class="uk-card-body">
-
-                            <ul class="uk-subnav uk-subnav-pill" uk-switcher>
-                                <li><a href="#">Stündlich</a></li>
-                                <li><a href="#">Täglich</a></li>
-                                <li><a href="#">Wöchentlich</a></li>
-                            </ul>
-
-                            <ul id="switcher" class="uk-switcher uk-margin">
-                                <li>
-                                    <form>
-                                        <span>Minute </span>
-                                        <select id="hourly_minutes" class="uk-select">
-                                            <option value="00">00</option>
-                                            <option value="10">10</option>
-                                            <option value="20">20</option>
-                                            <option value="30">30</option>
-                                            <option value="40">40</option>
-                                            <option value="50">50</option>
-                                        </select>
-
-                                    </form>
-                                </li>
-                                <li>
-                                    <span>Uhrzeit </span><input id="daily_time" type="time" value="00:00">
-                                </li>
-                                <li>
-                                    <p>Tag</p>
-                                    <select id="weekly_day" class="uk-select">
-                                        <option value="MON">Montag</option>
-                                        <option value="TUE">Dienstag</option>
-                                        <option value="WED">Mittwoch</option>
-                                        <option value="THU">Donnerstag</option>
-                                        <option value="FRI">Freitag</option>
-                                        <option value="SAT">Samstag</option>
-                                        <option value="SUN">Sonntag</option>
-                                    </select>
-                                    <span>Uhrzeit </span><input id="weekly_time" type="time" value="00:00">
-                                </li>
-
-                            </ul>
-                            <button id="confirm" class="uk-button uk-button-primary">Anwenden</button>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <div>
-                    <div class="uk-card uk-card-default uk-card-body uk-hidden"></div>
-                </div>
-            </div>
-    </div>
+</div>
 
 </body>
 <footer>
