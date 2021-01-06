@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Startseite</title>
 
-    <script src="../data/exampleCategories.js"></script>
-    <script src="../javascript/getCategories.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/global.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../libs/uikit/css/uikit.min.css">
@@ -22,61 +20,56 @@
 </head>
 <body style="background-color: #f8f8f8;" onload="loadPopUp()">
 
+    <!-- Header -->
+    <div class="headContent">
 
-<!-- Header -->
-<div class="headContent">
+        <!-- Logo -->
+        <h1 id="logo" class="uk-heading uk-text-center">
+            <a href="index.html">
+                <img src="../img/logo.png"/>
+            </a>
+        </h1>
 
-    <!-- Logo einbinden -->
-    <h1 id="logo" class="uk-heading uk-text-center">
-        <a href="index.html">
-            <img src="../img/logo.png"/>
-        </a>
-    </h1>
-
-    <!-- Navigation zwischen den Seiten -->
-    <div id="navbar" class="uk-text-center">
-        <img src="images/light.jpg" alt="">
-        <div class="uk-position-center">
-            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-                <div  class="uk-navbar">
-                    <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="outline.html">Daten</a></li>
-                        <li><a href="settings.html">Einstellungen</a></li>
-                        <li><a href="impressum.html">Impressum</a></li>
-                    </ul>
-                </div>
-            </nav>
+        <!-- Navbar between sites -->
+        <div id="navbar" class="uk-text-center">
+            <div class="uk-position-center">
+                <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                    <div  class="uk-navbar">
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-active"><a href="outline.html">Daten</a></li>
+                            <li><a href="settings.html">Einstellungen</a></li>
+                            <li><a href="impressum.html">Impressum</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
+
+        <form style="visibility: hidden" id="searchform" class="uk-search uk-search-default" onkeyup="searchTable()">
+            <span class="uk-search-icon-flip" uk-search-icon></span>
+            <input id="searchbar" class="uk-search-input" type="search" placeholder="Search...">
+        </form>
+
+        <hr class="uk-divider-icon">
     </div>
 
-    <!-- Suchfeld -->
-    <form style="visibility: hidden" id="searchform" class="uk-search uk-search-default" onkeyup="searchTable()">
-        <span class="uk-search-icon-flip" uk-search-icon></span>
-        <input id="searchbar" class="uk-search-input" type="search" placeholder="Search...">
-    </form>
+    <a id="callPopUp" class="uk-icon-button" href="#unsubscribe_modal" uk-toggle></a>
 
-    <!-- Trenner -->
-    <hr class="uk-divider-icon">
-</div>
+    <!-- Pop-up: Unsubscribe table -->
+    <div id="unsubscribe_modal" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
 
-<a id="callPopUp" class="uk-icon-button" href="#unsubscribe_modal" uk-toggle></a>
-
-<!-- Pop-up zum abonnieren der Tabelle -->1
-
-<div id="unsubscribe_modal" uk-modal>
-    <div class="uk-modal-dialog">
-        <button class="uk-modal-close-default" type="button" uk-close></button>
-
-        <div class="uk-modal-body">
-            <h2 class="uk-modal-title uk-text-center">Tabelle deabonnieren</h2>
-            <p>Bitte geben Sie ihre Mailadresse an um nicht weiter über neue Daten dieser Tabelle informiert zu werden.</p>
-            <input id="unsubscribe_input" placeholder="E-Mail">
-        </div>
-        <div class="uk-modal-footer uk-text-center">
-            <button id="subscribe_bt" class="uk-button uk-button-primary" onclick="unsubscribe()" type="button">OK</button>
+            <div class="uk-modal-body">
+                <h2 class="uk-modal-title uk-text-center">Tabelle deabonnieren</h2>
+                <p>Bitte geben Sie ihre Mailadresse an um nicht weiter über neue Daten dieser Tabelle informiert zu werden.</p>
+                <input id="unsubscribe_input" placeholder="E-Mail">
+            </div>
+            <div class="uk-modal-footer uk-text-center">
+                <button id="subscribe_bt" class="uk-button uk-button-primary" onclick="unsubscribe()" type="button">OK</button>
+            </div>
         </div>
     </div>
-</div>
 
 </body>
 </html>
