@@ -7,7 +7,7 @@ let id = urlParams.get('id')
 const url_dataset = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false"
 const url_dataset_count = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=0&countonly=true&deflatt=false"
 const url_dataset_keys = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/collection/data_" + id + "/getAttributes?storage=smartmonitoring"
-const url_category_updateTime = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category/tbl_cat_id?tbl_cat_id=" + id
+const url_category_updateTime = SWAC_config.datasources[1] + "tbl_category/tbl_cat_id?tbl_cat_id=" + id
 
 window.onload = function () {
 

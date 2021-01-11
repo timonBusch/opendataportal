@@ -1,2 +1,4 @@
 *.idea
 swac_template/.idea/workspace.xml
+/OpenDataPortal/nbproject/private/
+/nbproject/private/

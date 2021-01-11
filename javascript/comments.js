@@ -26,7 +26,7 @@ function postComment() {
     }
     formBody = formBody.join("&")
 
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/comment/addComment", formBody)
+    postData(SWAC_config.datasources[1] + "comment/addComment", formBody)
 
 }
 
@@ -35,7 +35,7 @@ function postComment() {
  * @returns {Promise<any>}
  */
 async function getComments() {
-    let response = await fetch("http://localhost:8080/opendataportal-1.0-SNAPSHOT/comment/tableId?tableId=" + id_comments);
+    let response = await fetch(SWAC_config.datasources[1] + "/comment/tableId?tableId=" + id_comments);
     return await response.json()
 }
 

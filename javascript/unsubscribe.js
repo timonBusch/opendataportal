@@ -20,7 +20,7 @@ function unsubscribe() {
     }
     formBody = formBody.join("&")
 
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/subscriber/rmvSubscriber", formBody)
+    postData(SWAC_config.datasources[1] + "subscriber/rmvSubscriber", formBody)
 
 
 

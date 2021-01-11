@@ -14,7 +14,7 @@ function invalidDataExists() {
 }
 
 async function getValid() {
-    let response = await fetch("http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl/id?id=" + id_valid);
+    let response = await fetch(SWAC_config.datasources[1] + "tbl/id?id=" + id_valid);
     return await response.json()
 }
 

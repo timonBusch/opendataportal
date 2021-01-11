@@ -1,4 +1,4 @@
-let tbl_cat_url = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category"
+let tbl_cat_url = SWAC_config.datasources[1] + "tbl_category"
 var fetchedData = [];
 
 const promiseOfData =
