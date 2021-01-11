@@ -1,4 +1,4 @@
-let url = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category"
+let tbl_cat_url = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category"
 var fetchedtables = [];
 let actCategory;
 
@@ -23,8 +23,10 @@ function getCheckedBoxes(chkboxName) {
 
 /**
  * Checks if the category already exists
+ * returns true if the category is new, otherwise it returns false
+ *
  * @param catName
- * @returns {boolean}
+ * @returns {boolean} - true: category is new, false: category already exists
  */
 function isNewCategory(catName){
     for (var i = 0; i < fetchedCategories.length; i++){
@@ -61,8 +63,8 @@ function addCategory(){
 
 /**
  * POST to insert a new category
- * @param name
- * @param description
+ * @param name - category name
+ * @param description - category description
  */
 async function postCategory(name, description) {
     let category = {
@@ -150,7 +152,7 @@ function deleteCategory(){
 
 /**
  * Prepares the POST request to update a category description
- * @param catDescription
+ * @param catDescription - category description
  */
 function updateCategory(catDescription){
     let category = {
@@ -168,8 +170,8 @@ function updateCategory(catDescription){
     postData(caturl+"/updateCategory", formBody)
 }
 
-const promiseOfSomeJsonData =
-    fetch(url)
+const promiseOfData =
+    fetch(tbl_cat_url)
         .then(r=>r.json())
         .then(data => {
             fetchedtables = data;
@@ -177,5 +179,5 @@ const promiseOfSomeJsonData =
         });
 
 window.onload = async () => {
-    let someData = await promiseOfSomeJsonData;
+    let promisedData = await promiseOfData;
 };

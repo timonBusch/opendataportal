@@ -70,7 +70,7 @@ function editCategories(){
  * Checks if an element is part of another array
  * @param source - array
  * @param target - element
- * @returns {boolean}
+ * @returns {boolean} true: target is element of source, false: target is not element of source
  */
 function containsAny(source, target){
     var result = source.filter(function(item){ return target.indexOf(item) > -1});

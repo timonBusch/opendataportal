@@ -1,12 +1,8 @@
-let url = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category"
+let tbl_cat_url = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/tbl_category"
 var fetchedData = [];
-var fdOptions = {
-    showWhenNoData: false,
-    sortable: true
-};
 
-const promiseOfSomeJsonData =
-    fetch(url)
+const promiseOfData =
+    fetch(tbl_cat_url)
     .then(r=>r.json())
     .then(data => {
         fetchedData = data
@@ -23,14 +19,9 @@ const filterWhenReady = function (requestors) {
 };
 
 window.onload = async () => {
-    let someData = await promiseOfSomeJsonData;
+    let promiesdData = await promiseOfData;
     console.log("onload");
     document.getElementById('searchbar').value = "";
-    /*
-    SWAC_reactions.addReaction(function () {
-        displayResult(getFilterFromLS());
-    }, "present_categories");
-     */
     SWAC_reactions.addReaction(filterWhenReady, "present_categories", "fetchedDatasets");
 };
 

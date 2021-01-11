@@ -17,7 +17,7 @@ function updateLS(name) {
 }
 
 /**
- * If the user comes from startpage, filters should be resetted and the selected filter should
+ * If the user comes from startpage, th filters should be resetted and the selected filter should
  * operate
  */
 function startfilter(name) {
@@ -50,8 +50,8 @@ function allStorage() {
  * Checks if LocalStorage might have deleted categories,
  * if so, the category will be removed
  *
- * @param categoryInLS
- * @returns {boolean}
+ * @param categoryInLS - category to check
+ * @returns {boolean} - true: the category is still valid, false: there was an invalid (deleted) category
  */
 function checkLS(categoryInLS){
     let categoryNames = [];
@@ -66,7 +66,7 @@ function checkLS(categoryInLS){
 }
 
 /**
- * Get all filteroptions from ls
+ * Get all filteroptions (categories) from ls
  */
 function getFilterFromLS() {
     let checkedFilter = [];
@@ -81,7 +81,7 @@ function getFilterFromLS() {
 }
 
 /**
- * Display the tableboxes and the rusultcount in outline.html
+ * Display the "tableboxes" (datasets) and the rusultcount in outline.html
  *
  * @param checkedFilter - checked filteroptions
  */
@@ -112,9 +112,9 @@ function displayResult(checkedFilter) {
 }
 
 /**
- * Check filteroptions in outline.html
+ * Set checkmarks for the filteroptions in outline.html
  *
- * @param checkedFilter
+ * @param checkedFilter options (categories) to check
  */
 function checkCheckbox(checkedFilter) {
     let checkBox = document.getElementById(checkedFilter);
