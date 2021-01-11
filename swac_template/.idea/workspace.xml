@@ -29,10 +29,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="startseite category chance">
+    <list default="true" id="50c2adc1-6095-403d-8d17-b5f3aa293b23" name="Default Changelist" comment="removed attributes from warning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javascript/filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javascript/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites/tabelle_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/sites/tabelle_details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +55,16 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1kY85iHRxbTCqje8opnHCYCpLTA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <OptionsSetting value="false" id="Update" />
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
+  <component name="ProjectId" id="1kY85iHRxbTCqje8opnHCYCpLTA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -116,6 +121,23 @@
       <workItem from="1609060331677" duration="4978000" />
       <workItem from="1609159314165" duration="14265000" />
       <workItem from="1609245024832" duration="4180000" />
+      <workItem from="1607329848257" duration="5953000" />
+      <workItem from="1607865450659" duration="631000" />
+      <workItem from="1607867589589" duration="3521000" />
+      <workItem from="1607936652967" duration="22948000" />
+      <workItem from="1608038929869" duration="1407000" />
+      <workItem from="1608280486327" duration="12978000" />
+      <workItem from="1608539614312" duration="13460000" />
+      <workItem from="1608644707031" duration="2269000" />
+      <workItem from="1608829303963" duration="665000" />
+      <workItem from="1609330730022" duration="6512000" />
+      <workItem from="1609419341658" duration="5368000" />
+      <workItem from="1609578497167" duration="13539000" />
+      <workItem from="1609601614803" duration="3351000" />
+      <workItem from="1609751395308" duration="14620000" />
+      <workItem from="1609840511183" duration="2540000" />
+      <workItem from="1610095141566" duration="941000" />
+      <workItem from="1610356344146" duration="1284000" />
     </task>
     <task id="LOCAL-00001" summary="color change header">
       <created>1605890889177</created>
@@ -257,14 +279,168 @@
       <option name="project" value="LOCAL" />
       <updated>1606731817889</updated>
     </task>
-    <task id="LOCAL-00021" summary="startseite category chance">
-      <created>1607335846751</created>
+    <task id="LOCAL-00021" summary="filter for attributes working and downloading as json">
+      <created>1607686036620</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1607335846751</updated>
+      <updated>1607686036620</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added js for subscribing">
+      <created>1607875971387</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1607875971387</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Tables can now be commented">
+      <created>1607947937963</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1607947937963</updated>
+    </task>
+    <task id="LOCAL-00024" summary="warning if datasets are invalid and category and updateTime is shown correctly">
+      <created>1607961766105</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1607961766105</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Erstellungsdatum to Letztes Update">
+      <created>1607961954166</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1607961954166</updated>
+    </task>
+    <task id="LOCAL-00026" summary="fixed datensaetze abrufen and implemented csv export">
+      <created>1608292991858</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1608292991858</updated>
+    </task>
+    <task id="LOCAL-00027" summary="added Java Code example">
+      <created>1608545884014</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1608545884014</updated>
+    </task>
+    <task id="LOCAL-00028" summary="added functionality for subscribe">
+      <created>1608551034536</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1608551034536</updated>
+    </task>
+    <task id="LOCAL-00029" summary="implemented code example for java">
+      <created>1608554783557</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1608554783557</updated>
+    </task>
+    <task id="LOCAL-00030" summary="implemented JavaScript and Python example">
+      <created>1608556053327</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1608556053327</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Input to show a exact amount datasets and dataset can be filtered through start and end date">
+      <created>1609423723773</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1609423723773</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added Link for settings">
+      <created>1609587110304</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1609587110304</updated>
+    </task>
+    <task id="LOCAL-00033" summary="added code example matlab">
+      <created>1609587354668</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1609587354668</updated>
+    </task>
+    <task id="LOCAL-00034" summary="added site for validation settings">
+      <created>1609587400204</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1609587400204</updated>
+    </task>
+    <task id="LOCAL-00035" summary="added links for new settings site">
+      <created>1609587424721</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1609587424721</updated>
+    </task>
+    <task id="LOCAL-00036" summary="preparing settings for REST">
+      <created>1609602158659</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1609602158660</updated>
+    </task>
+    <task id="LOCAL-00037" summary="fixed postData">
+      <created>1609604247484</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1609604247484</updated>
+    </task>
+    <task id="LOCAL-00038" summary="small fix in settings.html">
+      <created>1609752503510</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1609752503510</updated>
+    </task>
+    <task id="LOCAL-00039" summary="refactoring comments">
+      <created>1609753691383</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1609753691383</updated>
+    </task>
+    <task id="LOCAL-00040" summary="changed name to tbl_id in outline.html">
+      <created>1609757187116</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1609757187116</updated>
+    </task>
+    <task id="LOCAL-00041" summary="changed data preview, id cannot be filtered anymore, warning now show which attributes are affected">
+      <created>1609764204294</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1609764204294</updated>
+    </task>
+    <task id="LOCAL-00042" summary="small refactoring">
+      <created>1609767034082</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1609767034082</updated>
+    </task>
+    <task id="LOCAL-00043" summary="removed attributes from warning">
+      <created>1609854330065</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1609854330065</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,13 +471,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="color change header" />
-    <MESSAGE value="adding header and footer to sites" />
-    <MESSAGE value="adding search function to outline.html" />
-    <MESSAGE value="fix sort button" />
-    <MESSAGE value="fixing link in navbar" />
-    <MESSAGE value="hiding searchbar on details" />
-    <MESSAGE value="adding number of tables when loading tables" />
     <MESSAGE value="add startseite.html" />
     <MESSAGE value="add startseite.js" />
     <MESSAGE value="startseite href ergänzt" />
@@ -314,36 +483,19 @@
     <MESSAGE value="opendata portal icon is link to startseite" />
     <MESSAGE value="opendata portal icon is link to startseite - added also to impressum" />
     <MESSAGE value="startseite category chance" />
-    <option name="LAST_COMMIT_MESSAGE" value="startseite category chance" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2610" y="-156" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608286143670">
-      <screen x="1920" y="-423" width="1920" height="1040" />
-    </state>
-    <state x="2610" y="-156" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1608286143670" />
-    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1609016062573">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1280.680@0.0.1280.680" timestamp="1609016062573" />
-    <state x="121" y="51" key="MergeDialog" timestamp="1609016083538">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="121" y="51" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1609016083538" />
-    <state x="2873" y="-423" width="974" height="1047" key="dock-window-1" timestamp="1607508969632">
-      <screen x="1920" y="-423" width="1920" height="1040" />
-    </state>
-    <state x="2873" y="-423" width="974" height="1047" key="dock-window-1/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1607508969632" />
-    <state x="2682" y="-76" width="585" height="592" key="find.popup" timestamp="1608547375639">
-      <screen x="1920" y="-423" width="1920" height="1040" />
-    </state>
-    <state x="2682" y="-76" width="585" height="592" key="find.popup/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1608547375639" />
-    <state x="2536" y="29" key="run.anything.popup" timestamp="1607684903097">
-      <screen x="1920" y="-423" width="1920" height="1040" />
-    </state>
-    <state x="2536" y="29" key="run.anything.popup/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1607684903097" />
-    <state x="2543" y="-198" width="672" height="678" key="search.everywhere.popup" timestamp="1608546201357">
-      <screen x="1920" y="-423" width="1920" height="1040" />
-    </state>
-    <state x="2543" y="-198" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/1920.-423.1920.1040@1920.-423.1920.1040" timestamp="1608546201357" />
+    <MESSAGE value="Input to show a exact amount datasets and dataset can be filtered through start and end date" />
+    <MESSAGE value="added Link for settings" />
+    <MESSAGE value="added code example matlab" />
+    <MESSAGE value="added site for validation settings" />
+    <MESSAGE value="added links for new settings site" />
+    <MESSAGE value="preparing settings for REST" />
+    <MESSAGE value="fixed postData" />
+    <MESSAGE value="small fix in settings.html" />
+    <MESSAGE value="refactoring comments" />
+    <MESSAGE value="changed name to tbl_id in outline.html" />
+    <MESSAGE value="changed data preview, id cannot be filtered anymore, warning now show which attributes are affected" />
+    <MESSAGE value="small refactoring" />
+    <MESSAGE value="removed attributes from warning" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed attributes from warning" />
   </component>
 </project>
