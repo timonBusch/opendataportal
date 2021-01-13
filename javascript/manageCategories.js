@@ -104,7 +104,7 @@ function assignCategories(startCategories, finCategories){
                 toInsert.push(finCategories[i]);
             }
         }
-        deleteCategories(startCategories);
+        //deleteCategories(startCategories);
         insertCategories(toInsert);
     }
 }
@@ -114,6 +114,7 @@ function assignCategories(startCategories, finCategories){
  * @param finCategories - array with the categories to insert
  */
 function insertCategories(finCategories){
+    /*
     let formBody = [];
     let tblidEncodedKey = encodeURIComponent("table_id");
     let tblidEncodedValue = encodeURIComponent(tbl_id);
@@ -123,7 +124,10 @@ function insertCategories(finCategories){
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl+"/addTBLCategories", formBody);
+    postData(caturl+"/addTBLCategories", formBody);*/
+    let tbl_cats = {"table_id":tbl_id, "category_ids":finCategories};
+    console.log(JSON.stringify(tbl_cats));
+    postData(caturl+"/addTBLCategories", tbl_cats);
 }
 
 /**
@@ -131,6 +135,7 @@ function insertCategories(finCategories){
  * @param startCategories - array with the categories to delete
  */
 function deleteCategories(startCategories){
+    /*
     let formBody = [];
     let tblidEncodedKey = encodeURIComponent("table_id");
     let tblidEncodedValue = encodeURIComponent(tbl_id);
@@ -140,5 +145,9 @@ function deleteCategories(startCategories){
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl+"/deleteTBLCategories", formBody);
+    postData(caturl+"/deleteTBLCategories", formBody);*/
+
+    let tbl_cats = {"table_id":tbl_id, "category_ids":finCategories};
+    console.log(JSON.stringify(tbl_cats));
+    //postData(caturl+"/addTBLCategories", tbl_cats);
 }
