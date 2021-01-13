@@ -11,7 +11,7 @@ function postData(url, data) {
         cache: 'no-cache',
         credentials: 'same-origin',
         headers: {
-            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            'content-type': 'application/json'
         },
         method: 'POST',
         mode: 'cors',

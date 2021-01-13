@@ -125,9 +125,9 @@ function insertCategories(finCategories){
     formBody = formBody.join("&");
 
     postData(caturl+"/addTBLCategories", formBody);*/
-    let tbl_cats = {"table_id":tbl_id, "category_ids":finCategories};
+    let tbl_cats = {"tblId":tbl_id, "categories":finCategories};
     console.log(JSON.stringify(tbl_cats));
-    postData(caturl+"/addTBLCategories", JSON.stringify(tbl_cats));
+    postData( "http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addTBLCategories", JSON.stringify(tbl_cats));
 }
 
 /**
