@@ -127,7 +127,7 @@ function insertCategories(finCategories){
     postData(caturl+"/addTBLCategories", formBody);*/
     let tbl_cats = {"table_id":tbl_id, "category_ids":finCategories};
     console.log(JSON.stringify(tbl_cats));
-    postData(caturl+"/addTBLCategories", tbl_cats);
+    postData(caturl+"/addTBLCategories", JSON.stringify(tbl_cats));
 }
 
 /**
@@ -147,7 +147,7 @@ function deleteCategories(startCategories){
 
     postData(caturl+"/deleteTBLCategories", formBody);*/
 
-    let tbl_cats = {"table_id":tbl_id, "category_ids":finCategories};
+    let tbl_cats = {"table_id":tbl_id, "category_ids":startCategories};
     console.log(JSON.stringify(tbl_cats));
-    //postData(caturl+"/addTBLCategories", tbl_cats);
+    //postData(caturl+"/addTBLCategories", JSON.stringify(tbl_cats));
 }
