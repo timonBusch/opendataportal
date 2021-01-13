@@ -35,7 +35,7 @@ function postComment() {
  * @returns {Promise<any>}
  */
 async function getComments() {
-    let response = await fetch(SWAC_config.datasources[1] + "/comment/tableId?tableId=" + id_comments);
+    let response = await fetch(SWAC_config.datasources[1] + "comment/tableId?tableId=" + id_comments);
     return await response.json()
 }
 
