@@ -54,7 +54,7 @@ function addCategory(){
             })
             postCategory(catName, catDescription).then(r => postTBL_Category(catName, checkedTables));
         } else {
-            alert(duplicateMsg)
+            alert(duplicateMsg);
         }
     } else {
         alert(missingMsg);
@@ -79,8 +79,7 @@ async function postCategory(name, description) {
     }
     formBody = formBody.join("&");
 
-    let response = await fetch(caturl+"/addCategory", {
-        body: formBody,
+    let response = await fetch(caturl+"addCategory?" + formBody, {
         cache: 'no-cache',
         credentials: 'same-origin',
         headers: {
@@ -110,7 +109,7 @@ function postTBL_Category(catName, checkedTables) {
     formBody.push(nameEncodedKey + "=" + nameEncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl+"/addTBLCategory", formBody);
+    postData(caturl + "/addTBLCategory?" + formBody);
 }
 
 /**
@@ -129,8 +128,8 @@ function editCategory(){
     let missingMsg = "Bitte geben Sie eine Beschreibung an.";
     var catDescription = document.getElementById("categorydescription").value;
     if (catDescription !== "") {
-        console.log("Kategoriebeschreibung anpassen von " + actCategory)
-        updateCategory(catDescription)
+        console.log("Kategoriebeschreibung anpassen von " + actCategory);
+        updateCategory(catDescription);
     } else {
         alert(missingMsg);
     }
@@ -140,14 +139,13 @@ function editCategory(){
  * Prepares the POST request to delete a category
  */
 function deleteCategory(){
-    console.log("Löschen der Kategorie " + actCategory)
     let formBody = [];
     let EncodedKey = encodeURIComponent("id");
     let EncodedValue = encodeURIComponent(actCategory);
     formBody.push(EncodedKey + "=" + EncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl+"/deleteCategory", formBody);
+    postData(caturl + "/deleteCategory?", formBody);
 }
 
 /**
@@ -162,12 +160,12 @@ function updateCategory(catDescription){
 
     let formBody = []
     for (let property in category) {
-        let encodedKey = encodeURIComponent(property)
-        let encodedValue = encodeURIComponent(category[property])
-        formBody.push(encodedKey + "=" + encodedValue)
+        let encodedKey = encodeURIComponent(property);
+        let encodedValue = encodeURIComponent(category[property]);
+        formBody.push(encodedKey + "=" + encodedValue);
     }
-    formBody = formBody.join("&")
-    postData(caturl+"/updateCategory", formBody)
+    formBody = formBody.join("&");
+    postData(caturl + "updateCategory?" + formBody);
 }
 
 const promiseOfData =

@@ -1,4 +1,4 @@
-let caturl = SWAC_config.datasources[1] + "category"
+let caturl = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/" + "category/"
 var fetchedCategories = [];
 let checkedCategories = [];
 let tbl_id;
@@ -104,7 +104,7 @@ function assignCategories(startCategories, finCategories){
                 toInsert.push(finCategories[i]);
             }
         }
-        //deleteCategories(startCategories);
+        deleteCategories(startCategories);
         insertCategories(toInsert);
     }
 }
@@ -114,7 +114,6 @@ function assignCategories(startCategories, finCategories){
  * @param finCategories - array with the categories to insert
  */
 function insertCategories(finCategories){
-
     let formBody = [];
     let tblidEncodedKey = encodeURIComponent("table_id");
     let tblidEncodedValue = encodeURIComponent(tbl_id);
@@ -123,14 +122,8 @@ function insertCategories(finCategories){
     let catidsEncodedValue = encodeURIComponent(finCategories);
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
     formBody = formBody.join("&");
-    console.log(formBody)
-    postData("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addTBLCategories?"+formBody, formBody);
-    /*
-    let tbl_cats = {"tblId":tbl_id, "categories":finCategories};
-    console.log(JSON.stringify(tbl_cats));
-    postData( "http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addTBLCategories", JSON.stringify(tbl_cats));
 
-     */
+    postData(caturl + "addTBLCategories?" + formBody);
 }
 
 /**
@@ -138,7 +131,6 @@ function insertCategories(finCategories){
  * @param startCategories - array with the categories to delete
  */
 function deleteCategories(startCategories){
-    /*
     let formBody = [];
     let tblidEncodedKey = encodeURIComponent("table_id");
     let tblidEncodedValue = encodeURIComponent(tbl_id);
@@ -148,9 +140,5 @@ function deleteCategories(startCategories){
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl+"/deleteTBLCategories", formBody);*/
-
-    let tbl_cats = {"table_id":tbl_id, "category_ids":startCategories};
-    console.log(JSON.stringify(tbl_cats));
-    //postData(caturl+"/addTBLCategories", JSON.stringify(tbl_cats));
+    postData(caturl + "deleteTBLCategories?" + formBody);
 }
