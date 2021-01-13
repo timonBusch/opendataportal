@@ -4,10 +4,10 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
 let id = urlParams.get('id')
 
-const url_dataset = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false"
-const url_dataset_count = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=0&countonly=true&deflatt=false"
-const url_dataset_keys = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/collection/data_" + id + "/getAttributes?storage=smartmonitoring"
-const url_category_updateTime = SWAC_config.datasources[1] + "tbl_category/tbl_cat_id?tbl_cat_id=" + id
+const url_dataset = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false"
+const url_dataset_count = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/" + id + "?storage=smartmonitoring&size=0&countonly=true&deflatt=false"
+const url_dataset_keys = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/collection/" + id + "/getAttributes?storage=smartmonitoring"
+const url_category_updateTime = SWAC_config.datasources[1] + "tbl_category/tbl_cat_name?tbl_cat_name=" + id
 
 window.onload = function () {
 
@@ -15,6 +15,12 @@ window.onload = function () {
         let count = data
         let number = document.getElementById("number_dataset");
         number.textContent = count.records[0].count + " Datensätze zur Verfügung";
+    }).catch(function () {
+        UIkit.notification({
+            message: 'Error while getting count',
+            status: 'warning',
+            timeout: 5000
+        });
     })
 
     document.getElementById("filter_attributes").addEventListener("click", filter_attributes)
@@ -164,11 +170,23 @@ var categories_updateTime
 getData(url_category_updateTime).then(data => {
     categories_updateTime = data
 
+}).catch(function () {
+    UIkit.notification({
+        message: 'Error while getting table details',
+        status: 'warning',
+        timeout: 5000
+    });
 })
 
 var dataset;
 getData(url_dataset).then(data =>{
     dataset = data
+}).catch(function () {
+    UIkit.notification({
+        message: 'Error while getting datasets',
+        status: 'warning',
+        timeout: 5000
+    });
 });
 
 var dataset_keys;
@@ -187,6 +205,12 @@ getData(url_dataset_keys).then(data => {
         })
     }
 
+}).catch(function () {
+    UIkit.notification({
+        message: 'Error while getting datakeys',
+        status: 'warning',
+        timeout: 5000
+    });
 })
 
 SWAC_reactions.addReaction(function () {
