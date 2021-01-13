@@ -9,8 +9,8 @@
  * Configuration for SWAC
  */
 var SWAC_config = {};
-SWAC_config.swac_root = "/OpenDataPortal";
-SWAC_config.app_root = "/OpenDataPortal";
+SWAC_config.swac_root = "/projekt6_opendataportal"; //OpenDataPortal
+SWAC_config.app_root = "/projekt6_opendataportal"; //OpenDataPortal
 // Options for progressive webapp
 SWAC_config.progressive = {};
 SWAC_config.progressive.active = false;
@@ -42,7 +42,7 @@ SWAC_config.onlinereactions[0] = {
 // Backend connection settings
 SWAC_config.datasources = [];
 SWAC_config.datasources[0] = "/SWAC/data/[fromName]";
-SWAC_config.datasources[1] = "/OpenDataPortalBackend/";
+SWAC_config.datasources[1] = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/" //"/OpenDataPortalBackend/";
 SWAC_config.datasources[2] = "/OpenDataPortalBackend/[fromName]";
 
 SWAC_config.interfaces = {};
