@@ -114,7 +114,7 @@ function assignCategories(startCategories, finCategories){
  * @param finCategories - array with the categories to insert
  */
 function insertCategories(finCategories){
-    /*
+
     let formBody = [];
     let tblidEncodedKey = encodeURIComponent("table_id");
     let tblidEncodedValue = encodeURIComponent(tbl_id);
@@ -123,11 +123,14 @@ function insertCategories(finCategories){
     let catidsEncodedValue = encodeURIComponent(finCategories);
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
     formBody = formBody.join("&");
-
-    postData(caturl+"/addTBLCategories", formBody);*/
+    console.log(formBody)
+    postDataWithout("http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addTBLCategories?"+formBody, formBody);
+    /*
     let tbl_cats = {"tblId":tbl_id, "categories":finCategories};
     console.log(JSON.stringify(tbl_cats));
     postData( "http://localhost:8080/opendataportal-1.0-SNAPSHOT/category/addTBLCategories", JSON.stringify(tbl_cats));
+
+     */
 }
 
 /**

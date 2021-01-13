@@ -11,7 +11,7 @@ function postData(url, data) {
         cache: 'no-cache',
         credentials: 'same-origin',
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
         },
         method: 'POST',
         mode: 'cors',
@@ -32,7 +32,7 @@ function postData(url, data) {
  */
 function postDataWithout(url, data) {
     return fetch(url, {
-        body: data,
+        //body: data,
         cache: 'no-cache',
         credentials: 'same-origin',
         headers: {
