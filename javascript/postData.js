@@ -30,7 +30,7 @@ function postData(url, data) {
  * @param data
  * @returns {Promise<void>}
  */
-function postDataWithout(url, data) {
+function postDataWithout(url) {
     return fetch(url, {
         //body: data,
         cache: 'no-cache',

@@ -1,27 +1,29 @@
 
-const queryString = window.location.search;
 
-const urlParams = new URLSearchParams(queryString)
-let id = urlParams.get('id')
+let id = new URLSearchParams(window.location.search).get('id')
 
-const url_dataset = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false"
-const url_dataset_count = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/" + id + "?storage=smartmonitoring&size=0&countonly=true&deflatt=false"
-const url_dataset_keys = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/collection/" + id + "/getAttributes?storage=smartmonitoring"
-const url_category_updateTime = SWAC_config.datasources[1] + "tbl_category/tbl_cat_name?tbl_cat_name=" + id
+const url_category_updateTime = SWAC_config.datasources[1] + "tbl_category/tbl_cat_id?tbl_cat_id=" + id
+
+var categories_updateTime
+var table_name = ""
+getData(url_category_updateTime).then(data => {
+    categories_updateTime = data
+    table_name = data.name
+    getTableInformation()
+}).catch(function () {
+    UIkit.notification({
+        message: 'Error while getting table details',
+        status: 'warning',
+        timeout: 5000
+    });
+})
+
+
 
 window.onload = function () {
 
-    getData(url_dataset_count).then(data => {
-        let count = data
-        let number = document.getElementById("number_dataset");
-        number.textContent = count.records[0].count + " Datensätze zur Verfügung";
-    }).catch(function () {
-        UIkit.notification({
-            message: 'Error while getting count',
-            status: 'warning',
-            timeout: 5000
-        });
-    })
+    getTableCount()
+
 
     document.getElementById("filter_attributes").addEventListener("click", filter_attributes)
     document.getElementById("export_json").addEventListener("click", exportComponentAsJson)
@@ -110,11 +112,11 @@ function filter_attributes(){
     // Set component to filtered dataset
     if(correctInput) {
 
-        let new_dataset_url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&includes=" + include_string + "&size=" + size + "&countonly=false&deflatt=false"
+        let new_dataset_url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/" + table_name + "?storage=smartmonitoring&includes=" + include_string + "&size=" + size + "&countonly=false&deflatt=false"
         setExample(new_dataset_url)
         getData(new_dataset_url).then(data => {
             dataset = data
-            setComponentData(component)
+            setComponentData(component, dataset.records)
         })
 
         UIkit.modal("#datasets_modal").toggle()
@@ -130,10 +132,11 @@ function filter_attributes(){
 
 /**
  * Set the data of a component
+ * @param component_name
  * @param component
  */
-function setComponentData(component) {
-    component.swac_comp.addData("data_preview", dataset.records)
+function setComponentData(component_name, component) {
+    component_name.swac_comp.addData("data_preview", component)
 }
 
 
@@ -165,57 +168,76 @@ function exportComponentAsCSV() {
 
 // Call Api and set variable for SWAC components
 
-var categories_updateTime
+function getTableCount() {
+    const url_dataset_count = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/" + table_name + "?storage=smartmonitoring&size=0&countonly=true&deflatt=false"
 
-getData(url_category_updateTime).then(data => {
-    categories_updateTime = data
+    getData(url_dataset_count).then(data => {
+        let count = data
+        let number = document.getElementById("number_dataset");
+        number.textContent = count.records[0].count + " Datensätze zur Verfügung";
+    }).catch(function () {
+        UIkit.notification({
+            message: 'Error while getting count',
+            status: 'warning',
+            timeout: 5000
+        });
+    })
+}
 
-}).catch(function () {
-    UIkit.notification({
-        message: 'Error while getting table details',
-        status: 'warning',
-        timeout: 5000
-    });
-})
 
 var dataset;
-getData(url_dataset).then(data =>{
-    dataset = data
-}).catch(function () {
-    UIkit.notification({
-        message: 'Error while getting datasets',
-        status: 'warning',
-        timeout: 5000
-    });
-});
-
 var dataset_keys;
-getData(url_dataset_keys).then(data => {
-    dataset_keys = data.attributes
-    if(dataset_keys !== undefined) {
-        for(let i =0; i < dataset_keys.length; i++) {
-            if(dataset_keys[i].name === "id") {
-                dataset_keys.splice(i,1)
-            }
-        }
-        dataset_keys.sort(function (a, b) {
-            if(a.name < b.name) {return -1;}
-            if(a.name > b.name) {return 1}
-            return 0
-        })
-    }
+function getTableInformation() {
+    const url_dataset = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/" + table_name + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false"
 
-}).catch(function () {
-    UIkit.notification({
-        message: 'Error while getting datakeys',
-        status: 'warning',
-        timeout: 5000
+
+    getData(url_dataset).then(data =>{
+        dataset = data
+    }).catch(function () {
+        UIkit.notification({
+            message: 'Error while getting datasets',
+            status: 'warning',
+            timeout: 5000
+        });
     });
-})
+
+    const url_dataset_keys = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/collection/" + table_name + "/getAttributes?storage=smartmonitoring"
+
+
+    getData(url_dataset_keys).then(data => {
+        dataset_keys = data.attributes
+        if(dataset_keys !== undefined) {
+            for(let i =0; i < dataset_keys.length; i++) {
+                if(dataset_keys[i].name === "id") {
+                    dataset_keys.splice(i,1)
+                }
+            }
+            dataset_keys.sort(function (a, b) {
+                if(a.name < b.name) {return -1;}
+                if(a.name > b.name) {return 1}
+                return 0
+            })
+        }
+
+    }).catch(function () {
+        UIkit.notification({
+            message: 'Error while getting datakeys',
+            status: 'warning',
+            timeout: 5000
+        });
+    })
+}
+
 
 SWAC_reactions.addReaction(function () {
-
-}, "exampledata")
+    console.log("Blub")
+    let data_preview_component = document.getElementById("data_preview")
+    let present_attributes_component = document.getElementById("present_attributes")
+    data_preview_component.swac_comp.removeAllData()
+    present_attributes_component.swac_comp.removeAllData()
+    setComponentData(data_preview_component, dataset.records)
+    setComponentData(data_preview_component, dataset_keys)
+}, "categories_updateTime")
 
 
 

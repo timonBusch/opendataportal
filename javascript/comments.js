@@ -26,7 +26,7 @@ function postComment() {
     }
     formBody = formBody.join("&")
 
-    postDataWithout(SWAC_config.datasources[1] + "comment/addComment", formBody)
+    postDataWithout(SWAC_config.datasources[1] + "comment/addComment/" + formBody)
 
 }
 
@@ -35,11 +35,11 @@ function postComment() {
  * @returns {Promise<any>}
  */
 async function getComments() {
-    let responseName = await fetch(SWAC_config.datasources[1] + "tbl_category/tbl_cat_name?tbl_cat_name=" + id_comments)
-    let id = await responseName.json()
-    let response = await fetch(SWAC_config.datasources[1] + "comment/tableId?tableId=" + id.tbl_id);
+
+    let response = await fetch(SWAC_config.datasources[1] + "comment/tableId?tableId=" + id_comments);
     return await response.json()
 }
+
 
 var comments
 
