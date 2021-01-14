@@ -22,118 +22,119 @@
 </head>
 
 <body style="background-color: #f8f8f8;">
-    <!-- Header -->
-    <div class="headContent">
-        <!-- Logo  -->
-        <h1 id="logo" class="uk-heading uk-text-center">
-            <a href="index.html">
-                <img src="../img/logo.png"/>
-            </a>
-        </h1>
+<!-- Header -->
+<div class="headContent">
+    <!-- Logo  -->
+    <h1 id="logo" class="uk-heading uk-text-center">
+        <a href="index.html">
+            <img src="../img/logo.png"/>
+        </a>
+    </h1>
 
-        <!-- Navbar between sites -->
-        <div id="navbar" class="uk-text-center">
-            <div class="uk-position-center">
-                <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-                    <div  class="uk-navbar">
-                        <ul class="uk-navbar-nav">
-                            <li class="uk-active"><a href="outline.html">Daten</a></li>
-                            <li><a href="settings.html">Einstellungen</a></li>
-                            <li><a href="impressum.html">Impressum</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+    <!-- Navbar between sites -->
+    <div id="navbar" class="">
+        <div class="">
+            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar style="position:relative; left:50%; margin-left:-161px">
+                <div class="uk-navbar">
+                    <ul class="uk-navbar-nav" style="position:relative; margin-top:-60px; margin-bottom:-20px;">
+                        <li class="uk-active"><a href="outline.html">Daten</a></li>
+                        <li><a href="settings.html">Einstellungen</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
+    </div>
+    <div style="margin-bottom: 10px">
+        <a id="newcat" class="uk-button uk-button-default" href="#datasets_modal" uk-toggle style="position: relative; width: 400px; left: 50%; margin-left: -200px; border-radius: 30px 30px 30px 30px;">
+            Neue Kategorie hinzufügen
+        </a>
+    </div>
+    <div id="showAll">
+        <a id="category_card_all" class="uk-button uk-button-default" onclick="startfilter('all')" href="outline.html" style="position: relative; width: 400px; left: 50%; margin-left: -200px; border-radius: 30px 30px 30px 30px;">
+            Alle Daten anzeigen
+        </a>
+    </div>
+    <hr class="uk-divider-icon">
+</div>
+
+<h2 id="headline">Stöbern Sie in den folgenden Kategorien</h2>
+<div class="uk-section uk-section-muted" style="padding:30px">
+    <div id="present_categories" swa="Present FROM fetchedCategories" class="uk-grid-column-small uk-grid-row-large uk-child-width-1-5@s uk-text-center" uk-grid>
+        <div class="swac_repeatForSet" style="margin-bottom: 10px; margin-top: 10px;">
         <div>
-            <a id="newcat" class="uk-button uk-button-default" href="#datasets_modal" uk-toggle style="position: relative; width: 400px; left: 50%; margin-left: -200px; border-radius: 30px 30px 30px 30px;">
-                Neue Kategorie hinzufügen
-            </a>
-        </div>
-        <hr class="uk-divider-icon">
-    </div>
-
-    <h2 id="headline">Stöbern Sie in den folgenden Kategorien</h2>
-    <div class="uk-section uk-section-muted" style="position: relative; width: 1400px; left: 50%; margin-left: -700px;">
-        <div class="uk-column-1-4">
-            <div id="showAll" style="border: none;">
-                <div class="uk-column-1-4">
-                    <a id="category_card_all" class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" onclick="startfilter('all')" href="outline.html" style="margin-bottom:30px">
-                        <div class="uk-card-body">
-                            <h5 id="all">Alles</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div id="present_categories" swa="Present FROM fetchedCategories" style="border: none;">
-                <div class="uk-column-1-4 swac_repeatForSet" style="margin-bottom:30px">
-                    <div>
-                    <a id="category_card" class="uk-card uk-card-default uk-card-hover uk-border-circle uk-button" onclick="startfilter('{name}')" href="outline.html">
-                        <div class="uk-card-body">
-                            <h5 id="{name}">{name}</h5>
-                        </div>
-
-                    </a>
+            <div class="uk-card uk-card-default uk-card-body uk-card-hover" style="padding-top: 10px;padding-right: 10px;padding-left: 10px;padding-bottom: 10px; height: 280px; margin-left:10px;">
+                <a onclick="startfilter('{name}')" href="outline.html" style="color:inherit; text-decoration:none; padding-top: 10px;padding-right: 10px;padding-left: 10px;padding-bottom: 10px;">
+                    <div class="uk-card-header catheader" style="padding-top: 20px;padding-right: 20px;padding-left: 20px;padding-bottom: 20px;">
+                        <h5 id="{name}">{name}</h5>
                     </div>
-                    <div uk-drop>
-                        <button href="#editCategory_modal" uk-toggle uk-icon="icon: pencil" type="button" onclick="setActCategory({id})" class="uk-button uk-button-default" type="button" style="border: none; padding: 0; margin-left: 240px; margin-top: -80px; z-index: 50;"></button>
-                        <button href="#deleteCategory_modal" uk-toggle uk-icon="icon: trash" type="button" onclick="setActCategory({id})" class="uk-button uk-button-default" type="button" style="border: none; padding: 0; margin-top: -80px;"></button>
-                        <div class="uk-card uk-card-body uk-card-default uk-animation-fade hovertext" style="padding: 20px; margin-top: 0">{description}</div>
+                    <div class="uk-card-body" style="padding-top: 20px;padding-right: 20px;padding-left: 20px;padding-bottom: 20px;">
+                        <p>{description}</p>
+                    </div>
+                </a>
+                <div>
+                    <div class="uk-card-footer" style="bottom: 0;padding-top: 20px;padding-right: 20px;padding-left: 20px;padding-bottom: 20px;">
+                    <button href="#editCategory_modal" uk-toggle uk-icon="icon: pencil" type="button" onclick="setActCategory({id})" class="uk-button uk-button-default" type="button"></button>
+                    <button href="#deleteCategory_modal" uk-toggle uk-icon="icon: trash" type="button" onclick="setActCategory({id})" class="uk-button uk-button-default" type="button"></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Popup: Add category -->
-    <div id="datasets_modal" uk-modal>
-        <div class="uk-modal-dialog" style="border-radius: 10px 10px 10px 10px;">
-            <button class="uk-modal-close-default" type="button" uk-close></button>
-            <div class="uk-modal-body uk-text-center">
-                <h2 class="uk-modal-title">Kategorie hinzufügen</h2>
-                <input type="text" id="catname" name="catName" placeholder="Kategoriename">
-                <textarea id="catdescription" name="catDesc" placeholder="Beschreibung..."></textarea>
-                <p>Bitte wählen Sie die Tabellen aus, die zur Kategorie gehören:</p>
-                <div class="uk-panel-scrollable uk-height-small uk-width-expand uk-text-center">
-                    <form id="present_tables" swa="Present FROM fetchedtables" class="uk-grid-small remove_border" uk-grid>
-                        <div class="swac_repeatForSet" style="width: 100%; text-align: initial;">
-                            <label><input name="checkedTables" class="uk-checkbox" type="checkbox" value="{title}" id="{tbl_id}"> {title}</label>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="uk-modal-footer uk-text-center" style="border-radius: 0px 0px 10px 10px">
-                <button id="addCategory" class="uk-button uk-button-primary uk-modal-close" type="button" onclick="addCategory()">Fertig</button>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
 
-    <!-- Popup: Delete Category -->
-    <div id="deleteCategory_modal" uk-modal>
-        <div class="uk-modal-dialog uk-modal-body">
-            <h2 class="uk-modal-title">Kategorie löschen</h2>
-            <p>Wollen Sie diese Kategorie wirklich löschen?</p>
-            <p class="uk-text-right">
-                <button class="uk-button uk-button-danger uk-modal-close" type="button" onclick="deleteCategory()">Ja</button>
-                <button class="uk-button uk-button-default uk-modal-close" type="button">Nein</button>
-            </p>
+<!-- Popup: Edit category -->
+<div id="editCategory_modal" uk-modal>
+    <div class="uk-modal-dialog" style="border-radius: 10px 10px 10px 10px;">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-body uk-text-center">
+            <h2 class="uk-modal-title">Kategorie ändern</h2>
+            <input type="text" id="categoryname" name="catName" style="width: 70%"><br>
+            <textarea id="categorydescription" name="catDesc" style="width: 70%">{description}</textarea>
+        </div>
+        <div class="uk-modal-footer uk-text-center" style="border-radius: 0px 0px 10px 10px">
+            <button id="editCategory" class="uk-button uk-button-primary uk-modal-close" type="button" onclick="editCategory()">Fertig</button>
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Abbrechen</button>
         </div>
     </div>
+</div>
 
-    <!-- Popup: Edit category -->
-    <div id="editCategory_modal" uk-modal>
-        <div class="uk-modal-dialog" style="border-radius: 10px 10px 10px 10px;">
-            <button class="uk-modal-close-default" type="button" uk-close></button>
-            <div class="uk-modal-body uk-text-center">
-                <h2 class="uk-modal-title">Kategorie ändern</h2>
-                <textarea id="categorydescription" name="catDesc" placeholder="Beschreibung..."></textarea>
-            </div>
-            <div class="uk-modal-footer uk-text-center" style="border-radius: 0px 0px 10px 10px">
-                <button id="editCategory" class="uk-button uk-button-primary uk-modal-close" type="button" onclick="editCategory()">Fertig</button>
-                <button class="uk-button uk-button-default uk-modal-close" type="button">Abbrechen</button>
+<!-- Popup: Add category -->
+<div id="datasets_modal" uk-modal>
+    <div class="uk-modal-dialog" style="border-radius: 10px 10px 10px 10px;">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-body uk-text-center">
+            <h2 class="uk-modal-title">Kategorie hinzufügen</h2>
+            <input type="text" id="catname" name="catName" placeholder="Kategoriename">
+            <textarea id="catdescription" name="catDesc" placeholder="Beschreibung..."></textarea>
+            <p>Bitte wählen Sie die Tabellen aus, die zur Kategorie gehören:</p>
+            <div class="uk-panel-scrollable uk-height-small uk-width-expand uk-text-center">
+                <form id="present_tables" swa="Present FROM fetchedtables" class="uk-grid-small remove_border" uk-grid>
+                    <div class="swac_repeatForSet" style="width: 100%; text-align: initial;">
+                        <label><input name="checkedTables" class="uk-checkbox" type="checkbox" value="{title}" id="{tbl_id}"> {title}</label>
+                    </div>
+                </form>
             </div>
         </div>
+        <div class="uk-modal-footer uk-text-center" style="border-radius: 0px 0px 10px 10px">
+            <button id="addCategory" class="uk-button uk-button-primary uk-modal-close" type="button" onclick="addCategory()">Fertig</button>
+        </div>
     </div>
+</div>
+
+<!-- Popup: Delete Category -->
+<div id="deleteCategory_modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Kategorie löschen</h2>
+        <p>Wollen Sie diese Kategorie wirklich löschen?</p>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-danger uk-modal-close" type="button" onclick="deleteCategory()">Ja</button>
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Nein</button>
+        </p>
+    </div>
+</div>
 </body>
 <footer>
     <ul>

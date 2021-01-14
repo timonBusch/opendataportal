@@ -11,7 +11,11 @@ function getCategories(){
     fetch(caturl)
         .then(r=>r.json())
         .then(data => {
-            fetchedCategories = data;
+            fetchedCategories = data.sort(function (a, b) {
+                if(a.name < b.name) {return -1;}
+                if(a.name > b.name) {return 1}
+                return 0
+            });
             return data;
         });
 }
@@ -123,7 +127,7 @@ function insertCategories(finCategories){
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl + "addTblCategories?" + formBody);
+    postDataWithout(caturl + "addTblCategories?" + formBody);
 }
 
 /**
@@ -140,5 +144,5 @@ function deleteCategories(startCategories){
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl + "deleteTblCategories?" + formBody);
+    postDataWithout(caturl + "deleteTblCategories?" + formBody);
 }

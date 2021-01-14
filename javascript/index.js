@@ -1,6 +1,8 @@
 let tbl_cat_url = SWAC_config.datasources[1] + "tbl_category"
 var fetchedtables = [];
 let actCategory;
+let actCategoryDesc;
+let actCategoryName;
 
 /**
  * Checks which boxes are checked and returns their ids
@@ -43,7 +45,6 @@ function isNewCategory(catName){
 function addCategory(){
     let missingMsg = "Bitte geben Sie einen Namen, eine Beschreibung und mindestens eine Tabelle an.";
     let duplicateMsg = "Eine Kategorie mit diesem Namen ist bereits vorhanden.";
-    let fc = document.getElementById("present_categories");
     var checkedTables = [];
     var checkedBoxes = getCheckedBoxes("checkedTables");
     var catName = document.getElementById("catname").value;
@@ -68,7 +69,6 @@ function addCategory(){
  * @param description - category description
  */
 async function postCategory(name, description) {
-    let fc = document.getElementById("present_categories");
     let category = {
         'name': name,
         'description': description
@@ -96,7 +96,7 @@ async function postCategory(name, description) {
         .then(function (text) {
             category["id"] = text;
             fetchedCategories.push(category);
-            swacReload(fc, fetchedCategories)
+            swacReload(fetchedCategories)
             }
         )
     )
@@ -118,16 +118,24 @@ function postTbl_Category(catName, checkedTables) {
     formBody.push(nameEncodedKey + "=" + nameEncodedValue);
     formBody = formBody.join("&");
 
-    postDataWithout(caturl + "addTblCategory?" + formBody);
+    postDataWithout(caturl + "addTblCategory?" + formBody)
 }
 
 /**
  * If a category-edit-button (edit or delete) is pushed, actCategory is set so other functions know which category they
  * have to work with at the moment.
+ * And setting the other variables as well since there is a problem with passing two or more "swac"-parameter.
  * @param id - category id
  */
 function setActCategory(id){
     actCategory = id;
+    for(elem in fetchedCategories){
+        if(fetchedCategories[elem]["id"]===actCategory){
+            actCategoryDesc = fetchedCategories[elem]["description"];
+            actCategoryName = fetchedCategories[elem]["name"];
+        }
+    }
+    setModalInformation();
 }
 
 /**
@@ -136,8 +144,9 @@ function setActCategory(id){
 function editCategory(){
     let missingMsg = "Bitte geben Sie eine Beschreibung an.";
     var catDescription = document.getElementById("categorydescription").value;
-    if (catDescription !== "") {
-        updateCategory(catDescription);
+    var catName = document.getElementById("categoryname").value;
+    if (catDescription !== "" && catName !== "") {
+        updateCategory(catDescription, catName);
     } else {
         alert(missingMsg);
     }
@@ -148,7 +157,13 @@ function editCategory(){
  * @param comp - Component
  * @param arr - Array
  */
-function swacReload(comp, arr){
+function swacReload(arr){
+    let comp = document.getElementById("present_categories");
+    arr.sort(function (a, b) {
+        if(a.name < b.name) {return -1;}
+        if(a.name > b.name) {return 1}
+        return 0
+    })
     comp.swac_comp.removeAllData();
     for (elem in arr) {
         comp.swac_comp.addSet("present_categories", arr[elem]);
@@ -176,7 +191,7 @@ function deleteCategory(){
                     }
                     i++;
                 }
-                swacReload(fc, fetchedCategories);
+                swacReload(fetchedCategories);
             }
             return response.json();
         })
@@ -186,10 +201,11 @@ function deleteCategory(){
  * Prepares the POST request to update a category description
  * @param catDescription - category description
  */
-function updateCategory(catDescription){
+function updateCategory(catDescription, catName){
     let category = {
+        'description': catDescription,
         'id': actCategory,
-        'description': catDescription
+        'name': catName
     }
 
     let formBody = []
@@ -199,7 +215,22 @@ function updateCategory(catDescription){
         formBody.push(encodedKey + "=" + encodedValue);
     }
     formBody = formBody.join("&");
-    postData(caturl + "updateCategory?" + formBody);
+    postDataWithout(caturl + "updateCategory?" + formBody).then(response => {
+        if (!response.ok) {
+            throw new Error("HTTP status " + response.status);
+        } else {
+            let i = 0;
+            for (elem in fetchedCategories) {
+                if (fetchedCategories[elem]["id"]===actCategory){
+                    fetchedCategories.splice(i, 1);
+                }
+                i++;
+            }
+            fetchedCategories.push(category)
+            swacReload(fetchedCategories)
+        }
+        return response.json();
+    });
 }
 
 const promiseOfData =
@@ -213,3 +244,14 @@ const promiseOfData =
 window.onload = async () => {
     let promisedData = await promiseOfData;
 };
+
+function setModalInformation(){
+    var catDescription = document.getElementById("categorydescription");
+    catDescription.value = actCategoryDesc;
+    var catName= document.getElementById("categoryname");
+    catName.value = actCategoryName;
+}
+
+SWAC_reactions.addReaction(function () {
+    swacReload(fetchedCategories);
+}, "present_categories");
