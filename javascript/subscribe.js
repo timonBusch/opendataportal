@@ -34,7 +34,7 @@ function subscribe() {
     }
     formBody = formBody.join("&")
 
-    postDataWithout(SWAC_config.datasources[1] + "tbl_subscriber/addTblSubscriber"+ formBody)
+    postDataWithout(SWAC_config.datasources[1] + "tbl_subscriber/addTblSubscriber?" + formBody)
 
 }
 

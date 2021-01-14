@@ -20,7 +20,7 @@ function unsubscribe() {
     }
     formBody = formBody.join("&")
 
-    postData(SWAC_config.datasources[1] + "subscriber/rmvSubscriber", formBody)
+    postData(SWAC_config.datasources[1] + "subscriber/rmvSubscriber?" + formBody)
 
 
 
