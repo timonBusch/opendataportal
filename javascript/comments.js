@@ -9,24 +9,38 @@ let id_comments = urlParamsx.get('id')
  */
 function postComment() {
 
-    let author = document.getElementById("comment_author").value
-    let text = document.getElementById("comment_area").value
+    let author = document.getElementById("comment_author")
+    let text = document.getElementById("comment_area")
 
-   let comment = {
-       'author': author,
-       'content': text,
-       'tableId': id_comments
+    if(author.value === "" && text.value !== "") {
+        author.classList.add("uk-animation-shake")
+
+        setTimeout(function (){
+            author.classList.remove("uk-animation-shake")
+        }, 500)
+    }else if(author.value !== "" && text.value === "") {
+        text.classList.add("uk-animation-shake")
+
+        setTimeout(function (){
+            text.classList.remove("uk-animation-shake")
+        }, 500)
+    }else {
+        let comment = {
+            'author': author.value,
+            'content': text.value,
+            'tableId': id_comments
+        }
+
+        let formBody = []
+        for (let property in comment) {
+            let encodedKey = encodeURIComponent(property)
+            let encodedValue = encodeURIComponent(comment[property])
+            formBody.push(encodedKey + "=" + encodedValue)
+        }
+        formBody = formBody.join("&")
+
+        postDataWithout(SWAC_config.datasources[1] + "comment/addComment?" + formBody)
     }
-
-    let formBody = []
-    for (let property in comment) {
-        let encodedKey = encodeURIComponent(property)
-        let encodedValue = encodeURIComponent(comment[property])
-        formBody.push(encodedKey + "=" + encodedValue)
-    }
-    formBody = formBody.join("&")
-
-    postDataWithout(SWAC_config.datasources[1] + "comment/addComment/" + formBody)
 
 }
 

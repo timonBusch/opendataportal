@@ -20,9 +20,8 @@ function invalidDataExists() {
 }
 
 async function getValid() {
-    let responseName = await fetch(SWAC_config.datasources[1] + "tbl_category/tbl_cat_name?tbl_cat_name=" + id_valid)
-    let id = await responseName.json()
-    let response = await fetch(SWAC_config.datasources[1] + "tbl/id?id=" + id.tbl_id);
+
+    let response = await fetch(SWAC_config.datasources[1] + "tbl/id?id=" + id_valid);
     return await response.json()
 }
 

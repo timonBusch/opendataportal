@@ -2,12 +2,15 @@
 
 let id = new URLSearchParams(window.location.search).get('id')
 
+// Call OpenDataBackend and get table titel, update time, description
+
 const url_category_updateTime = SWAC_config.datasources[1] + "tbl_category/tbl_cat_id?tbl_cat_id=" + id
 
 var categories_updateTime
 var table_name = ""
 getData(url_category_updateTime).then(data => {
     categories_updateTime = data
+    // Get table name to call on Database
     table_name = data.name
     getTableInformation()
 }).catch(function () {
@@ -18,12 +21,9 @@ getData(url_category_updateTime).then(data => {
     });
 })
 
-
-
 window.onload = function () {
 
     getTableCount()
-
 
     document.getElementById("filter_attributes").addEventListener("click", filter_attributes)
     document.getElementById("export_json").addEventListener("click", exportComponentAsJson)
@@ -31,10 +31,9 @@ window.onload = function () {
     document.getElementById("comment_bt").addEventListener("click", postComment)
     document.getElementById("subscribe_bt").addEventListener("click", subscribe)
 
-    setExample("http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false")
+    setExample(SWAC_config.datasources[3] + "/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false")
 
 }
-
 
 /**
  * Get data from smartdata REST API
@@ -112,7 +111,7 @@ function filter_attributes(){
     // Set component to filtered dataset
     if(correctInput) {
 
-        let new_dataset_url = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/" + table_name + "?storage=smartmonitoring&includes=" + include_string + "&size=" + size + "&countonly=false&deflatt=false"
+        let new_dataset_url = SWAC_config.datasources[3] + "/smartdata/records/" + table_name + "?storage=smartmonitoring&includes=" + include_string + "&size=" + size + "&countonly=false&deflatt=false"
         setExample(new_dataset_url)
         getData(new_dataset_url).then(data => {
             dataset = data
@@ -168,8 +167,11 @@ function exportComponentAsCSV() {
 
 // Call Api and set variable for SWAC components
 
+/**
+ * Calls REST API and set dataset count
+ */
 function getTableCount() {
-    const url_dataset_count = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/" + table_name + "?storage=smartmonitoring&size=0&countonly=true&deflatt=false"
+    const url_dataset_count = SWAC_config.datasources[3] + "/smartdata/records/" + table_name + "?storage=smartmonitoring&size=0&countonly=true&deflatt=false"
 
     getData(url_dataset_count).then(data => {
         let count = data
@@ -187,8 +189,12 @@ function getTableCount() {
 
 var dataset;
 var dataset_keys;
+
+/**
+ * Calls REST API gets informatione for data preview and the data keys
+ */
 function getTableInformation() {
-    const url_dataset = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/records/" + table_name + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false"
+    const url_dataset = SWAC_config.datasources[3] + "/smartdata/records/" + table_name + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false"
 
 
     getData(url_dataset).then(data =>{
@@ -201,7 +207,7 @@ function getTableInformation() {
         });
     });
 
-    const url_dataset_keys = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand/smartdata/collection/" + table_name + "/getAttributes?storage=smartmonitoring"
+    const url_dataset_keys = SWAC_config.datasources[3] + "/smartdata/collection/" + table_name + "/getAttributes?storage=smartmonitoring"
 
 
     getData(url_dataset_keys).then(data => {
@@ -228,9 +234,9 @@ function getTableInformation() {
     })
 }
 
+// Remove all data from components and set them again
 
 SWAC_reactions.addReaction(function () {
-    console.log("Blub")
     let data_preview_component = document.getElementById("data_preview")
     let present_attributes_component = document.getElementById("present_attributes")
     data_preview_component.swac_comp.removeAllData()

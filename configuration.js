@@ -44,6 +44,7 @@ SWAC_config.datasources = [];
 SWAC_config.datasources[0] = "/SWAC/data/[fromName]";
 SWAC_config.datasources[1] = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/" //"/OpenDataPortalBackend/";
 SWAC_config.datasources[2] = "/OpenDataPortalBackend/[fromName]";
+SWAC_config.datasources[3] = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand"; // /SmartDataTeststand/
 
 SWAC_config.interfaces = {};
 SWAC_config.interfaces.get = 'get';
