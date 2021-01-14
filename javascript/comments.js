@@ -26,7 +26,7 @@ function postComment() {
     }
     formBody = formBody.join("&")
 
-    postDataWithout(SWAC_config.datasources[1] + "comment/addComment/" + formBody)
+    postDataWithout(SWAC_config.datasources[1] + "comment/addComment?" + formBody)
 
 }
 

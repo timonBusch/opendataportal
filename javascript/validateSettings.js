@@ -39,7 +39,7 @@ function getSettings(index) {
         'settings' : seconds + " " + minutes + " " + hours + " " + day_of_month + " " + month + " " + day_of_week
     }
     console.log(settings)
-    postDataWithout(SWAC_config.datasources[1] + "schedule/addScheduleDate/" + toUrlencoded(settings))
+    postDataWithout(SWAC_config.datasources[1] + "schedule/addScheduleDate?" + toUrlencoded(settings))
 }
 
 
