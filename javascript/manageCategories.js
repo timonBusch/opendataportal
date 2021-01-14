@@ -123,7 +123,7 @@ function insertCategories(finCategories){
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl + "addTBLCategories?" + formBody);
+    postData(caturl + "addTblCategories?" + formBody);
 }
 
 /**
@@ -140,5 +140,5 @@ function deleteCategories(startCategories){
     formBody.push(catidsEncodedKey + "=" + catidsEncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl + "deleteTBLCategories?" + formBody);
+    postData(caturl + "deleteTblCategories?" + formBody);
 }

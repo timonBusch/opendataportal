@@ -52,7 +52,7 @@ function addCategory(){
             checkedBoxes.forEach(item => {
                 checkedTables.push(item);
             })
-            postCategory(catName, catDescription).then(r => postTBL_Category(catName, checkedTables));
+            postCategory(catName, catDescription).then(r => postTbl_Category(catName, checkedTables));
         } else {
             alert(duplicateMsg);
         }
@@ -99,7 +99,7 @@ async function postCategory(name, description) {
  * @param catName - category name
  * @param checkedTables - selected tables
  */
-function postTBL_Category(catName, checkedTables) {
+function postTbl_Category(catName, checkedTables) {
     let formBody = [];
     let idsEncodedKey = encodeURIComponent("table_ids");
     let idsEncodedValue = encodeURIComponent(checkedTables);
@@ -109,7 +109,7 @@ function postTBL_Category(catName, checkedTables) {
     formBody.push(nameEncodedKey + "=" + nameEncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl + "/addTBLCategory?" + formBody);
+    postData(caturl + "addTblCategory?" + formBody);
 }
 
 /**
@@ -145,7 +145,7 @@ function deleteCategory(){
     formBody.push(EncodedKey + "=" + EncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl + "/deleteCategory?", formBody);
+    postData(caturl + "deleteCategory?" + formBody);
 }
 
 /**
