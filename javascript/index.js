@@ -43,6 +43,7 @@ function isNewCategory(catName){
 function addCategory(){
     let missingMsg = "Bitte geben Sie einen Namen, eine Beschreibung und mindestens eine Tabelle an.";
     let duplicateMsg = "Eine Kategorie mit diesem Namen ist bereits vorhanden.";
+    let fc = document.getElementById("present_categories");
     var checkedTables = [];
     var checkedBoxes = getCheckedBoxes("checkedTables");
     var catName = document.getElementById("catname").value;
@@ -67,6 +68,7 @@ function addCategory(){
  * @param description - category description
  */
 async function postCategory(name, description) {
+    let fc = document.getElementById("present_categories");
     let category = {
         'name': name,
         'description': description
@@ -90,7 +92,14 @@ async function postCategory(name, description) {
         dataType: 'json',
         redirect: 'follow',
         referrer: 'no-referrer',
-    })
+    }).then(response => response.text()
+        .then(function (text) {
+            category["id"] = text;
+            fetchedCategories.push(category);
+            swacReload(fc, fetchedCategories)
+            }
+        )
+    )
     return await response
 }
 
@@ -109,7 +118,7 @@ function postTbl_Category(catName, checkedTables) {
     formBody.push(nameEncodedKey + "=" + nameEncodedValue);
     formBody = formBody.join("&");
 
-    postData(caturl + "addTblCategory?" + formBody);
+    postDataWithout(caturl + "addTblCategory?" + formBody);
 }
 
 /**
@@ -128,7 +137,6 @@ function editCategory(){
     let missingMsg = "Bitte geben Sie eine Beschreibung an.";
     var catDescription = document.getElementById("categorydescription").value;
     if (catDescription !== "") {
-        console.log("Kategoriebeschreibung anpassen von " + actCategory);
         updateCategory(catDescription);
     } else {
         alert(missingMsg);
@@ -136,16 +144,42 @@ function editCategory(){
 }
 
 /**
+ * Since the reload method is not implemented in swac yet, this method will reload the component
+ * @param comp - Component
+ * @param arr - Array
+ */
+function swacReload(comp, arr){
+    comp.swac_comp.removeAllData();
+    for (elem in arr) {
+        comp.swac_comp.addSet("present_categories", arr[elem]);
+    }
+}
+/**
  * Prepares the POST request to delete a category
  */
 function deleteCategory(){
+    let i = 0;
     let formBody = [];
     let EncodedKey = encodeURIComponent("id");
     let EncodedValue = encodeURIComponent(actCategory);
     formBody.push(EncodedKey + "=" + EncodedValue);
     formBody = formBody.join("&");
-
-    postData(caturl + "deleteCategory?" + formBody);
+    let fc = document.getElementById("present_categories");
+    postDataWithout(caturl + "deleteCategory?" + formBody)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP status " + response.status);
+            } else {
+                for (elem in fetchedCategories) {
+                    if (fetchedCategories[elem]["id"]==actCategory){
+                        fetchedCategories.splice(i, 1);
+                    }
+                    i++;
+                }
+                swacReload(fc, fetchedCategories);
+            }
+            return response.json();
+        })
 }
 
 /**
