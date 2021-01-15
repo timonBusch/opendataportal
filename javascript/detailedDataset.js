@@ -31,7 +31,7 @@ window.onload = function () {
     document.getElementById("comment_bt").addEventListener("click", postComment)
     document.getElementById("subscribe_bt").addEventListener("click", subscribe)
 
-    setExample(SWAC_config.datasources[3] + "/smartdata/records/data_" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false")
+    setExample(SWAC_config.datasources[3] + "/smartdata/records/" + id + "?storage=smartmonitoring&size=20&countonly=false&deflatt=false")
 
 }
 

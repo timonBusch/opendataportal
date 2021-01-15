@@ -20,6 +20,7 @@ function unsubscribe() {
     }
     formBody = formBody.join("&")
 
+
     postDataWithout(SWAC_config.datasources[1] + "subscriber/rmvSubscriber?" + formBody).then(function () {
         window.location.href="../sites/outline.html"
     })
