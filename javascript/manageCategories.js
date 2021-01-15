@@ -89,28 +89,79 @@ function containsAny(source, target){
  * @param finCategories - the categories, that the user has selected to be the categories of the table
  */
 function assignCategories(startCategories, finCategories){
+    let toDelete = [];
+    let i = startCategories.length;
+    while(i--) toDelete[i] = startCategories[i];
     let toInsert = [];
-    let i;
     if (finCategories == null) {
-        deleteCategories(startCategories);
+        deleteCategories(toDelete);
     } else {
         for (i = 0; i < finCategories.length; i++) {
-            if (containsAny(startCategories, finCategories[i])) {
-                let index = startCategories.indexOf(finCategories[i]);
+            if (containsAny(toDelete, finCategories[i])) {
+                let index = toDelete.indexOf(finCategories[i]);
                 if (index > -1) {
-                    startCategories.splice(index, 1);
+                    toDelete.splice(index, 1);
                 }
                 index = finCategories.indexOf(finCategories[i]);
-                if (index > -1) {
+                if (index > -1 && containsAny(startCategories, finCategories[i]) === false) {
                     toInsert.push(finCategories[i]);
                 }
             } else {
-                toInsert.push(finCategories[i]);
+                if (containsAny(startCategories, finCategories[i]) === false) {
+                    toInsert.push(finCategories[i]);
+                }
             }
         }
-        deleteCategories(startCategories);
-        insertCategories(toInsert);
+        if (toDelete.length > 0) {
+            deleteCategories(toDelete);
+        }
+        if (toInsert.length > 0){
+            insertCategories(toInsert);
+        }
+
     }
+    updateFetchedCategories(finCategories);
+    updateOverview();
+}
+
+/**
+ * Updating the "local" categories
+ *
+ * @param finCategories - All categories that belongs to a table
+ */
+function updateFetchedCategories(finCategories){
+    let categorystring = "";
+    for (let elem in fetchedCategories){
+        if (finCategories != null) {
+            if (containsAny(finCategories, fetchedCategories[elem]["id"].toString())) {
+                if (categorystring == "") {
+                    categorystring += fetchedCategories[elem]["name"]
+                } else {
+                    categorystring += ", " + fetchedCategories[elem]["name"];
+                }
+            }
+        }
+    }
+    for (let elem in fetchedData){
+        if (fetchedData[elem]["tbl_id"] == tbl_id){
+            fetchedData[elem]["categories"] =  categorystring;
+        }
+    }
+}
+
+/**
+ * If categories of a table have changed, the overview has to be updated...
+ * There may be new categories to display or filters that will proceed.
+ *
+ */
+function updateOverview(){
+    let comp = document.getElementById("fetchedDatasets");
+    comp.swac_comp.removeAllData();
+    for (elem in fetchedData) {
+        comp.swac_comp.addSet("fetchedData", fetchedData[elem]);
+    }
+    searchTable();
+    displayResult(getFilterFromLS());
 }
 
 /**
