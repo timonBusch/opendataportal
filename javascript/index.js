@@ -1,5 +1,5 @@
 let tbl_cat_url = SWAC_config.datasources[1] + "tbl_category"
-let fetchedtables = [];
+var fetchedtables = [];
 let actCategory;
 let actCategoryDesc;
 let actCategoryName;
@@ -94,9 +94,9 @@ async function postCategory(name, description) {
         referrer: 'no-referrer',
     }).then(response => response.text()
         .then(function (text) {
-            category["id"] = text;
-            fetchedCategories.push(category);
-            swacReload(fetchedCategories)
+                category["id"] = text;
+                fetchedCategories.push(category);
+                swacReload(fetchedCategories)
             }
         )
     )
