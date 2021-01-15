@@ -1,5 +1,5 @@
 let tbl_cat_url = SWAC_config.datasources[1] + "tbl_category"
-var fetchedtables = [];
+let fetchedtables = [];
 let actCategory;
 let actCategoryDesc;
 let actCategoryName;
@@ -154,7 +154,6 @@ function editCategory(){
 
 /**
  * Since the reload method is not implemented in swac yet, this method will reload the component
- * @param comp - Component
  * @param arr - Array
  */
 function swacReload(arr){
@@ -179,27 +178,26 @@ function deleteCategory(){
     let EncodedValue = encodeURIComponent(actCategory);
     formBody.push(EncodedKey + "=" + EncodedValue);
     formBody = formBody.join("&");
-    let fc = document.getElementById("present_categories");
     postDataWithout(caturl + "deleteCategory?" + formBody)
         .then(response => {
             if (!response.ok) {
                 throw new Error("HTTP status " + response.status);
             } else {
                 for (elem in fetchedCategories) {
-                    if (fetchedCategories[elem]["id"]==actCategory){
+                    if (fetchedCategories[elem]["id"]===actCategory){
                         fetchedCategories.splice(i, 1);
                     }
                     i++;
                 }
                 swacReload(fetchedCategories);
             }
-            return response.json();
         })
 }
 
 /**
  * Prepares the POST request to update a category description
- * @param catDescription - category description
+ * @param catDescription - new category description
+ * @param catName - new categoroy name
  */
 function updateCategory(catDescription, catName){
     let category = {
@@ -216,6 +214,7 @@ function updateCategory(catDescription, catName){
     }
     formBody = formBody.join("&");
     postDataWithout(caturl + "updateCategory?" + formBody).then(response => {
+
         if (!response.ok) {
             throw new Error("HTTP status " + response.status);
         } else {
@@ -229,7 +228,6 @@ function updateCategory(catDescription, catName){
             fetchedCategories.push(category)
             swacReload(fetchedCategories)
         }
-        return response.json();
     });
 }
 
