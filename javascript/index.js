@@ -32,7 +32,7 @@ function getCheckedBoxes(chkboxName) {
  */
 function isNewCategory(catName){
     for (var i = 0; i < fetchedCategories.length; i++){
-        if (fetchedCategories[i]["name"] === catName){
+        if (fetchedCategories[i]["name"] == catName){
             return false;
         }
     }
@@ -96,6 +96,7 @@ async function postCategory(name, description) {
         .then(function (text) {
                 category["id"] = text;
                 fetchedCategories.push(category);
+                console.log(fetchedCategories);
                 swacReload(fetchedCategories)
             }
         )
@@ -130,11 +131,14 @@ function postTbl_Category(catName, checkedTables) {
 function setActCategory(id){
     actCategory = id;
     for(elem in fetchedCategories){
-        if(fetchedCategories[elem]["id"]===actCategory){
+        if(fetchedCategories[elem]["id"]==actCategory){
             actCategoryDesc = fetchedCategories[elem]["description"];
             actCategoryName = fetchedCategories[elem]["name"];
         }
     }
+    console.log(actCategory);
+    console.log(actCategoryDesc);
+    console.log(actCategoryName);
     setModalInformation();
 }
 
@@ -184,7 +188,7 @@ function deleteCategory(){
                 throw new Error("HTTP status " + response.status);
             } else {
                 for (elem in fetchedCategories) {
-                    if (fetchedCategories[elem]["id"]===actCategory){
+                    if (fetchedCategories[elem]["id"]==actCategory){
                         fetchedCategories.splice(i, 1);
                     }
                     i++;
@@ -220,7 +224,7 @@ function updateCategory(catDescription, catName){
         } else {
             let i = 0;
             for (elem in fetchedCategories) {
-                if (fetchedCategories[elem]["id"]===actCategory){
+                if (fetchedCategories[elem]["id"]==actCategory){
                     fetchedCategories.splice(i, 1);
                 }
                 i++;
