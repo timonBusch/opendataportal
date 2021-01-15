@@ -1,4 +1,4 @@
-let caturl = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/" + "category/"
+let caturl = SWAC_config.datasources[1] + "category/"
 var fetchedCategories = [];
 let checkedCategories = [];
 let tbl_id;
