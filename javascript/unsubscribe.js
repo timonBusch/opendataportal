@@ -20,25 +20,11 @@ function unsubscribe() {
     }
     formBody = formBody.join("&")
 
-    postData(SWAC_config.datasources[1] + "subscriber/rmvSubscriber?" + formBody)
-
-
-
-}
-
-function postData(url, data) {
-    return fetch(url, {
-        body: data,
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
-        },
-        method: 'POST',
-        mode: 'cors',
-        redirect: 'follow',
-        referrer: 'no-referrer',
+    postDataWithout(SWAC_config.datasources[1] + "subscriber/rmvSubscriber?" + formBody).then(function () {
+        window.location.href="../sites/outline.html"
     })
-        .then(response => window.location.href="../sites/outline.html")
+
+
+
 
 }
