@@ -11,6 +11,10 @@ window.onload = function () {
 
 }
 
+/**
+ * Set right settings for backend
+ * @param index
+ */
 function getSettings(index) {
     let seconds = "0"
     let minutes = "0"
@@ -39,7 +43,21 @@ function getSettings(index) {
         'settings' : seconds + " " + minutes + " " + hours + " " + day_of_month + " " + month + " " + day_of_week
     }
     console.log(settings)
-    postDataWithout(SWAC_config.datasources[1] + "schedule/addScheduleDate?" + toUrlencoded(settings))
+    postDataWithout(SWAC_config.datasources[1] + "schedule/addScheduleDate?" + toUrlencoded(settings)).then(function () {
+
+        UIkit.notification({
+            message: 'Einstellungen gespeichert',
+            status: 'primary',
+            timeout: 5000
+        });
+
+    }).catch(function () {
+        UIkit.notification({
+            message: 'Error while sending settings',
+            status: 'warning',
+            timeout: 5000
+        });
+    })
 }
 
 
