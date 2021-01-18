@@ -44,7 +44,7 @@ SWAC_config.datasources = [];
 SWAC_config.datasources[0] = "/SWAC/data/[fromName]";
 SWAC_config.datasources[1] = "/OpenDataPortalBackend/"
 SWAC_config.datasources[2] = "/OpenDataPortalBackend/[fromName]";
-SWAC_config.datasources[3] = "/SmartDataTeststand/";
+SWAC_config.datasources[3] = "/SmartDataTeststand";
 
 SWAC_config.interfaces = {};
 SWAC_config.interfaces.get = 'get';
