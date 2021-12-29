@@ -44,7 +44,7 @@ SWAC_config.datasources = [];
 SWAC_config.datasources[0] = "/SWAC/data/[fromName]";
 SWAC_config.datasources[1] = "http://localhost:8080/opendataportal-1.0-SNAPSHOT/" // /OpenDataPortalBackend/
 SWAC_config.datasources[2] = "/OpenDataPortalBackend/[fromName]";
-SWAC_config.datasources[3] = "http://epigraf01.ad.fh-bielefeld.de:8080/SmartDataTeststand"; // /SmartDataTeststand
+SWAC_config.datasources[3] = ""; // /SmartDataTeststand
 
 SWAC_config.interfaces = {};
 SWAC_config.interfaces.get = 'get';
@@ -124,4 +124,4 @@ var footerlinks = [];
 footerlinks[0] = {id: 1, rfrom: "*", rto: "datenschutz.html", name: "Datenschutzerklärung"};
 footerlinks[1] = {id: 2, rfrom: "*", rto: "impressum.html", name: "Impressum"};
 footerlinks[2] = {id: 3, rfrom: "*", rto: "haftung.html", name: "Haftungsausschluss"};
-footerlinks[3] = {id: 4, rfrom: "*", rto: "http://git01-ifm-min.ad.fh-bielefeld.de/scl/2015_03_SCL_SmartMonitoring_Frontend/wikis/home", name: "Über SmartMonitoring"};
+footerlinks[3] = {id: 4, rfrom: "*", rto: "", name: "Über SmartMonitoring"};
